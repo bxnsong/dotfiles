@@ -1,5 +1,5 @@
 # Neovim
-if ! command -v nvim &> /dev/null
+if ! [ -x "$(command -v nvim)" ]
 then
     sudo add-apt-repository ppa:neovim-ppa/stable
     sudo apt-get update
@@ -7,20 +7,20 @@ then
 fi
 
 # LSD
-if ! command -v lsd &> /dev/null
+if ! [ -x "$(command -v lsd)" ]
 then
-    LSD_DEB_PATH=/home/discord/installation/lsd-0.23.1.deb
-    sudo dpkg -i $LSD_DEB_PATH
+    lsd_deb_path=/home/discord/installation/lsd-0.23.1.deb
+    sudo dpkg -i $lsd_deb_path
 fi
 
 # ripgrep
-if ! command -v rg &> /dev/null
+if ! [ -x "$(command -v rg)" ]
 then
     cargo install ripgrep
 fi
 
 # fd
-if ! command -v fd &> /dev/null
+if ! [ -x "$(command -v fd)" ]
 then
     cargo install fd-find
 fi

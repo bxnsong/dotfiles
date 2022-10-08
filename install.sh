@@ -44,5 +44,5 @@ fi
 
 # Language servers
 if ! [ -x "$(command -v typescript-language-server)" ]; then
-    npm i -g typescript-language-server
+    sudo npm i -g typescript-language-server
 fi

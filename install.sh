@@ -41,3 +41,8 @@ if ! [ -x "$(command -v fasd)" ]; then
     sudo apt-get update
     sudo apt-get install -y fasd
 fi
+
+# Language servers
+if ! [ -x "$(command -v typescript-language-server)" ]; then
+    npm i -g typescript-language-server
+fi

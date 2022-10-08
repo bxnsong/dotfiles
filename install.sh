@@ -34,3 +34,10 @@ if ! [ -d "$packer_home" ]; then
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim $packer_home
 fi
 cp -rsf "$dotfiles_home"/.config/. ~/.config
+
+# fasd
+if ! [ -x "$(command -v fasd)" ]; then
+    sudo add-apt-repository ppa:aacebedo/fasd
+    sudo apt-get update
+    sudo apt-get install fasd
+fi

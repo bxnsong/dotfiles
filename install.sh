@@ -39,5 +39,5 @@ cp -rsf "$dotfiles_home"/.config/. ~/.config
 if ! [ -x "$(command -v fasd)" ]; then
     sudo add-apt-repository ppa:aacebedo/fasd
     sudo apt-get update
-    sudo apt-get install fasd
+    sudo apt-get install -y fasd
 fi

@@ -4,7 +4,7 @@ dotfiles_home=~/dotfiles
 # Neovim
 if ! [ -x "$(command -v nvim)" ]
 then
-    sudo add-apt-repository ppa:neovim-ppa/stable
+    sudo add-apt-repository ppa:neovim-ppa/unstable
     sudo apt-get update
     sudo apt-get install -y neovim
 fi

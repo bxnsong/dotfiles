@@ -1,6 +1,8 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
+    use { 'neovim/nvim-lspconfig' }
+
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
@@ -23,7 +25,7 @@ return require('packer').startup(function()
         replace_netrw = 'picker',
     } end}
 
-    use 'yashguptaz/calvera-dark.nvim'
+    use 'folke/tokyonight.nvim'
 
     use { 'numToStr/Comment.nvim', config = function() require'Comment'.setup() end }
 

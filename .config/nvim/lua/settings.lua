@@ -1,6 +1,6 @@
 vim.o.background = 'dark'
 vim.o.termguicolors = true
-vim.cmd('colorscheme calvera')
+vim.cmd('colorscheme tokyonight-night')
 
 vim.o.encoding = 'utf-8'
 vim.o.backspace = 'indent,eol,start' -- backspace works on every char in insert mode

@@ -1,3 +1,6 @@
+dotfiles_home=~/dotfiles
+
+
 # Neovim
 if ! [ -x "$(command -v nvim)" ]
 then
@@ -24,3 +27,10 @@ if ! [ -x "$(command -v fd)" ]
 then
     cargo install fd-find
 fi
+
+# copy nvim config
+packer_home=~/.local/share/nvim/site/pack/packer/start/packer.nvim
+if ! [ -d "$packer_home" ]; then
+	git clone --depth 1 https://github.com/wbthomason/packer.nvim $packer_home
+fi
+cp -rsf "$dotfiles_home"/.config/. ~/.config

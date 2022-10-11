@@ -1,13 +1,19 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
-    use { 'neovim/nvim-lspconfig' }
+    use { 'williamboman/mason.nvim', config = function() require'mason'.setup() end }
+
+    use { 'williamboman/mason-lspconfig.nvim', after = 'mason', config = function() require'mason-lspconfig'.setup() end }
+
+    use { 'neovim/nvim-lspconfig', after = 'mason-lspconfig' }
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
 
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+    use { 'ms-jpq/coq.nvim', branch = 'coq' }
 
     use 'ggandor/lightspeed.nvim'
 

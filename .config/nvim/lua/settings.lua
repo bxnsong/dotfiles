@@ -29,3 +29,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 require'telescope'.load_extension('fzf')
+
+vim.g.coq_settings = { auto_start = 'shut-up' }
+require'coq'

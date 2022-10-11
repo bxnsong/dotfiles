@@ -5,9 +5,17 @@ return require('packer').startup(function()
 
     use { 'williamboman/mason-lspconfig.nvim', after = 'mason', config = function() require'mason-lspconfig'.setup() end }
 
-    use { 'neovim/nvim-lspconfig', after = 'mason-lspconfig' }
+    use { 'neovim/nvim-lspconfig' }
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+    use {
+        'folke/trouble.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require'trouble'.setup{}
+        end
+    }
 
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
 
@@ -15,7 +23,7 @@ return require('packer').startup(function()
 
     use { 'ms-jpq/coq.nvim', branch = 'coq' }
 
-    use 'ggandor/lightspeed.nvim'
+    use { 'ggandor/leap.nvim', config = function() require'leap'.set_default_keymaps() end }
 
     use {
         'AckslD/nvim-revJ.lua',

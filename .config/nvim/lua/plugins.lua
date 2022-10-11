@@ -25,6 +25,8 @@ return require('packer').startup(function()
 
     use { 'ggandor/leap.nvim', config = function() require'leap'.set_default_keymaps() end }
 
+    use 'gpanders/editorconfig.nvim'
+
     use {
         'AckslD/nvim-revJ.lua',
         requires = { 'wellle/targets.vim' },

@@ -9,9 +9,12 @@ return require('packer').startup(function()
 
     use { 'jose-elias-alvarez/null-ls.nvim', config = function() require'null-ls'.setup({
         sources = {
-            require'null-ls'.builtins.formatting.prettierd,
+            require'null-ls'.builtins.formatting.prettierd.with({
+                env = {
+                    PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/discord/.prettierrc')
+                }
+            }),
         },
-        debug = true
     }) end }
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }

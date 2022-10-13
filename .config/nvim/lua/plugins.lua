@@ -79,7 +79,10 @@ return require('packer').startup(function()
 
     use { 'numToStr/Comment.nvim', config = function() require'Comment'.setup() end }
 
-    use { 'steelsojka/pears.nvim', config = function() require'pears'.setup() end }
+    use {
+        'windwp/nvim-autopairs',
+        config = function() require'nvim-autopairs'.setup {} end
+    }
 
     use {'datwaft/bubbly.nvim', config = function()
         -- Here you can add the configuration for the plugin

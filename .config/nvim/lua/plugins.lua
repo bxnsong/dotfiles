@@ -9,7 +9,7 @@ return require('packer').startup(function()
 
     use { 'jose-elias-alvarez/null-ls.nvim', config = function() require'null-ls'.setup({
         sources = {
-            require'null-ls'.builtins.formatting.prettier,
+            require'null-ls'.builtins.formatting.prettierd,
         },
         debug = true
     }) end }

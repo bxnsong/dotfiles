@@ -84,6 +84,8 @@ return require('packer').startup(function()
         config = function() require'nvim-autopairs'.setup {} end
     }
 
+    use { 'kylechui/nvim-surround', config = function() require'nvim-surround'.setup{} end }
+
     use {'datwaft/bubbly.nvim', config = function()
         -- Here you can add the configuration for the plugin
         vim.g.bubbly_palette = {

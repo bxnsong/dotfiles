@@ -67,3 +67,5 @@ if ! [ -x "$(command -v lazygit)" ]; then
     sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
     rm lazygit.tar.gz
 fi
+
+# TODO: install fpp

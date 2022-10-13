@@ -41,3 +41,8 @@ if ! [ -x "$(command -v fasd)" ]; then
     sudo apt-get update
     sudo apt-get install -y fasd
 fi
+
+# prettier
+if ! [ -x "$(command -v prettier)" ]; then
+    sudo npm i prettier -g
+fi

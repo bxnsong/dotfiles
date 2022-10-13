@@ -57,15 +57,18 @@ return require('packer').startup(function()
     use 'gpanders/editorconfig.nvim'
 
     use {
-        'AckslD/nvim-revJ.lua',
-        requires = { 'wellle/targets.vim' },
-        config = function() require'revj'.setup {
-            keymaps = {
-                operator = '<Leader>J',
-                line = '<Leader>j',
-                visual = '<Leader>j',
-            }
-        } end
+        'AckslD/nvim-trevJ.lua',
+        config = 'require"trevj".setup()',  -- optional call for configurating non-default filetypes etc
+
+        -- uncomment if you want to lazy load
+        module = 'trevj',
+
+        -- an example for configuring a keybind, can also be done by filetype
+        setup = function()
+            vim.keymap.set('n', '<leader>j', function()
+                require('trevj').format_at_cursor()
+            end)
+        end,
     }
 
     use { 'luukvbaal/nnn.nvim', config = function() require'nnn'.setup {

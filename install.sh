@@ -59,3 +59,11 @@ if ! [ -x "$(command -v prettierd)" ]; then
     echo "prettierd not found, installing"
     sudo npm i @fsouza/prettierd -g
 fi
+
+# lazygit
+if ! [ -x "$(command -v lazygit)" ]; then
+    LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' |  sed -E 's/.*"v*([^"]+)".*/\1/')
+    curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+    sudo tar xf lazygit.tar.gz -C /usr/local/bin lazygit
+    rm lazygit.tar.gz
+fi

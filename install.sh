@@ -53,3 +53,9 @@ if ! [ -x "$(command -v prettier)" ]; then
     echo "prettier not found, installing"
     sudo npm i prettier -g
 fi
+
+# prettierd
+if ! [ -x "$(command -v prettierd)" ]; then
+    echo "prettierd not found, installing"
+    sudo npm i @fsouza/prettierd -g
+fi

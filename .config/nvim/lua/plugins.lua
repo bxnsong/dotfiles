@@ -33,8 +33,10 @@ return require('packer').startup(function()
                     PRETTIERD_DEFAULT_CONFIG = vim.fn.expand('~/discord/.prettierrc')
                 }
             }),
+            require'null-ls'.builtins.code_actions.eslint_d,
+            require'null-ls'.builtins.diagnostics.eslint_d,
         },
-    }) end, requires = { {'nvim-lua/plenary.nvim'} } }
+    }) end, requires = { {'nvim-lua/plenary.nvim'} }, after = 'mason.nvim' }
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 

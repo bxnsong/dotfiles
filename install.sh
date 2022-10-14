@@ -32,13 +32,27 @@ then
     cargo install fd-find
 fi
 
-# copy nvim config
+# copy dotfiles
+zshrc=~/.zshrc
+if ! [ -f "$zshrc" ]; then
+    echo "symlinking .zshrc"
+    cp -rsf "$dotfiles_home"/.zshrc ~/.zshrc
+fi
+
+tmux_conf=~/.tmux.conf.local
+if ! [ -f "$tmux_conf" ]; then
+    echo "symlinking .tmux.conf.local"
+    cp -rsf "$dotfiles_home"/.tmux.conf.local ~/.tmux.conf.local
+fi
+
 echo "symlinking .config"
+cp -rsf "$dotfiles_home"/.config/. ~/.config
+
+# install nvim package manager
 packer_home=~/.local/share/nvim/site/pack/packer/start/packer.nvim
 if ! [ -d "$packer_home" ]; then
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim $packer_home
 fi
-cp -rsf "$dotfiles_home"/.config/. ~/.config
 
 # fasd
 if ! [ -x "$(command -v fasd)" ]; then

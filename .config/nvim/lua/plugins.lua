@@ -54,6 +54,8 @@ return require('packer').startup(function()
 
     use { 'ms-jpq/coq.nvim', branch = 'coq' }
 
+    use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+
     use { 'ggandor/leap.nvim', config = function() require'leap'.set_default_keymaps() end }
 
     use 'gpanders/editorconfig.nvim'

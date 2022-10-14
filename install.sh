@@ -39,8 +39,16 @@ if ! [ -f "$zshrc" ]; then
     cp -rsf "$dotfiles_home"/.zshrc ~/.zshrc
 fi
 
-tmux_conf=~/.tmux.conf.local
+tmux_home=~/.tmux
+tmux_conf=~/.tmux.conf
 if ! [ -f "$tmux_conf" ]; then
+    echo "installing oh-my-tmux"
+    git clone https://github.com/gpakosz/.tmux.git $tmux_home
+    cp -rsf "$tmux_home"/.tmux.conf $tmux_conf
+fi
+
+tmux_conf_local=~/.tmux.conf.local
+if ! [ -f "$tmux_conf_local" ]; then
     echo "symlinking .tmux.conf.local"
     cp -rsf "$dotfiles_home"/.tmux.conf.local ~/.tmux.conf.local
 fi

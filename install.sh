@@ -39,6 +39,11 @@ if ! [ -f "$zshrc" ]; then
     cp -rsf "$dotfiles_home"/.zshrc ~/.zshrc
 fi
 
+oh_my_zsh=~/.oh-my-zsh
+if ! [ -d "$oh_my_zsh" ]; then
+    echo "oh-my-zsh not installed, run sh -c \"\$\(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh\)\""
+fi
+
 tmux_home=~/.tmux
 tmux_conf=~/.tmux.conf
 if ! [ -f "$tmux_conf" ]; then

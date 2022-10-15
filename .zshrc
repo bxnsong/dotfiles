@@ -110,6 +110,12 @@ export PATH=~/installation/bin:$PATH
 # fasd
 eval "$(fasd --init auto)"
 
+# easy ssh to coder
+coder-go()
+{
+    ssh coder.discord-workspace -t 'zsh -ic "tmux attach || tmux new-session -t discord"'
+}
+
 
 #compdef clyde
 _clyde() {

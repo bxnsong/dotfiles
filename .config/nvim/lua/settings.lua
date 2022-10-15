@@ -22,6 +22,8 @@ vim.o.incsearch = true -- starts searching as soon as typing, without enter need
 vim.o.ignorecase = true -- ignore letter case when searching
 vim.o.smartcase = true -- case insensitive unless capitals used in search
 
+vim.o.clipboard = 'unnamed' -- make clipboard work on mac
+
 require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,

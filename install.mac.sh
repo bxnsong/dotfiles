@@ -65,6 +65,12 @@ if ! [ -f "$yabairc" ]; then
     cp -sf "$dotfiles_home"/.yabairc $yabairc
 fi
 
+skhdrc=~/.skhdrc
+if ! [ -f "$skhdrc" ]; then
+    echo "symlinking .skhdrc"
+    cp -sf "$dotfiles_home"/.skhdrc $skhdrc
+fi
+
 echo "symlinking .config"
 cp -rsf "$dotfiles_home"/.config/. ~/.config
 

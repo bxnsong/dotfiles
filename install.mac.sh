@@ -73,18 +73,6 @@ if ! [ -x "$(command -v fasd)" ]; then
     brew install fasd
 fi
 
-# # prettier
-# if ! [ -x "$(command -v prettier)" ]; then
-#     echo "prettier not found, installing"
-#     npm i prettier -g
-# fi
-#
-# # prettierd
-# if ! [ -x "$(command -v prettierd)" ]; then
-#     echo "prettierd not found, installing"
-#     npm i @fsouza/prettierd -g
-# fi
-
 # lazygit
 if ! [ -x "$(command -v lazygit)" ]; then
     echo "lazygit not found, installing"

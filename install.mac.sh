@@ -100,7 +100,7 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # make keyboard repeat rate fast
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write -g InitialKeyRepeat -int 15
 
 # auto-hide dock

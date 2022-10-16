@@ -59,6 +59,12 @@ if ! [ -f "$tmux_conf_local" ]; then
     cp -sf "$dotfiles_home"/.tmux.conf.local ~/.tmux.conf.local
 fi
 
+yabairc=~/.yabairc
+if ! [ -f "$yabairc" ]; then
+    echo "symlinking .yabairc"
+    cp -sf "$dotfiles_home"/.yabairc $yabairc
+fi
+
 echo "symlinking .config"
 cp -rsf "$dotfiles_home"/.config/. ~/.config
 
@@ -116,3 +122,6 @@ defaults write com.apple.dock autohide -bool true
 
 # unshow recents in dock
 defaults write com.apple.dock show-recents -bool FALSE
+
+# hide the menu bar
+defaults write "Apple Global Domain" "_HIHideMenuBar" 1

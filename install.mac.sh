@@ -85,6 +85,13 @@ if ! [ -x "$(command -v fpp)" ]; then
     brew install fpp
 fi
 
+# fzf
+if ! [ -x "$(command -v fzf)" ]; then
+    echo "fzf not found, installing"
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install --all
+fi
+
 # save screenshots as .png
 defaults write com.apple.screencapture type -string "png"
 

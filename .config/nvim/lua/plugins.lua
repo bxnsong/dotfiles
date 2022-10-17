@@ -58,6 +58,8 @@ return require('packer').startup(function()
 
     use { 'ggandor/leap.nvim', config = function() require'leap'.set_default_keymaps() end }
 
+    use { 'norcalli/nvim-colorizer.lua', config = function() require'colorizer'.setup() end }
+
     use 'gpanders/editorconfig.nvim'
 
     use {

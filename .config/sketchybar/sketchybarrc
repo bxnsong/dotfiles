@@ -6,7 +6,7 @@ ICON_FONT="FiraCode Nerd Font:Retina:14.0"
 
 # ------- Basic Config ----------
 sketchybar --bar color=0xBA24273A
-sketchybar --bar position=top
+sketchybar --bar position=bottom
 sketchybar --bar height=26
 sketchybar --bar blur_radius=100
 sketchybar --bar shadow=off

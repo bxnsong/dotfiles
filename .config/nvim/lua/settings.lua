@@ -30,7 +30,13 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
-require'telescope'.load_extension('fzf')
+local telescope = require'telescope'
+telescope.setup {
+    pickers = {
+        find_files = { find_command = {'fd'}}
+    }
+}
+telescope.load_extension('fzf')
 
 vim.g.coq_settings = { auto_start = 'shut-up' }
 require'coq'

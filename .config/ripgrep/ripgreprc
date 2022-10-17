@@ -1,0 +1,10 @@
+# always show hidden files
+--hidden
+
+# use glob patterns to include/exclude files
+--glob=!git/*
+--glob=!.git/*
+--glob=!github/*
+
+# ignore case
+--ignore-case

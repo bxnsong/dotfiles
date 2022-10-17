@@ -10,16 +10,22 @@ if ! which brew >/dev/null 2>&1; then
 fi
 
 # fonts
-brew tap homebrew/cask-fonts
-brew install --cask font-fira-code
-brew install --cask font-fira-code-nerd-font
-brew install --cask font-hack
-brew install --cask font-hack-nerd-font
+# brew tap homebrew/cask-fonts
+# brew install --cask font-fira-code
+# brew install --cask font-fira-code-nerd-font
+# brew install --cask font-hack
+# brew install --cask font-hack-nerd-font
 
 # neovim
 if ! [ -x "$(command -v nvim)" ]; then
     echo "neovim not found, installing"
     brew install --HEAD neovim
+fi
+
+# neovim
+if ! [ -x "$(command -v jq)" ]; then
+    echo "jq not found, installing"
+    brew install jq
 fi
 
 # LSD

@@ -1,100 +1,114 @@
-# This is a demo config to show some of the most important commands more easily.
-# This is meant to be changed and configured, as it is intentionally kept sparse.
-# For a more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
+#!/usr/bin/env sh
 
-PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+PADDING=25
+TEXT_FONT="FiraCode Nerd Font:Retina:12.0"
+ICON_FONT="FiraCode Nerd Font:Retina:14.0"
 
-##### Bar Appearance #####
-# Configuring the general appearance of the bar, these are only some of the
-# options available. For all options see:
-# https://felixkratz.github.io/SketchyBar/config/bar
-# If you are looking for other colors, see the color picker:
-# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+# ------- Basic Config ----------
+sketchybar --bar color=0xBA24273A
+sketchybar --bar position=top
+sketchybar --bar height=26
+sketchybar --bar blur_radius=100
+sketchybar --bar shadow=off
+sketchybar --bar margin=12
+sketchybar --bar y_offset=5
+sketchybar --bar corner_radius=20
+sketchybar -m --add event yabai_window
 
-sketchybar --bar height=32        \
-                 blur_radius=50   \
-                 position=top     \
-                 sticky=off       \
-                 padding_left=10  \
-                 padding_right=10 \
-                 color=0x15ffffff
+####### RIGHT
+# ------- Time ----------
+sketchybar --add item time right
+sketchybar --set time label.font="$TEXT_FONT"
+sketchybar --set time script='sketchybar --set time label="$(date "+%I:%M%p")"'
+sketchybar --set time label.padding_left=$PADDING
+sketchybar --set time update_freq=2
 
-##### Changing Defaults #####
-# We now change some default values that are applied to all further items
-# For a full list of all available item properties see:
-# https://felixkratz.github.io/SketchyBar/config/items
+# ------- Date ----------
+sketchybar --add item date right
+sketchybar --set date label.font="$TEXT_FONT"
+sketchybar --set date script='sketchybar --set date label="$(date "+%m/%d/%y (%a)")"'
+sketchybar --set date label.padding_left=$PADDING
+sketchybar --set date update_freq=4
 
-sketchybar --default updates=when_shown                    \
-                     drawing=on                            \
-                     icon.font="Hack Nerd Font:Bold:17.0"  \
-                     icon.color=0xffffffff                 \
-                     label.font="Hack Nerd Font:Bold:14.0" \
-                     label.color=0xffffffff                \
-                     label.padding_left=4                  \
-                     label.padding_right=4                 \
-                     icon.padding_left=4                   \
-                     icon.padding_right=4
+# ------- Weather ----------
+sketchybar --add item weather right
+sketchybar --set weather update_freq=300
+sketchybar --set weather script="$HOME/.config/sketchybar/plugins/weather.sh" # Fix this
+sketchybar --set weather icon.font="$ICON_FONT"
+sketchybar --set weather icon.padding_left=$PADDING
+sketchybar --set weather label.font="$TEXT_FONT"
+sketchybar --set weather label.padding_left=5
 
-##### Adding Mission Control Space Indicators #####
-# Now we add some mission control spaces:
-# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
-# to indicate active and available mission control spaces
+sketchybar --set weather background.drawing=on
+$($HOME/.config/sketchybar/plugins/weather.sh)
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+####### CENTER
+# ------- Window Title ----------
+sketchybar --add item window center
+sketchybar --set window label.font="$TEXT_FONT"
+sketchybar --set window script="$HOME/.config/sketchybar/plugins/window_title.sh"
+sketchybar --subscribe window yabai_window
 
-for i in "${!SPACE_ICONS[@]}"
-do
-  sid=$(($i+1))
-  sketchybar --add space space.$sid left                                 \
-             --set space.$sid associated_space=$sid                      \
-                              icon=${SPACE_ICONS[i]}                     \
-                              icon.padding_left=8                        \
-                              icon.padding_right=8                       \
-                              background.padding_left=5                  \
-                              background.padding_right=5                 \
-                              background.color=0x44ffffff                \
-                              background.corner_radius=5                 \
-                              background.height=22                       \
-                              background.drawing=off                     \
-                              label.drawing=off                          \
-                              script="$PLUGIN_DIR/space.sh"              \
-                              click_script="yabai -m space --focus $sid"
-done
+####### LEFT
+# ------- BATT Usage ----------
+BATT_SCRIPT='sketchybar -m --set batt label="$(sh $HOME/.config/sketchybar/plugins/battery.sh)"'
+sketchybar --add item batt left
+sketchybar --set batt label.font="$TEXT_FONT"
+sketchybar --set batt label.padding_right=$PADDING
+sketchybar --set batt script="$BATT_SCRIPT"
+sketchybar --set batt update_freq=5
 
-##### Adding Left Items #####
-# We add some regular items to the left side of the bar
-# only the properties deviating from the current defaults need to be set
+# ------- CPU Usage ----------
+CPU_SCRIPT='
+CORE_COUNT=$(sysctl -n machdep.cpu.thread_count)
+CPU_INFO=$(ps -eo pcpu,user)
+CPU_SYS=$(echo "$CPU_INFO" | sed "s/[^ 0-9\.]//g" | awk "{sum+=\$1} END {print sum/(100.0 * $CORE_COUNT)}")
+CPU_USE=$(printf "%02.0f"\\n "$(echo "$CPU_SYS*100"  | bc -l)")
+sketchybar --set cpu label="CPU: ${CPU_USE}%"
+'
 
-sketchybar --add item space_separator left                         \
-           --set space_separator icon=                            \
-                                 background.padding_left=15        \
-                                 background.padding_right=15       \
-                                 label.drawing=off                 \
-                                                                   \
-           --add item front_app  left                              \
-           --set front_app       script="$PLUGIN_DIR/front_app.sh" \
-                                 icon.drawing=off                  \
-           --subscribe front_app front_app_switched
+sketchybar --add item cpu left
+sketchybar --set cpu label.font="$TEXT_FONT"
+sketchybar --set cpu script="$CPU_SCRIPT"
+sketchybar --set cpu update_freq=2
+sketchybar --set cpu label.padding_right=$PADDING
 
-##### Adding Right Items #####
-# In the same way as the left items we can add items to the right side.
-# Additional position (e.g. center) are available, see:
-# https://felixkratz.github.io/SketchyBar/config/items#adding-items-to-sketchybar
+# ------- RAM Usage ----------
+RAM_SCRIPT='sketchybar -m --set ram label="RAM: $(memory_pressure | grep "System-wide memory free percentage:" | awk "{ print 100-\$5 }")%"'
+sketchybar --add item ram left
+sketchybar --set ram label.font="$TEXT_FONT"
+sketchybar --set ram label.padding_right=$PADDING
+sketchybar --set ram script="$RAM_SCRIPT"
+sketchybar --set ram update_freq=2
 
-sketchybar --add item clock right                        \
-           --set clock   update_freq=10                  \
-                         script="$PLUGIN_DIR/clock.sh"   \
-                                                         \
-           --add item battery right                      \
-           --set battery script="$PLUGIN_DIR/battery.sh" \
-                         update_freq=10                  \
-           --subscribe battery system_woke
+# ------- Uptime ----------
+UPTIME_SCRIPT='sketchybar -m --set uptime label="$(uptime | sed "s/.*\(up [0-9:]* *[A-z]*\).*/\1/")"'
+sketchybar --add item uptime right
+sketchybar --set uptime label.font="$TEXT_FONT"
+sketchybar --set uptime label.padding_right=$PADDING
+sketchybar --set uptime script="$UPTIME_SCRIPT"
+sketchybar --set uptime update_freq=600
+sketchybar -m --set uptime label="$(uptime | sed "s/.*\(up [0-9:]* *[A-z]*\).*/\1/")"
 
-##### Finalizing Setup #####
-# The below command is only needed at the end of the initial configuration and
-# should never be run in an item script.
+# ------- skhd Modal ----------
+sketchybar --add item modal left
+sketchybar --set modal label="[n]"
+sketchybar --set modal label.font="$TEXT_FONT"
+sketchybar --set modal label.padding_right=$PADDING
 
-sketchybar --update
+# ------- Yabai Float ----------
+# sketchybar --add item yabai_float left
+# sketchybar --add event window_focus
+# sketchybar --add event float_change
+# sketchybar --set yabai_float label.padding_left=$PADDING
+# sketchybar --set yabai_float label.font="FiraCode Nerd Font Mono:Medium:24.0"
+# sketchybar --set yabai_float script="~/.config/sketchybar/plugins/yabai_float.sh"
+# sketchybar --subscribe yabai_float yabai_window
+# $($HOME/.config/sketchybar/plugins/yabai_float.sh)
 
-echo "sketchybar configuration loaded.."
+------- Yabai Mode ----------
+sketchybar --add item yabai_mode left
+sketchybar --set yabai_mode label.font="$TEXT_FONT"
+sketchybar --set yabai_mode script="~/.config/sketchybar/plugins/yabai_mode.sh"
+sketchybar --subscribe yabai_mode yabai_window
+$($HOME/.config/sketchybar/plugins/yabai_mode.sh)

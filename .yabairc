@@ -11,6 +11,14 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 #
 
+# S I G N A L S
+# Sketchybar
+yabai -m signal --add event=window_created action="sketchybar -m --trigger yabai_window &> /dev/null"
+yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger yabai_window &> /dev/null"
+yabai -m signal --add event=window_focused action="sketchybar -m --trigger yabai_window &> /dev/null"
+yabai -m signal --add event=space_changed action="sketchybar -m --trigger yabai_window &> /dev/null"
+yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger yabai_window &> /dev/null"
+
 # global settings
 yabai -m config                                 \
     mouse_follows_focus          off            \

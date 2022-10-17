@@ -103,6 +103,7 @@ export GIT_EDITOR='nvim'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v="nvim"
 alias ls="lsd"
+alias lg="lazygit"
 
 # coder installation executables (for nnn)
 export PATH=~/installation/bin:$PATH

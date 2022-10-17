@@ -9,6 +9,13 @@ if ! which brew >/dev/null 2>&1; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# fonts
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
+brew install --cask font-fira-code-nerd-font
+brew install --cask font-hack
+brew install --cask font-hack-nerd-font
+
 # neovim
 if ! [ -x "$(command -v nvim)" ]; then
     echo "neovim not found, installing"

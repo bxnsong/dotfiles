@@ -128,4 +128,17 @@ return require('packer').startup(function()
 
     use { 'lewis6991/gitsigns.nvim', config = function() require'gitsigns'.setup() end }
 
+    use { 'ruifm/gitlinker.nvim', requires = 'nvim-lua/plenary.nvim', config = function() require'gitlinker'.setup{
+        opts = {
+            action_callback = function(url)
+                -- yank to unnamed register
+                vim.api.nvim_command('let @" = \'' .. url .. '\'')
+                -- copy to the system clipboard using OSC52
+                vim.fn.OSCYankString(url)
+            end,
+        },
+    } end }
+
+    use { 'ojroques/vim-oscyank', branch = 'main' }
+
 end)

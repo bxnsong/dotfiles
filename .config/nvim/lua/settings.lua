@@ -24,6 +24,8 @@ vim.o.smartcase = true -- case insensitive unless capitals used in search
 
 vim.o.clipboard = 'unnamed' -- make clipboard work on mac
 
+vim.g.oscyank_silent = true -- don't show oscyank confirmation message after yanking
+
 require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,

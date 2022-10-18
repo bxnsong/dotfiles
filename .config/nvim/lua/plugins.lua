@@ -128,7 +128,7 @@ return require('packer').startup(function()
 
     use { 'lewis6991/gitsigns.nvim', config = function() require'gitsigns'.setup() end }
 
-    use { 'ruifm/gitlinker.nvim', requires = 'nvim-lua/plenary.nvim', config = function() require'gitlinker'.setup{
+    use { 'ruifm/gitlinker.nvim', after = 'vim-oscyank', requires = 'nvim-lua/plenary.nvim', config = function() require'gitlinker'.setup{
         opts = {
             action_callback = function(url)
                 -- yank to unnamed register

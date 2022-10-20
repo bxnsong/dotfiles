@@ -111,10 +111,25 @@ export PATH=~/installation/bin:$PATH
 # fasd
 eval "$(fasd --init auto)"
 
+LOCAL_SSH_PORT=19001
+LOCAL_SSH_USER=$(whoami)
+
 # easy ssh to coder
 coder-go()
 {
-    ssh coder.discord-workspace -t 'zsh -ic "tmux attach || tmux new-session -t discord"'
+    SETENVS=$(cat <<EOF
+setenv -t discord LOCAL_SSH_PORT $LOCAL_SSH_PORT \; \
+setenv -t discord LOCAL_SSH_USER $LOCAL_SSH_USER
+EOF
+)
+
+    CMD=$(cat <<EOF
+tmux -2 attach \; $SETENVS || \
+tmux -2 new-session -t discord \; $SETENVS
+EOF
+)
+
+    ssh coder.discord-workspace -R "$LOCAL_SSH_PORT":localhost:22 -t "$CMD"
 }
 
 

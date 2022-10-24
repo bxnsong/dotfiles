@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-url="wttr.in/?format=%C+|+%t"
+url="wttr.in/?format=%C+|+%t&m"
 raw="$(curl -s $url)"
 condition=$(echo $raw | awk -F '|' '{print $1}' | tr '[:upper:]' '[:lower:]')
 condition="${condition// /}"

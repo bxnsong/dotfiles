@@ -141,4 +141,11 @@ return require('packer').startup(function()
 
     use { 'ojroques/vim-oscyank', branch = 'main' }
 
+    use { 'f-person/git-blame.nvim' }
+
+    use { 'ldelossa/gh.nvim', requires = 'ldelossa/litee.nvim', config = function()
+        require'litee.lib'.setup()
+        require'litee.gh'.setup()
+    end }
+
 end)

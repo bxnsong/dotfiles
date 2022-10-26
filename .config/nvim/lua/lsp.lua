@@ -45,4 +45,13 @@ require'lspconfig'['tsserver'].setup(coq.lsp_ensure_capabilities({
 require'lspconfig'['pylsp'].setup(coq.lsp_ensure_capabilities({
     on_attach = on_attach,
     flags = lsp_flags,
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    enabled = false,
+                }
+            }
+        }
+    }
 }))

@@ -118,6 +118,12 @@ if ! [ -x "$(command -v fzf)" ]; then
     ~/.fzf/install --all
 fi
 
+# gh
+if ! [ -x "$(command -v gh)" ]; then
+    echo "gh not found, installing"
+    brew install gh
+fi
+
 # save screenshots as .png
 defaults write com.apple.screencapture type -string "png"
 

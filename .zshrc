@@ -108,6 +108,9 @@ alias lg="lazygit"
 # coder installation executables (for nnn)
 export PATH=~/installation/bin:$PATH
 
+# random scripts
+export PATH=~/dotfiles/bin:$PATH
+
 # fasd
 eval "$(fasd --init auto)"
 

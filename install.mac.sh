@@ -124,6 +124,12 @@ if ! [ -x "$(command -v gh)" ]; then
     brew install gh
 fi
 
+# bat
+if ! [ -x "$(command -v bat)" ]; then
+    echo "bat not found, installing"
+    brew install bat
+fi
+
 # save screenshots as .png
 defaults write com.apple.screencapture type -string "png"
 

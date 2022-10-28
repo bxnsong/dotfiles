@@ -38,11 +38,11 @@ local lsp_flags = {
 }
 
 local coq = require'coq'
-require'lspconfig'['tsserver'].setup(coq.lsp_ensure_capabilities({
+require'lspconfig'.tsserver.setup(coq.lsp_ensure_capabilities({
     on_attach = on_attach,
     flags = lsp_flags,
 }))
-require'lspconfig'['pylsp'].setup(coq.lsp_ensure_capabilities({
+require'lspconfig'.pylsp.setup(coq.lsp_ensure_capabilities({
     on_attach = on_attach,
     flags = lsp_flags,
     settings = {
@@ -54,4 +54,8 @@ require'lspconfig'['pylsp'].setup(coq.lsp_ensure_capabilities({
             }
         }
     }
+}))
+require'lspconfig'.kotlin_language_server.setup(coq.lsp_ensure_capabilities({
+    on_attach = on_attach,
+    flags = lsp_flags,
 }))

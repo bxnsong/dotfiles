@@ -19,6 +19,11 @@ yabai -m signal --add event=window_focused action="sketchybar -m --trigger yabai
 yabai -m signal --add event=space_changed action="sketchybar -m --trigger yabai_window &> /dev/null"
 yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger yabai_window &> /dev/null"
 
+# auto-focus after closing a window
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+
 # global settings
 yabai -m config                                 \
     mouse_follows_focus          off            \

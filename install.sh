@@ -75,18 +75,6 @@ if ! [ -x "$(command -v fasd)" ]; then
     sudo apt-get install -y fasd
 fi
 
-# prettier
-if ! [ -x "$(command -v prettier)" ]; then
-    echo "prettier not found, installing"
-    sudo npm i prettier -g
-fi
-
-# prettierd
-if ! [ -x "$(command -v prettierd)" ]; then
-    echo "prettierd not found, installing"
-    sudo npm i @fsouza/prettierd -g
-fi
-
 # lazygit
 if ! [ -x "$(command -v lazygit)" ]; then
     echo "lazygit not found, installing"

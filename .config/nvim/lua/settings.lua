@@ -40,7 +40,13 @@ telescope.setup {
 }
 telescope.load_extension('fzf')
 
-vim.g.coq_settings = { auto_start = 'shut-up' }
+vim.g.coq_settings = {
+	auto_start = 'shut-up',
+	keymap = {
+		jump_to_mark = '',
+		bigger_preview = '',
+	},
+}
 require'coq'
 
 -- START nvim-autopairs map <CR> --

@@ -5,7 +5,7 @@ dotfiles_home=~/dotfiles
 if ! [ -x "$(command -v nvim)" ]
 then
     echo "neovim not found, installing"
-    sudo add-apt-repository ppa:neovim-ppa/unstable
+    sudo add-apt-repository --yes ppa:neovim-ppa/unstable
     sudo apt-get update
     sudo apt-get install -y neovim
 fi
@@ -70,7 +70,7 @@ fi
 # fasd
 if ! [ -x "$(command -v fasd)" ]; then
     echo "fasd not found, installing"
-    sudo add-apt-repository ppa:aacebedo/fasd
+    sudo add-apt-repository --yes ppa:aacebedo/fasd
     sudo apt-get update
     sudo apt-get install -y fasd
 fi

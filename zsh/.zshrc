@@ -105,8 +105,8 @@ alias v="nvim"
 alias ls="lsd"
 alias lg="lazygit"
 
-# coder installation executables (for nnn)
-export PATH=~/installation/bin:$PATH
+# nix
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
 
 # random scripts
 export PATH=~/dotfiles/bin:$PATH

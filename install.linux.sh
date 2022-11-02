@@ -5,6 +5,7 @@ nix-channel --update; nix-env -iA nixpkgs.nix nixpkgs.cacert;
 
 # install all programs
 nix-env -iA nixpkgs.bat \
+    nixpkgs.conda \
     nixpkgs.fasd \
     nixpkgs.fd \
     nixpkgs.fpp \

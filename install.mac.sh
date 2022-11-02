@@ -9,30 +9,7 @@ if ! which brew >/dev/null 2>&1; then
 fi
 brew bundle
 
-# oh-my-zsh
-if [[ ! -d ~/.oh-my-zsh ]]; then
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-	chsh -s $(which zsh)
-fi
-
-tmux_home=~/.tmux
-tmux_conf=~/.tmux.conf
-if ! [ -f "$tmux_conf" ]; then
-	echo "installing oh-my-tmux"
-	git clone https://github.com/gpakosz/.tmux.git $tmux_home
-	cp -sf "$tmux_home"/.tmux.conf $tmux_conf
-fi
-
-# stow
-stow kitty
-stow zsh
-stow nvim
-stow tmux
-stow yabai
-stow skhd
-stow sketchybar
-stow rg
-stow fd
+#### APPLE DEFAULTS ####
 
 # save screenshots as .png
 defaults write com.apple.screencapture type -string "png"

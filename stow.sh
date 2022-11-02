@@ -1,0 +1,9 @@
+stow fd
+stow kitty
+stow nvim
+stow rg
+stow sketchybar
+stow skhd
+stow tmux
+stow yabai
+stow zsh

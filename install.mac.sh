@@ -24,13 +24,6 @@ if ! [ -f "$tmux_conf" ]; then
 	cp -sf "$tmux_home"/.tmux.conf $tmux_conf
 fi
 
-# fzf
-if ! [ -x "$(command -v fzf)" ]; then
-	echo "installing fzf"
-	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	~/.fzf/install --all
-fi
-
 # stow
 stow kitty
 stow zsh

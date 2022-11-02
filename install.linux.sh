@@ -17,4 +17,5 @@ nix-env -iA nixpkgs.bat \
     nixpkgs.stow \
     nixpkgs.tmux \
     nixpkgs.tree \
-    nixpkgs.zsh
+    nixpkgs.zsh \
+    nixpkgs.zsh-autosuggestions

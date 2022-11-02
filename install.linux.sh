@@ -1,5 +1,8 @@
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
 
+# update nix
+nix-channel --update; nix-env -iA nixpkgs.nix nixpkgs.cacert;
+
 # install all programs
 nix-env -iA nixpkgs.bat \
     nixpkgs.fasd \

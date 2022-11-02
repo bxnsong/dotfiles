@@ -1,7 +1,7 @@
 # todo: check if nix is installed
 
 # install all programs
-nixenv -iA nixpkgs.bat \
+nix-env -iA nixpkgs.bat \
     nixpkgs.fasd \
     nixpkgs.fd \
     nixpkgs.fpp \

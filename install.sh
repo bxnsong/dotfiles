@@ -8,13 +8,14 @@ Linux) OS=linux ;;
 esac
 
 case $OS in
-darwin) . install.mac.sh ;;
-linux) . install.linux.sh ;;
+darwin) ./install.mac.sh ;;
+linux) ./install.linux.sh ;;
 esac
 
 # oh-my-zsh
-if [[ ! -d ~/.oh-my-zsh ]]; then
+if ! [ -d ~/.oh-my-zsh ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+	rm ~/.zshrc
 	chsh -s $(which zsh)
 fi
 
@@ -27,4 +28,4 @@ if ! [ -f "$tmux_conf" ]; then
 	cp -sf "$tmux_home"/.tmux.conf $tmux_conf
 fi
 
-. stow.sh
+./stow.sh

@@ -24,12 +24,6 @@ if ! [ -f "$tmux_conf" ]; then
 	cp -sf "$tmux_home"/.tmux.conf $tmux_conf
 fi
 
-# install nvim package manager
-packer_home=~/.local/share/nvim/site/pack/packer/start/packer.nvim
-if ! [ -d "$packer_home" ]; then
-	git clone --depth 1 https://github.com/wbthomason/packer.nvim $packer_home
-fi
-
 # fzf
 if ! [ -x "$(command -v fzf)" ]; then
 	echo "installing fzf"

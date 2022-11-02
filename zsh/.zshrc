@@ -105,9 +105,6 @@ alias v="nvim"
 alias ls="lsd"
 alias lg="lazygit"
 
-# Set PATH, MANPATH, etc., for Homebrew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # coder installation executables (for nnn)
 export PATH=~/installation/bin:$PATH
 

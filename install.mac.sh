@@ -1,5 +1,4 @@
 #!/bin/sh
-dotfiles_home="$(pwd)"
 
 # brew installation will also add basic xcode tools (git)
 if ! which brew >/dev/null 2>&1; then

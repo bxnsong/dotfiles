@@ -1,55 +1,28 @@
 #!/bin/sh
-dotfiles_home=~/dotfiles
+dotfiles_home="$(pwd)"
 
 # brew installation will also add basic xcode tools (git)
 if ! which brew >/dev/null 2>&1; then
-  echo "brew not found, installing"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+	echo "brew not found, installing"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-
-
-# copy dotfiles
-if ! [ -f "$zshrc" ]; then
-    echo "symlinking .zshrc"
-    cp -rsf "$dotfiles_home"/.zshrc ~/.zshrc
-fi
+brew bundle
 
 # oh-my-zsh
 if [[ ! -d ~/.oh-my-zsh ]]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-  chsh -s $(which zsh)
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+	chsh -s $(which zsh)
 fi
 
 tmux_home=~/.tmux
 tmux_conf=~/.tmux.conf
 if ! [ -f "$tmux_conf" ]; then
-    echo "installing oh-my-tmux"
-    git clone https://github.com/gpakosz/.tmux.git $tmux_home
-    cp -sf "$tmux_home"/.tmux.conf $tmux_conf
+	echo "installing oh-my-tmux"
+	git clone https://github.com/gpakosz/.tmux.git $tmux_home
+	cp -sf "$tmux_home"/.tmux.conf $tmux_conf
 fi
-
-tmux_conf_local=~/.tmux.conf.local
-if ! [ -f "$tmux_conf_local" ]; then
-    echo "symlinking .tmux.conf.local"
-    cp -sf "$dotfiles_home"/.tmux.conf.local ~/.tmux.conf.local
-fi
-
-yabairc=~/.yabairc
-if ! [ -f "$yabairc" ]; then
-    echo "symlinking .yabairc"
-    cp -sf "$dotfiles_home"/.yabairc $yabairc
-fi
-
-skhdrc=~/.skhdrc
-if ! [ -f "$skhdrc" ]; then
-    echo "symlinking .skhdrc"
-    cp -sf "$dotfiles_home"/.skhdrc $skhdrc
-fi
-
-echo "symlinking .config"
-cp -rsf "$dotfiles_home"/.config/. ~/.config
 
 # install nvim package manager
 packer_home=~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -59,10 +32,21 @@ fi
 
 # fzf
 if ! [ -x "$(command -v fzf)" ]; then
-    echo "fzf not found, installing"
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install --all
+	echo "installing fzf"
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install --all
 fi
+
+# stow
+stow kitty
+stow zsh
+stow nvim
+stow tmux
+stow yabai
+stow skhd
+stow sketchybar
+stow rg
+stow fd
 
 # save screenshots as .png
 defaults write com.apple.screencapture type -string "png"

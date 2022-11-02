@@ -28,4 +28,4 @@ if ! [ -f "$tmux_conf" ]; then
 	cp -sf "$tmux_home"/.tmux.conf $tmux_conf
 fi
 
-./stow.sh
+source stow.sh

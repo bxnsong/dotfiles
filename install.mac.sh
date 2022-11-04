@@ -7,7 +7,7 @@ if ! which brew >/dev/null 2>&1; then
 	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-brew bundle
+brew update && brew upgrade && brew bundle
 
 #### APPLE DEFAULTS ####
 

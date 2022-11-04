@@ -19,6 +19,7 @@ nix-env -iA nixpkgs.bat \
     nixpkgs.nnn \
     nixpkgs.ripgrep \
     nixpkgs.stow \
+    nixpkgs.tldr \
     nixpkgs.tmux \
     nixpkgs.tree \
     nixpkgs.zsh \

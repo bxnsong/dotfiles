@@ -44,10 +44,11 @@ wk.register({
         f = { '<cmd>Telescope find_files hidden=true<CR>', 'Find files' },
         g = { '<cmd>Telescope live_grep<CR>', 'Grep' },
         b = { '<cmd>Telescope buffers<CR>', 'Buffers' },
-        h = { '<cmd>Telescope harpoon marks<CR>', 'Marks' },
+        h = { '<cmd>Telescope harpoon marks<CR>', '(Harpoon) Marks' },
     },
     h = {
         name = 'Harpoon',
-        a = { '<cmd>lua require"harpoon.mark".add_file()<CR>', 'Add file' }
+        a = { '<cmd>lua require"harpoon.mark".add_file()<CR>', 'Add file' },
+        h = { '<cmd>lua require"harpoon.ui".toggle_quick_menu()<CR>', 'Toggle menu' }
     }
 }, { prefix = '<leader>' })

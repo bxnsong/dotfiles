@@ -39,6 +39,7 @@ telescope.setup {
     }
 }
 telescope.load_extension('fzf')
+telescope.load_extension('harpoon')
 
 vim.g.coq_settings = {
 	auto_start = 'shut-up',

@@ -38,3 +38,7 @@ nmap('<leader>xd', '<cmd>Trouble document_diagnostics<CR>')
 nmap('<leader>xa', '<cmd>Trouble lsp_definitions<CR>')
 nmap('<leader>xt', '<cmd>Trouble lsp_type_definitions<CR>')
 nmap('gR', '<cmd>Trouble lsp_references<CR>')
+
+-- harpoon
+nmap('<leader>ha', '<cmd>lua require"harpoon.mark".add_file()<CR>')
+nmap('<leader>hh', '<cmd>Telescope harpoon marks<CR>')

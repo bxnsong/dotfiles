@@ -165,6 +165,11 @@ return require('packer').startup(function()
         require'litee.gh'.setup()
     end }
 
+    use { 'ThePrimeagen/harpoon', requires = 'nvim-lua/plenary.nvim', config = function()
+        require'harpoon'.setup{
+            mark_branch = true
+        } end }
+
     if packer_bootstrap then
         require'packer'.sync()
     end

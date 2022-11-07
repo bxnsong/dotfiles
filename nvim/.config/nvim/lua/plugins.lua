@@ -53,6 +53,8 @@ return require('packer').startup(function()
                 require 'null-ls'.builtins.diagnostics.flake8,
                 require 'null-ls'.builtins.formatting.ktlint,
                 require 'null-ls'.builtins.diagnostics.ktlint,
+                require 'null-ls'.builtins.formatting.luaformatter,
+                require 'null-ls'.builtins.diagnostics.luacheck,
             },
         })
     end, requires = { { 'nvim-lua/plenary.nvim' } }, after = 'mason.nvim' }

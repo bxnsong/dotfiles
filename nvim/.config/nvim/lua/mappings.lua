@@ -28,17 +28,26 @@ nmap('<C-k>', '<C-w>k')
 nmap('<BS>', '<C-^>')
 nmap('<ESC>', ':noh<CR>')
 
--- Telescope mappings
-nmap('<leader>tf', '<cmd>Telescope find_files hidden=true<CR>')
-nmap('<leader>tg', '<cmd>Telescope live_grep<CR>')
-nmap('<leader>tb', '<cmd>Telescope buffers<CR>')
-
-nmap('<leader>xx', '<cmd>TroubleToggle<CR>')
-nmap('<leader>xd', '<cmd>Trouble document_diagnostics<CR>')
-nmap('<leader>xa', '<cmd>Trouble lsp_definitions<CR>')
-nmap('<leader>xt', '<cmd>Trouble lsp_type_definitions<CR>')
-nmap('gR', '<cmd>Trouble lsp_references<CR>')
-
--- harpoon
-nmap('<leader>ha', '<cmd>lua require"harpoon.mark".add_file()<CR>')
-nmap('<leader>hh', '<cmd>Telescope harpoon marks<CR>')
+-- which-key
+local wk = require 'which-key'
+wk.register({
+    x = {
+        name = 'Trouble',
+        x = { '<cmd>TroubleToggle<CR>', 'Toggle' },
+        d = { '<cmd>Trouble document_diagnostics<CR>', 'Diagnostics' },
+        a = { '<cmd>Trouble lsp_definitions<CR>', 'LSP definitions' },
+        t = { '<cmd>Trouble lsp_type_definitions<CR>', 'LSP type definitions' },
+        r = { '<cmd>Trouble lsp_references<CR>', 'LSP references' },
+    },
+    t = {
+        name = 'Telescope',
+        f = { '<cmd>Telescope find_files hidden=true<CR>', 'Find files' },
+        g = { '<cmd>Telescope live_grep<CR>', 'Grep' },
+        b = { '<cmd>Telescope buffers<CR>', 'Buffers' },
+        h = { '<cmd>Telescope harpoon marks<CR>', 'Marks' },
+    },
+    h = {
+        name = 'Harpoon',
+        a = { '<cmd>lua require"harpoon.mark".add_file()<CR>', 'Add file' }
+    }
+}, { prefix = '<leader>' })

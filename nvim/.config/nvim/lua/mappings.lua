@@ -42,8 +42,8 @@ wk.register({
     t = {
         name = 'Telescope',
         f = { '<cmd>Telescope find_files hidden=true<CR>', 'Find files' },
-        g = { '<cmd>Telescope live_grep<CR>', 'Grep' },
-        p = { '<cmd>lua require("telescope").extensions.live_grep_args.live_grep_args()<CR>', 'Grep with args' },
+        p = { '<cmd>Telescope live_grep<CR>', 'Grep' },
+        g = { '<cmd>lua require("telescope").extensions.live_grep_args.live_grep_args()<CR>', 'Grep with args' },
         b = { '<cmd>Telescope buffers<CR>', 'Buffers' },
         h = { '<cmd>Telescope harpoon marks<CR>', '(Harpoon) Marks' },
     },

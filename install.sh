@@ -21,13 +21,4 @@ if ! [ -d ~/.oh-my-zsh ]; then
 	chsh -s $(which zsh)
 fi
 
-# oh-my-tmux
-tmux_home=~/.tmux
-tmux_conf=~/.tmux.conf
-if ! [ -f "$tmux_conf" ]; then
-	echo "installing oh-my-tmux"
-	git clone https://github.com/gpakosz/.tmux.git $tmux_home
-	cp -sf "$tmux_home"/.tmux.conf $tmux_conf
-fi
-
 source stow.sh

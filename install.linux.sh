@@ -15,6 +15,7 @@ nix-env -iA nixpkgs.bat \
     nixpkgs.gh \
     nixpkgs.git \
     nixpkgs.jq \
+    nixpkgs.lazygit \
     nixpkgs.lsd \
     nixpkgs.neofetch \
     nixpkgs.neovim \

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # set the working directory to where the file is
 cd "$(dirname "$0")" || return
 

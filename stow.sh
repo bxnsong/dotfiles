@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 stow fd
 stow kitty
 stow nvim

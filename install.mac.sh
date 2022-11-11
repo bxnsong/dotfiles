@@ -38,5 +38,8 @@ defaults write com.apple.dock show-recents -bool FALSE
 # hide the menu bar
 defaults write "Apple Global Domain" "_HIHideMenuBar" 1
 
+# disable natural scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
 echo "-- add PATH=\"\" to /etc/zprofile"
 echo "-- set caps lock to ctrl"

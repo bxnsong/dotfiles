@@ -38,7 +38,7 @@ telescope.setup {
     defaults = {
         mappings = {
             i = {
-                ["<C-h>"] = "which-key",
+                ["<C-h>"] = "which_key",
             }
         }
     },

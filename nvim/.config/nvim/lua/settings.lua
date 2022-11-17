@@ -35,6 +35,13 @@ require 'nvim-treesitter.configs'.setup {
 local telescope = require 'telescope'
 local lga_actions = require 'telescope-live-grep-args.actions'
 telescope.setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-h>"] = "which-key",
+            }
+        }
+    },
     pickers = {
         find_files = { find_command = { 'fd' } }
     },

@@ -45,6 +45,7 @@ wk.register({
         p = { '<cmd>Telescope live_grep<CR>', 'Grep' },
         g = { '<cmd>lua require("telescope").extensions.live_grep_args.live_grep_args()<CR>', 'Grep with args' },
         b = { '<cmd>Telescope buffers<CR>', 'Buffers' },
+        j = { '<cmd>Telescope jumplist<CR>', 'Jumplist' },
     },
     h = {
         name = 'Harpoon',

@@ -368,6 +368,9 @@ set-option -sa terminal-overrides ",xterm*:Tc"
 # no repeat
 set -sg repeat-time 0
 
+# clipboard with vim-oscyank
+set -s set-clipboard on
+
 # -- tpm -----------------------------------------------------------------------
 
 # while I don't use tpm myself, many people requested official support so here

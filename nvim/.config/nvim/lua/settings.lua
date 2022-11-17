@@ -56,6 +56,8 @@ telescope.load_extension('fzf')
 telescope.load_extension('harpoon')
 telescope.load_extension('live_grep_args')
 
+vim.g.oscyank_term = 'default'
+
 vim.g.coq_settings = {
     auto_start = 'shut-up',
     keymap = {

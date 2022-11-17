@@ -371,6 +371,9 @@ set -sg repeat-time 0
 # clipboard with vim-oscyank
 set -s set-clipboard on
 
+# lazygit
+bind -r g run-shell "tmux neww -c #{pane_current_path} bash -c \"lazygit\""
+
 # -- tpm -----------------------------------------------------------------------
 
 # while I don't use tpm myself, many people requested official support so here

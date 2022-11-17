@@ -52,5 +52,11 @@ wk.register({
         a = { '<cmd>lua require"harpoon.mark".add_file()<CR>', 'Add file' },
         h = { '<cmd>lua require"harpoon.ui".toggle_quick_menu()<CR>', 'Toggle menu' },
         m = { '<cmd>Telescope harpoon marks<CR>', '(Harpoon) Marks' },
-    }
+    },
+    l = {
+        name = 'LSP',
+        c = { '<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code action' },
+        s = { '<cmd>lua vim.lsp.buf.signature_help()<CR>', 'Signature help' },
+        f = { '<cmd>lua vim.lsp.buf.format { async = true }<CR>', 'Format' },
+    },
 }, { prefix = '<leader>' })

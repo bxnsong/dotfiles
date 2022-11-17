@@ -372,7 +372,10 @@ set -sg repeat-time 0
 set -s set-clipboard on
 
 # lazygit
-bind -r g run-shell "tmux neww -c #{pane_current_path} bash -c \"lazygit\""
+bind g run-shell "tmux neww -c #{pane_current_path} bash -c \"lazygit\""
+
+# edit configuration
+bind e new-window -n "~/.tmux.conf.local" bash -c '${EDITOR:-nvim} ~/.tmux.conf.local && tmux source ~/.tmux.conf && tmux display "~/.tmux.conf sourced"'
 
 # -- tpm -----------------------------------------------------------------------
 

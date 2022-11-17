@@ -377,6 +377,9 @@ bind g run-shell "tmux neww -c #{pane_current_path} bash -c \"lazygit\""
 # edit configuration
 bind e new-window -n "~/.tmux.conf.local" bash -c '${EDITOR:-nvim} ~/.tmux.conf.local && tmux source ~/.tmux.conf && tmux display "~/.tmux.conf sourced"'
 
+# edit dotfiles
+bind D run-shell "tmux neww -c $HOME/dotfiles bash -c \"nvim\""
+
 # -- tpm -----------------------------------------------------------------------
 
 # while I don't use tpm myself, many people requested official support so here

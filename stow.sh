@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 stow fd
+stow ideavim
 stow kitty
 stow nvim
 stow rg

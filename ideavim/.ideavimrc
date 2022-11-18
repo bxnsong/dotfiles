@@ -1,0 +1,19 @@
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+let mapleader = ' '
+
+inoremap jk <ESC>
+nnoremap ; :
+nnoremap L $
+nnoremap H ^
+
+" Splits
+nnoremap <leader>\\ :vsplit<CR>
+nnoremap <leader>- :split<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l

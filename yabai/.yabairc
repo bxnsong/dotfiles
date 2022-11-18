@@ -13,11 +13,11 @@ sudo yabai --load-sa
 
 # S I G N A L S
 # Sketchybar
-yabai -m signal --add event=window_created action="sketchybar -m --trigger yabai_window &> /dev/null"
-yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger yabai_window &> /dev/null"
-yabai -m signal --add event=window_focused action="sketchybar -m --trigger yabai_window &> /dev/null"
 yabai -m signal --add event=space_changed action="sketchybar -m --trigger yabai_window &> /dev/null"
 yabai -m signal --add event=window_title_changed action="sketchybar -m --trigger yabai_window &> /dev/null"
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
 # auto-focus after closing a window
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
@@ -40,8 +40,8 @@ yabai -m config                                 \
     insert_feedback_color        0xffd75f5f     \
     active_window_border_color   0xd45ed659     \
     normal_window_border_color   0xff555555     \
-    window_border_width          4              \
-    window_border_radius         4              \
+    window_border_width          2              \
+    window_border_radius         11             \
     window_border_blur           off            \
     window_border_hidpi          on             \
     window_border                on             \
@@ -49,7 +49,7 @@ yabai -m config                                 \
     split_type                   auto           \
     auto_balance                 off            \
     top_padding                  00             \
-    bottom_padding               44             \
+    bottom_padding               63             \
     left_padding                 12             \
     right_padding                12             \
     window_gap                   12             \
@@ -58,5 +58,8 @@ yabai -m config                                 \
     mouse_action1                move           \
     mouse_action2                resize         \
     mouse_drop_action            swap
+
+yabai -m rule --add app="System\ Preferences" manage=off border=off
+yabai -m rule --add app="Alfred" manage=off border=off
 
 echo "yabai configuration loaded.."

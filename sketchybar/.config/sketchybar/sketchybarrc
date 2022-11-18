@@ -1,114 +1,73 @@
 #!/usr/bin/env sh
 
-PADDING=25
-TEXT_FONT="FiraCode Nerd Font:Retina:12.0"
-ICON_FONT="FiraCode Nerd Font:Retina:14.0"
+source "$HOME/.config/sketchybar/colors.sh" # Loads all defined colors
+source "$HOME/.config/sketchybar/icons.sh" # Loads all defined icons
 
-# ------- Basic Config ----------
-sketchybar --bar color=0xBA24273A
-sketchybar --bar position=bottom
-sketchybar --bar height=26
-sketchybar --bar blur_radius=100
-sketchybar --bar shadow=off
-sketchybar --bar margin=12
-sketchybar --bar y_offset=5
-sketchybar --bar corner_radius=20
-sketchybar -m --add event yabai_window
+ITEM_DIR="$HOME/.config/sketchybar/items" # Directory where the items are configured
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins" # Directory where all the plugin scripts are stored
 
-####### RIGHT
-# ------- Time ----------
-sketchybar --add item time right
-sketchybar --set time label.font="$TEXT_FONT"
-sketchybar --set time script='sketchybar --set time label="$(date "+%I:%M%p")"'
-sketchybar --set time label.padding_left=$PADDING
-sketchybar --set time update_freq=2
+FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+PADDINGS=3 # All paddings use this value (icon, label, background)
 
-# ------- Date ----------
-sketchybar --add item date right
-sketchybar --set date label.font="$TEXT_FONT"
-sketchybar --set date script='sketchybar --set date label="$(date "+%m/%d/%y (%a)")"'
-sketchybar --set date label.padding_left=$PADDING
-sketchybar --set date update_freq=4
+# Setting up and starting the helper process
+HELPER=git.felix.helper
+killall helper
+cd $HOME/.config/sketchybar/helper && make
+$HOME/.config/sketchybar/helper/helper $HELPER > /dev/null 2>&1 &
 
-# ------- Weather ----------
-sketchybar --add item weather right
-sketchybar --set weather update_freq=300
-sketchybar --set weather script="$HOME/.config/sketchybar/plugins/weather.sh" # Fix this
-sketchybar --set weather icon.font="$ICON_FONT"
-sketchybar --set weather icon.padding_left=$PADDING
-sketchybar --set weather label.font="$TEXT_FONT"
-sketchybar --set weather label.padding_left=5
+# Unload the macOS on screen indicator overlay for volume change
+launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
 
-sketchybar --set weather background.drawing=on
-$($HOME/.config/sketchybar/plugins/weather.sh)
+# Setting up the general bar appearance and default values
+sketchybar --bar     height=39                                         \
+                     color=$BAR_COLOR                                  \
+                     shadow=on                                         \
+                     position=bottom                                   \
+                     sticky=on                                         \
+                     padding_right=7                                   \
+                     padding_left=7                                    \
+                     corner_radius=9                                   \
+                     y_offset=6                                        \
+                     margin=12                                         \
+                     blur_radius=20                                    \
+                     notch_width=0                                     \
+                                                                       \
+           --default updates=when_shown                                \
+                     icon.font="$FONT:Bold:14.0"                       \
+                     icon.color=$ICON_COLOR                            \
+                     icon.padding_left=$PADDINGS                       \
+                     icon.padding_right=$PADDINGS                      \
+                     label.font="$FONT:Semibold:13.0"                  \
+                     label.color=$LABEL_COLOR                          \
+                     label.padding_left=$PADDINGS                      \
+                     label.padding_right=$PADDINGS                     \
+                     background.padding_right=$PADDINGS                \
+                     background.padding_left=$PADDINGS                 \
+                     background.height=26                              \
+                     background.corner_radius=9                        \
+                     popup.background.border_width=2                   \
+                     popup.background.corner_radius=11                 \
+                     popup.background.border_color=$POPUP_BORDER_COLOR \
+                     popup.background.color=$POPUP_BACKGROUND_COLOR    \
+                     popup.background.shadow.drawing=on
 
-####### CENTER
-# ------- Window Title ----------
-sketchybar --add item window center
-sketchybar --set window label.font="$TEXT_FONT"
-sketchybar --set window script="$HOME/.config/sketchybar/plugins/window_title.sh"
-sketchybar --subscribe window yabai_window
+# Left
+source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
 
-####### LEFT
-# ------- BATT Usage ----------
-BATT_SCRIPT='sketchybar -m --set batt label="$(sh $HOME/.config/sketchybar/plugins/battery.sh)"'
-sketchybar --add item batt left
-sketchybar --set batt label.font="$TEXT_FONT"
-sketchybar --set batt label.padding_right=$PADDING
-sketchybar --set batt script="$BATT_SCRIPT"
-sketchybar --set batt update_freq=5
+# Center
+source "$ITEM_DIR/spotify.sh"
 
-# ------- CPU Usage ----------
-CPU_SCRIPT='
-CORE_COUNT=$(sysctl -n machdep.cpu.thread_count)
-CPU_INFO=$(ps -eo pcpu,user)
-CPU_SYS=$(echo "$CPU_INFO" | sed "s/[^ 0-9\.]//g" | awk "{sum+=\$1} END {print sum/(100.0 * $CORE_COUNT)}")
-CPU_USE=$(printf "%02.0f"\\n "$(echo "$CPU_SYS*100"  | bc -l)")
-sketchybar --set cpu label="CPU: ${CPU_USE}%"
-'
+# Right
+source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/brew.sh"
+# source "$ITEM_DIR/github.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/divider.sh"
+source "$ITEM_DIR/cpu.sh"
 
-sketchybar --add item cpu left
-sketchybar --set cpu label.font="$TEXT_FONT"
-sketchybar --set cpu script="$CPU_SCRIPT"
-sketchybar --set cpu update_freq=2
-sketchybar --set cpu label.padding_right=$PADDING
+# Forcing all item scripts to run (never do this outside of sketchybarrc)
+sketchybar --update
 
-# ------- RAM Usage ----------
-RAM_SCRIPT='sketchybar -m --set ram label="RAM: $(memory_pressure | grep "System-wide memory free percentage:" | awk "{ print 100-\$5 }")%"'
-sketchybar --add item ram left
-sketchybar --set ram label.font="$TEXT_FONT"
-sketchybar --set ram label.padding_right=$PADDING
-sketchybar --set ram script="$RAM_SCRIPT"
-sketchybar --set ram update_freq=2
-
-# ------- Uptime ----------
-# UPTIME_SCRIPT='sketchybar -m --set uptime label="$(uptime | sed "s/.*\(up [0-9:]* *[A-z]*\).*/\1/")"'
-# sketchybar --add item uptime right
-# sketchybar --set uptime label.font="$TEXT_FONT"
-# sketchybar --set uptime label.padding_right=$PADDING
-# sketchybar --set uptime script="$UPTIME_SCRIPT"
-# sketchybar --set uptime update_freq=600
-# sketchybar -m --set uptime label="$(uptime | sed "s/.*\(up [0-9:]* *[A-z]*\).*/\1/")"
-
-# ------- skhd Modal ----------
-sketchybar --add item modal left
-sketchybar --set modal label="[n]"
-sketchybar --set modal label.font="$TEXT_FONT"
-sketchybar --set modal label.padding_right=$PADDING
-
-# ------- Yabai Float ----------
-# sketchybar --add item yabai_float left
-# sketchybar --add event window_focus
-# sketchybar --add event float_change
-# sketchybar --set yabai_float label.padding_left=$PADDING
-# sketchybar --set yabai_float label.font="FiraCode Nerd Font Mono:Medium:24.0"
-# sketchybar --set yabai_float script="~/.config/sketchybar/plugins/yabai_float.sh"
-# sketchybar --subscribe yabai_float yabai_window
-# $($HOME/.config/sketchybar/plugins/yabai_float.sh)
-
-------- Yabai Mode ----------
-sketchybar --add item yabai_mode left
-sketchybar --set yabai_mode label.font="$TEXT_FONT"
-sketchybar --set yabai_mode script="~/.config/sketchybar/plugins/yabai_mode.sh"
-sketchybar --subscribe yabai_mode yabai_window
-$($HOME/.config/sketchybar/plugins/yabai_mode.sh)
+echo "sketchybar configuation loaded.."

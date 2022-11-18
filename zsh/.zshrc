@@ -135,6 +135,14 @@ EOF
     ssh coder.discord-workspace -R "$LOCAL_SSH_PORT":localhost:22 -t "$CMD"
 }
 
+function brew() {
+  command brew "$@" 
+
+  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+    sketchybar --trigger brew_update
+  fi
+}
+
 #compdef clyde
 _clyde() {
   eval $(env COMMANDLINE="${words[1,$CURRENT]}" _CLYDE_COMPLETE=complete-zsh  clyde)

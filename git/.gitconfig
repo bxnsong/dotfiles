@@ -1,0 +1,7 @@
+[user]
+	email = ben.soh@discordapp.com
+	name = Ben Soh
+[pull]
+	rebase = true
+[core]
+	excludesfile = /Users/bensoh/.gitignore

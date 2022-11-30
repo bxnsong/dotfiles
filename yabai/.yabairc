@@ -36,12 +36,10 @@ yabai -m config                                 \
     window_opacity_duration      0.0            \
     active_window_opacity        1.0            \
     normal_window_opacity        0.90           \
-    window_opacity               off            \
+    window_opacity               on             \
     insert_feedback_color        0xffd75f5f     \
-    active_window_border_color   0xd45ed659     \
-    normal_window_border_color   0xff555555     \
-    window_border_width          2              \
-    window_border_radius         11             \
+    active_window_border_color   0xff006f96     \
+    normal_window_border_color   0xffcecccd     \
     window_border_blur           off            \
     window_border_hidpi          on             \
     window_border                on             \

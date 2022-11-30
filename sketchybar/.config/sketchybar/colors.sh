@@ -11,6 +11,7 @@ export ORANGE=0xfff5a97f
 export MAGENTA=0xffc6a0f6
 export GREY=0xff939ab7
 export TRANSPARENT=0x00000000
+export YABAI_WINDOW_BORDER=0xff006f96
 
 # General bar colors
 export BAR_COLOR=0xcc24273a

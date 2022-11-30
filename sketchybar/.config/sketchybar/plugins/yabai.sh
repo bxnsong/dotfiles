@@ -25,7 +25,7 @@ window_state() {
                     yabai -m config active_window_border_color $BLUE > /dev/null 2>&1 &
                 else
                     args+=(--set $NAME icon=$YABAI_GRID icon.color=$ORANGE)
-                    yabai -m config active_window_border_color $WHITE > /dev/null 2>&1 &
+                    yabai -m config active_window_border_color $YABAI_WINDOW_BORDER > /dev/null 2>&1 &
                 fi
                 ;;
             "true")

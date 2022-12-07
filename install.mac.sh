@@ -41,5 +41,8 @@ defaults write "Apple Global Domain" "_HIHideMenuBar" 1
 # disable natural scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# turn off mouse acceleration
+defaults write -g com.apple.mouse.scaling -integer -1
+
 echo "-- add PATH=\"\" to /etc/zprofile"
 echo "-- set caps lock to ctrl"

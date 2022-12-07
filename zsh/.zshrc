@@ -102,6 +102,9 @@ alias lg="lazygit"
 # nix
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
 
+# homebrew coreutils
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+
 # random scripts
 export PATH=~/dotfiles/bin:$PATH
 

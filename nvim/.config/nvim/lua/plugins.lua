@@ -181,6 +181,8 @@ return require('packer').startup(function()
 
     use { 'folke/which-key.nvim', config = function() require 'which-key'.setup() end }
 
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
     if packer_bootstrap then
         require 'packer'.sync()
     end

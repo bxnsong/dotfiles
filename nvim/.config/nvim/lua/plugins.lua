@@ -99,10 +99,7 @@ return require('packer').startup(function()
         end,
     }
 
-    use { 'luukvbaal/nnn.nvim', config = function() require 'nnn'.setup {
-            replace_netrw = 'picker',
-        }
-    end }
+    use 'kevinhwang91/rnvimr'
 
     use 'folke/tokyonight.nvim'
 

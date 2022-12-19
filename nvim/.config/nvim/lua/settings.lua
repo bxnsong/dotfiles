@@ -26,6 +26,20 @@ vim.o.clipboard = 'unnamed' -- make clipboard work on mac
 
 vim.g.oscyank_silent = true -- don't show oscyank confirmation message after yanking
 
+-- ranger
+vim.g.rnvimr_enable_ex = true
+vim.g.rnvimr_enable_picker = true
+vim.g.rnvimr_draw_border = true
+vim.g.rnvimr_hide_gitignore = true
+vim.g.rnvimr_action = {
+    ["<C-t>"] = 'NvimEdit tabedit',
+    ["<C-x>"] = 'NvimEdit split',
+    ["<C-v>"] = 'NvimEdit vsplit',
+    ["gw"] = 'JumpNvimCwd',
+    ["yw"] = 'EmitRangerCwd',
+}
+-- ranger
+
 require 'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,

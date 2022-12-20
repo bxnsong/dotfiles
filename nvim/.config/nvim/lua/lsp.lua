@@ -16,12 +16,15 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
-local coq = require 'coq'
-require 'lspconfig'.tsserver.setup(coq.lsp_ensure_capabilities({
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require 'lspconfig'.tsserver.setup({
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
-}))
-require 'lspconfig'.pylsp.setup(coq.lsp_ensure_capabilities({
+})
+require 'lspconfig'.pylsp.setup({
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
     settings = {
@@ -33,8 +36,9 @@ require 'lspconfig'.pylsp.setup(coq.lsp_ensure_capabilities({
             }
         }
     }
-}))
-require 'lspconfig'.sumneko_lua.setup(coq.lsp_ensure_capabilities({
+})
+require 'lspconfig'.sumneko_lua.setup({
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
-}))
+})

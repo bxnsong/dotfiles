@@ -74,9 +74,15 @@ return require('packer').startup(function()
 
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-    use { 'ms-jpq/coq.nvim', branch = 'coq' }
-
-    use { 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+    use ({
+        'hrsh7th/nvim-cmp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-nvim-lsp-signature-help',
+        'hrsh7th/cmp-nvim-lua',
+        'hrsh7th/cmp-path',
+        'onsails/lspkind.nvim',
+    })
 
     use { 'ggandor/leap.nvim', config = function() require 'leap'.set_default_keymaps() end }
 

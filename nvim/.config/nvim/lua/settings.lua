@@ -24,8 +24,8 @@ vim.o.smartcase = true -- case insensitive unless capitals used in search
 
 vim.o.clipboard = 'unnamed' -- make clipboard work on mac
 
-require('settings.coq')
 require('settings.autopairs')
+require('settings.cmp')
 require('settings.oscyank')
 require('settings.rnvimr')
 require('settings.telescope')

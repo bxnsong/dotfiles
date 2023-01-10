@@ -57,7 +57,11 @@ yabai -m config                                 \
     mouse_action2                resize         \
     mouse_drop_action            swap
 
-yabai -m rule --add app="System\ Preferences" manage=off border=off
 yabai -m rule --add app="Alfred" manage=off border=off
+yabai -m rule --add app="System\ Preferences" manage=off border=off
+yabai -m rule --add app="^Dash$" manage=off
+yabai -m rule --add app="^Logitech G HUB$" manage=off
+yabai -m rule --add app="qemu-system-aarch64" manage=off border=off
+yabai -m rule --add title='Settings$' manage=off
 
 echo "yabai configuration loaded.."

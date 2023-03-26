@@ -7,6 +7,7 @@ let
     lg = "lazygit";
   };
 in {
+  home.packages = with pkgs; [ zsh ];
   programs = {
     fzf.enableZshIntegration = true;
 

@@ -17,15 +17,11 @@ let
     neofetch
     nixfmt
     python3
-    ranger
     ripgrep
     rnix-lsp
-    starship
     stow
     stylua
     tldr
-    tmux
     tree
-    zsh
   ];
 in { home = { inherit packages; }; }

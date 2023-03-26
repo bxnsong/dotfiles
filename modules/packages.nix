@@ -1,7 +1,5 @@
 { self, pkgs, ... }:
 let
-  python3 = pkgs.python3.withPackages
-    (p: with p; [ flake8 requests python-lsp-server pynvim ipython ]);
   packages = with pkgs; [
     bat
     black
@@ -16,7 +14,6 @@ let
     luarocks
     neofetch
     nixfmt
-    python3
     ripgrep
     rnix-lsp
     stow

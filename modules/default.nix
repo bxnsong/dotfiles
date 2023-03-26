@@ -5,6 +5,7 @@ let
 in {
   imports = [
     ./git.nix
+    ./ideavim
     ./neovim
     ./packages.nix
     ./python.nix

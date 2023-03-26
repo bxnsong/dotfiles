@@ -21,6 +21,7 @@ let
     ripgrep
     rnix-lsp
     starship
+    stow
     stylua
     tldr
     tmux

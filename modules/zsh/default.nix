@@ -18,13 +18,16 @@ in {
       dotDir = ".config/zsh";
       oh-my-zsh = {
         enable = true;
-        plugins = [ "gitfast" ];
+        plugins = [ "gitfast" "tmux" ];
         theme = "clean";
       };
       inherit shellAliases;
       sessionVariables = {
         EDITOR = "nvim";
         GIT_EDITOR = "nvim";
+        ZSH_TMUX_AUTOSTART = "true";
+
+        PATH = "\${PATH}";
       };
 
       initExtra = (builtins.readFile ./zshrc);

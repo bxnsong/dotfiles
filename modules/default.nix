@@ -3,7 +3,7 @@ let
   inherit (lib) mkOption types;
   inherit (config.ben) username homeDirectory;
 in {
-  imports = [ ./starship.nix ./packages.nix ./zsh ./tmux ];
+  imports = [ ./starship.nix ./packages.nix ./zsh ./tmux ./neovim ];
 
   options.ben = {
     username = mkOption {

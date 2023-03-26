@@ -4,6 +4,7 @@ let
   inherit (config.ben) username homeDirectory;
 in {
   imports = [
+    ./git.nix
     ./neovim
     ./packages.nix
     ./python.nix

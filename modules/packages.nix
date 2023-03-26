@@ -20,5 +20,6 @@ let
     stylua
     tldr
     tree
+    yarn
   ];
 in { home = { inherit packages; }; }

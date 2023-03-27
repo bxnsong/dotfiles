@@ -25,7 +25,7 @@ in {
       sessionVariables = {
         EDITOR = "nvim";
         GIT_EDITOR = "nvim";
-        ZSH_TMUX_AUTOSTART = "true";
+        ZSH_TMUX_AUTOSTART = "false";
 
         PATH = "\${PATH}";
       };

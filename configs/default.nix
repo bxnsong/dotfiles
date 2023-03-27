@@ -6,10 +6,8 @@ let
   hosts = loadDir ./.;
 in mapAttrs (_: host:
   (let
-    inherit (host) system config;
+    inherit (host) system;
     pkgs = import nixpkgs { inherit (host) system; };
-    username = config.ben.username;
-    homeDirectory = config.ben.homeDirectory;
   in home-manager.lib.homeManagerConfiguration {
     inherit pkgs;
     extraSpecialArgs = inputs;

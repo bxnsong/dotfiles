@@ -4,11 +4,12 @@ let
   inherit (config.ben) username homeDirectory;
 in {
   imports = [
+    ./fzf.nix
     ./git.nix
     ./ideavim
     ./neovim
     ./packages.nix
-    ./python.nix
+    # ./python.nix
     ./ranger
     ./starship.nix
     ./tmux

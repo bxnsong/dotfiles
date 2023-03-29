@@ -7,7 +7,6 @@ let
     fd
     fpp
     gh
-    jq
     ktlint
     lazygit
     lsd
@@ -20,6 +19,5 @@ let
     stylua
     tldr
     tree
-    yarn
   ];
 in { home = { inherit packages; }; }

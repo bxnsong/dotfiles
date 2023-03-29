@@ -8,7 +8,7 @@
           "$username"
           "$hostname"
           "$directory"
-          "$git_branc"
+          "$git_branch"
           "$get_state"
           "$cmd_duration"
           "$line_break"

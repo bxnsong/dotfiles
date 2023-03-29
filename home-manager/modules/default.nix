@@ -9,7 +9,7 @@ in {
     ./ideavim
     ./neovim
     ./packages.nix
-    # ./python.nix
+    ./python.nix
     ./ranger
     ./starship.nix
     ./tmux

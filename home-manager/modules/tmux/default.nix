@@ -11,6 +11,6 @@ in {
     keyMode = "vi";
     terminal = "tmux-256color";
     prefix = "C-a";
-    plugins = [ nova ];
+    plugins = [ nova pkgs.tmuxPlugins.fpp ];
   };
 }

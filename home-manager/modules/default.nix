@@ -39,6 +39,7 @@ in {
       inherit username homeDirectory;
       stateVersion = "22.11";
     };
+    xdg.configFile."fd/ignore".text = ".git";
     programs = { home-manager.enable = true; };
   };
 }

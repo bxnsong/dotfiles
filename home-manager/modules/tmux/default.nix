@@ -1,19 +1,16 @@
-{ pkgs, config, ... }: {
-  home = {
-    packages = with pkgs; [ tmux ];
-    file = {
-      ".tmux.conf.local".source =
-        config.lib.file.mkOutOfStoreSymlink ./config/tmux.conf.local;
-      ".tmux.conf".source =
-        config.lib.file.mkOutOfStoreSymlink ./config/tmux.conf;
-    };
-  };
+{ pkgs, config, ... }:
+let nova = import ./nova.nix { inherit pkgs; };
+in {
+  home = { packages = with pkgs; [ tmux ]; };
   programs.tmux = {
     enable = true;
     baseIndex = 1;
-    extraConfig = builtins.readFile ./config/tmux.conf;
+    extraConfig = builtins.readFile ./tmux.conf;
+    escapeTime = 10;
     historyLimit = 10000;
     keyMode = "vi";
-    terminal = "xterm-256color";
+    terminal = "tmux-256color";
+    prefix = "C-a";
+    plugins = [ nova ];
   };
 }

@@ -360,10 +360,10 @@ set -g mode-keys vi
 # move status line to top
 set -g status-position top
 
-set -g default-terminal "xterm-256color"
+set -g default-terminal "tmux-256color"
 
 # True Color (RGB) Color Schemes
-set-option -sa terminal-overrides ",xterm*:Tc"
+set-option -sa terminal-overrides ",*-256color*:Tc"
 
 # no repeat
 set -sg repeat-time 0

@@ -11,6 +11,7 @@ let
     lazygit
     lsd
     luarocks
+    ncurses
     neofetch
     nixfmt
     ripgrep

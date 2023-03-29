@@ -30,15 +30,15 @@ in {
       brews = [
         {
           name = "felixkratz/formulae/sketchybar";
-          restart_service = true;
+          restart_service = "changed";
         }
         {
           name = "koekeishiya/formulae/yabai";
-          restart_service = true;
+          restart_service = "changed";
         }
         {
           name = "koekeishiya/formulae/skhd";
-          restart_service = true;
+          restart_service = "changed";
         }
       ];
     };

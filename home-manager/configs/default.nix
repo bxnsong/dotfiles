@@ -1,6 +1,6 @@
 { nixpkgs, home-manager, ... }@inputs:
 let
-  localLib = import ../lib { inherit (nixpkgs) lib; };
+  localLib = import ../../lib { inherit (nixpkgs) lib; };
   inherit (builtins) mapAttrs;
   inherit (localLib) loadDir;
   hosts = loadDir ./.;

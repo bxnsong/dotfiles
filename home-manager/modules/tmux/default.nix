@@ -1,5 +1,7 @@
 { pkgs, config, ... }:
-let nova = import ./nova.nix { inherit pkgs; };
+let
+  nova = import ./nova.nix { inherit pkgs; };
+  spotify = import ./spotify.nix { inherit pkgs; };
 in {
   home = { packages = with pkgs; [ tmux ]; };
   programs.tmux = {
@@ -11,6 +13,6 @@ in {
     keyMode = "vi";
     terminal = "tmux-256color";
     prefix = "C-a";
-    plugins = [ nova pkgs.tmuxPlugins.fpp ];
+    plugins = [ nova spotify pkgs.tmuxPlugins.fpp ];
   };
 }

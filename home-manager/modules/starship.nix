@@ -9,7 +9,7 @@
           "$hostname"
           "$directory"
           "$git_branch"
-          "$get_state"
+          "$git_state"
           "$cmd_duration"
           "$line_break"
           "$conda"

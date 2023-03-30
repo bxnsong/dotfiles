@@ -153,6 +153,7 @@ return require("packer").startup(function()
 
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
+    use({ "L3MON4D3/LuaSnip", run = "make install_jsregexp" })
     use({
         "hrsh7th/nvim-cmp",
         "hrsh7th/cmp-buffer",
@@ -160,6 +161,7 @@ return require("packer").startup(function()
         "hrsh7th/cmp-nvim-lsp-signature-help",
         "hrsh7th/cmp-nvim-lua",
         "hrsh7th/cmp-path",
+        "saadparwaiz1/cmp_luasnip",
         "onsails/lspkind.nvim",
     })
 
@@ -270,7 +272,7 @@ return require("packer").startup(function()
                         -- yank to unnamed register
                         vim.api.nvim_command("let @\" = '" .. url .. "'")
                         -- copy to the system clipboard using OSC52
-                        vim.fn.OSCYankString(url)
+                        vim.fn.OSCYank(url)
                     end,
                 },
             })

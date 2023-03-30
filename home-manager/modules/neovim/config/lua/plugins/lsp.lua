@@ -53,6 +53,13 @@ return {
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
         sources = {
           nls.builtins.formatting.stylua,
+          nls.builtins.formatting.prettierd,
+          nls.builtins.code_actions.eslint_d,
+          nls.builtins.diagnostics.eslint_d,
+          nls.builtins.diagnostics.flake8,
+          nls.builtins.formatting.ktlint,
+          nls.builtins.diagnostics.ktlint,
+          nls.builtins.formatting.nixfmt,
         },
       }
     end,

@@ -48,10 +48,6 @@ in {
       useUserPackages = true;
 
       users.${cfg.user.username} = { pkgs, ... }: {
-        ben = {
-          username = cfg.user.username;
-          homeDirectory = cfg.user.homeDirectory;
-        };
 
         imports = [
           ../../home-manager/modules/default.nix
@@ -59,6 +55,13 @@ in {
           ../modules/skhd
           ../modules/yabai
         ];
+      };
+
+      extraSpecialArgs = {
+        ben = {
+          username = cfg.user.username;
+          homeDirectory = cfg.user.homeDirectory;
+        };
       };
     };
 

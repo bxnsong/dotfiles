@@ -11,7 +11,7 @@ in {
     escapeTime = 10;
     historyLimit = 10000;
     keyMode = "vi";
-    terminal = "tmux-256color";
+    terminal = "screen-256color";
     prefix = "C-a";
     plugins = [ nova spotify pkgs.tmuxPlugins.fpp ];
   };

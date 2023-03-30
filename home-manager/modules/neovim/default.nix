@@ -3,7 +3,7 @@
   programs = {
     neovim = {
       enable = true;
-      extraLuaConfig = (builtins.readFile ./init.lua);
+      extraLuaConfig = "require(\"config.lazy\")";
     };
   };
   xdg.configFile.nvim = {

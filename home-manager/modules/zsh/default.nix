@@ -5,6 +5,7 @@ let
     vim = "nvim";
     ls = "lsd";
     lg = "lazygit";
+    cat = "bat";
   };
 in {
   home.packages = with pkgs; [ zsh ];

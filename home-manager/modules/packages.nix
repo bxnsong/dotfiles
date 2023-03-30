@@ -3,12 +3,12 @@ let
   packages = with pkgs; [
     bat
     black
+    cmake
     fasd
     fd
     fpp
     gh
     jq
-    ktlint
     lazygit
     lsd
     luarocks
@@ -16,9 +16,7 @@ let
     neofetch
     nixfmt
     ripgrep
-    rnix-lsp
     stow
-    stylua
     tldr
     tree
     yarn

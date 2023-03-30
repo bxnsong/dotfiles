@@ -1,7 +1,7 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, ben, ... }:
 let
   inherit (lib) mkOption types;
-  inherit (config.ben) username homeDirectory;
+  inherit (ben) username homeDirectory;
 in {
   imports = [
     ./fzf.nix

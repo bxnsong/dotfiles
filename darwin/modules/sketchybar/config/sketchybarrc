@@ -22,37 +22,43 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /
 PADDING=1600
 
 # Setting up the general bar appearance and default values
-sketchybar --bar     height=39                                         \
-                     color=$BAR_COLOR                                  \
-                     shadow=on                                         \
-                     position=bottom                                   \
-                     sticky=on                                         \
-                     padding_right=7                                   \
-                     padding_left=7                                    \
-                     corner_radius=9                                   \
-                     y_offset=6                                        \
-                     margin=$PADDING                                   \
-                     blur_radius=20                                    \
-                     notch_width=0                                     \
-                                                                       \
-           --default updates=when_shown                                \
-                     icon.font="$FONT:Bold:14.0"                       \
-                     icon.color=$ICON_COLOR                            \
-                     icon.padding_left=$PADDINGS                       \
-                     icon.padding_right=$PADDINGS                      \
-                     label.font="$FONT:Semibold:13.0"                  \
-                     label.color=$LABEL_COLOR                          \
-                     label.padding_left=$PADDINGS                      \
-                     label.padding_right=$PADDINGS                     \
-                     background.padding_right=$PADDINGS                \
-                     background.padding_left=$PADDINGS                 \
-                     background.height=26                              \
-                     background.corner_radius=9                        \
-                     popup.background.border_width=2                   \
-                     popup.background.corner_radius=11                 \
-                     popup.background.border_color=$POPUP_BORDER_COLOR \
-                     popup.background.color=$POPUP_BACKGROUND_COLOR    \
-                     popup.background.shadow.drawing=on
+bar=(
+    blur_radius=20
+    color=$BAR_COLOR
+    corner_radius=9
+    height=39
+    margin=$PADDING
+    notch_width=0
+    padding_left=7
+    padding_right=7
+    position=bottom
+    shadow=on
+    sticky=on
+    y_offset=6
+)
+
+default=(
+    background.corner_radius=9
+    background.height=26
+    background.padding_left=$PADDINGS
+    background.padding_right=$PADDINGS
+    icon.color=$ICON_COLOR
+    icon.font="$FONT:Bold:14.0"
+    icon.padding_left=$PADDINGS
+    icon.padding_right=$PADDINGS
+    label.color=$LABEL_COLOR
+    label.font="$FONT:Semibold:13.0"
+    label.padding_left=$PADDINGS
+    label.padding_right=$PADDINGS
+    popup.background.border_color=$POPUP_BORDER_COLOR
+    popup.background.border_width=2
+    popup.background.color=$POPUP_BACKGROUND_COLOR
+    popup.background.corner_radius=11
+    popup.background.shadow.drawing=on
+    updates=when_shown
+)
+
+sketchybar --bar "${bar[@]}" --default "${default[@]}"
 
 # Left
 source "$ITEM_DIR/apple.sh"

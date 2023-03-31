@@ -57,12 +57,7 @@ in {
         ];
       };
 
-      extraSpecialArgs = {
-        ben = {
-          username = cfg.user.username;
-          homeDirectory = cfg.user.homeDirectory;
-        };
-      };
+      extraSpecialArgs = { ben = cfg.user; };
     };
 
   };

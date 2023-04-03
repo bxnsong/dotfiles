@@ -6,8 +6,9 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
-  outputs = inputs@{ darwin, home-manager, nixpkgs, ... }: {
+  outputs = inputs: {
     homeConfigurations = import ./home-manager/configs inputs;
     darwinConfigurations = import ./darwin/configs inputs;
   };

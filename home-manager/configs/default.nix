@@ -12,4 +12,7 @@ in mapAttrs (_: host:
     inherit pkgs;
     extraSpecialArgs = inputs // { inherit (host.config) ben; };
     modules = [ ../modules/default.nix ];
+    configuration = { pkgs, ... }: {
+      nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
+    };
   })) hosts

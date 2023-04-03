@@ -1,9 +1,9 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ tree-sitter ];
+  home.packages = with pkgs; [ neovim-nightly ];
   programs = {
     neovim = {
       enable = true;
-      extraLuaConfig = "require(\"config.lazy\")";
+      extraLuaConfig = ''require("config.lazy")'';
     };
   };
   xdg.configFile.nvim = {

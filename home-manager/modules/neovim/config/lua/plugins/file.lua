@@ -1,5 +1,5 @@
 return {
-  { "kevinhwang91/rnvimr", keys = { { "-", "<cmd>RnvimrToggle<CR>", desc = "Open Ranger" } } },
   { "gpanders/editorconfig.nvim", event = { "BufReadPre", "BufNewFile" } },
-  { "norcalli/nvim-colorizer.lua" },
+  { "norcalli/nvim-colorizer.lua", config = true },
+  { "luukvbaal/nnn.nvim", config = true, keys = { { "-", "<cmd>NnnPicker %:p:h<cr>", desc = "Open nnn" } } },
 }

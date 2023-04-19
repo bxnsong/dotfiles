@@ -8,6 +8,7 @@ in {
     ./git.nix
     ./ideavim
     ./neovim
+    ./nnn.nix
     ./packages.nix
     ./python.nix
     ./ranger

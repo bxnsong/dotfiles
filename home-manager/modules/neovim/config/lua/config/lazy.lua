@@ -15,6 +15,7 @@ require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { import = "plugins" },
+    { import = "lazyvim.plugins.extras.linting.eslint" },
     { "nvim-neo-tree/neo-tree.nvim", enabled = false },
     { "akinsho/bufferline.nvim", enabled = false },
   },

@@ -13,6 +13,7 @@ return {
       },
       autoformat = true,
       format = {
+
         formatting_options = nil,
         timout_ms = nil,
       },
@@ -33,7 +34,7 @@ return {
         "flake8",
         "luacheck",
         "eslint_d",
-        "prettier",
+        "prettierd",
       },
     },
   },
@@ -53,8 +54,11 @@ return {
       return {
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
         sources = {
-          nls.builtins.code_actions.eslint_d,
-          nls.builtins.diagnostics.eslint_d,
+          nls.builtins.formatting.prettierd.with({
+            env = {
+              PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/discord/.prettierrc"),
+            },
+          }),
           nls.builtins.diagnostics.flake8,
           nls.builtins.diagnostics.ktlint,
           nls.builtins.formatting.beautysh,

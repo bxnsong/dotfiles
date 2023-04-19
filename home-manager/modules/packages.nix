@@ -12,10 +12,12 @@ let
     jq
     lazygit
     lsd
+    luajit
     luarocks
     ncurses
     neofetch
     nixfmt
+    nodejs
     ripgrep
     stow
     tldr

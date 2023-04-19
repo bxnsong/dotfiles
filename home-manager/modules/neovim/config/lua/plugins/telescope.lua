@@ -8,5 +8,6 @@ return {
         require("telescope").load_extension("fzf")
       end,
     },
+    keys = { { "<leader><leader>", "<cmd>Telescope find_files<cr>", desc = "Find Files" } },
   },
 }

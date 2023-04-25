@@ -21,6 +21,7 @@ return {
       servers = {
         pyright = {},
         lua_ls = {},
+        cssls = {},
       },
     },
   },

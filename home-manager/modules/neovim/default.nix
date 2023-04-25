@@ -3,7 +3,13 @@
   programs = {
     neovim = {
       enable = true;
-      extraLuaConfig = ''require("config.lazy")'';
+      extraLuaConfig = ''
+        require("config.lazy")
+        local status, ts_install = pcall(require, "nvim-treesitter.install")
+          if(status) then
+            ts_install.compilers = { "${pkgs.gcc}/bin/gcc" }
+          end
+      '';
     };
   };
   xdg.configFile.nvim = {

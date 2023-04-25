@@ -30,6 +30,7 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
+        "black",
         "beautysh",
         "flake8",
         "luacheck",
@@ -61,6 +62,7 @@ return {
           }),
           nls.builtins.diagnostics.flake8,
           nls.builtins.diagnostics.ktlint,
+          nls.builtins.formatting.black,
           nls.builtins.formatting.beautysh,
           nls.builtins.formatting.ktlint,
           nls.builtins.formatting.nixfmt,

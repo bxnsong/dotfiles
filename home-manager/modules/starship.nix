@@ -12,7 +12,7 @@
           "$git_state"
           "$cmd_duration"
           "$line_break"
-          "$conda"
+          "$python"
           "$character"
         ];
         directory = { style = "blue"; };
@@ -55,8 +55,6 @@
           format = "[$virtualenv]($style) ";
           style = "bright-black";
         };
-
-        conda = { format = "[$environment]($style) "; };
       };
     };
   };

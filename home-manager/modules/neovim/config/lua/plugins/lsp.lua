@@ -22,6 +22,7 @@ return {
         pyright = {},
         lua_ls = {},
         cssls = {},
+        rust_analyzer = {},
       },
     },
   },
@@ -45,7 +46,11 @@ return {
   -- treesitter, mason and typescript.nvim
   { import = "lazyvim.plugins.extras.lang.typescript" },
 
-  { "williamboman/mason-lspconfig.nvim", dependencies = { "mason.nvim" } },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "mason.nvim" },
+    opts = { ensure_installed = { "rust_analyzer" } },
+  },
 
   {
     "jose-elias-alvarez/null-ls.nvim",
@@ -68,6 +73,7 @@ return {
           nls.builtins.formatting.ktlint,
           nls.builtins.formatting.nixfmt,
           nls.builtins.formatting.stylua,
+          nls.builtins.formatting.rustfmt,
         },
       }
     end,

@@ -11,6 +11,6 @@ return {
       },
       replace_netrw = "picker",
     },
-    keys = { { "-", "<cmd>NnnPicker %:p:h<cr>", desc = "Open nnn" } },
+    keys = { { "-", "<cmd>NnnPicker %:p<cr>", desc = "Open nnn" } },
   },
 }

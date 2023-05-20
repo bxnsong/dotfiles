@@ -13,6 +13,9 @@
         };
       };
     };
-    zsh.sessionVariables = { NNN_FIFO = "$XDG_RUNTIME_DIR/nnn.fifo"; };
+    zsh.sessionVariables = {
+      NNN_FIFO = "$XDG_RUNTIME_DIR/nnn.fifo";
+      NNN_BATSTYLE = "plain";
+    };
   };
 }

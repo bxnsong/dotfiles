@@ -16,6 +16,7 @@ let
     luarocks
     ncurses
     neofetch
+    nettools
     nixfmt
     nodejs
     ripgrep

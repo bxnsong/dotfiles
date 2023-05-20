@@ -1,5 +1,4 @@
 { config, lib, pkgs, ... }: {
-  home.sessionVariables = { NNN_FIFO = "$XDG_RUNTIME_DIR/nnn.fifo"; };
   programs = {
     nnn = {
       enable = true;
@@ -14,5 +13,6 @@
         };
       };
     };
+    zsh.sessionVariables = { NNN_FIFO = "$XDG_RUNTIME_DIR/nnn.fifo"; };
   };
 }

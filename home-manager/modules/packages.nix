@@ -3,7 +3,6 @@ let
   packages = with pkgs; [
     bat
     black
-    cargo
     cmake
     fasd
     fd

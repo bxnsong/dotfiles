@@ -10,6 +10,11 @@ return {
     },
     config = {
       defaults = {
+        mappings = {
+          i = {
+            ["<C-d>"] = require("telescope.actions").delete_buffer,
+          },
+        },
         preview = {
           filesize_hook = function(filepath, bufnr, opts)
             local max_bytes = 5000

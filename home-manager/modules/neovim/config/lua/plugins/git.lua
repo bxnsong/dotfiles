@@ -11,4 +11,13 @@ return {
   },
   { "f-person/git-blame.nvim" },
   { "sindrets/diffview.nvim", dependencies = { "plenary.nvim" } },
+  {
+    "pwntester/octo.nvim",
+    dependencies = {
+      "plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = true,
+  },
 }

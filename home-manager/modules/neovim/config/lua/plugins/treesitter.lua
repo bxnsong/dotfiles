@@ -9,6 +9,9 @@ end
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    init = function()
+      vim.treesitter.language.register("markdown", "octo")
+    end,
     opts = {
       highlight = { enable = true, disable = is_big_file },
       indent = { enable = true, disable = is_big_file },

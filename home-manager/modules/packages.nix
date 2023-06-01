@@ -9,7 +9,6 @@ let
     fpp
     gh
     jq
-    lazygit
     lsd
     luajit
     luarocks

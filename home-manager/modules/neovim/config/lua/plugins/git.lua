@@ -24,6 +24,7 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     config = true,
+    cmd = "Octo",
     keys = {
       { "<leader>op", "<cmd>Octo pr search review-requested:@me is:open<cr>", desc = "View my PR queue" },
       { "<leader>om", "<cmd>Octo pr search author:@me<cr>", desc = "View my open PRs" },

@@ -36,6 +36,7 @@ return {
         "beautysh",
         "flake8",
         "luacheck",
+        "isort",
         "eslint_d",
         "prettierd",
       },
@@ -74,6 +75,7 @@ return {
           nls.builtins.formatting.nixfmt,
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.rustfmt,
+          nls.builtins.formatting.isort,
         },
       }
     end,

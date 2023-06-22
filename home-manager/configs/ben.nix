@@ -3,5 +3,6 @@
   config.ben = {
     username = "ben";
     homeDirectory = "/home/ben";
+    work = false;
   };
 }

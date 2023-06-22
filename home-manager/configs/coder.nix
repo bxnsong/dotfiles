@@ -3,5 +3,6 @@
   config.ben = {
     username = "discord";
     homeDirectory = "/home/discord";
+    work = true;
   };
 }

@@ -1,3 +1,3 @@
-{ pkgs, ... }:
-let python3 = pkgs.python3.withPackages (p: with p; [ pynvim ipython pipx ]);
-in { home = { packages = with pkgs; [ python3 ]; }; }
+{ pkgs, ben, ... }:
+let python3 = pkgs.python311.withPackages (p: with p; [ pynvim ipython pipx ]);
+in { home = { packages = with pkgs; if !ben.work then [ python3 ] else [ ]; }; }

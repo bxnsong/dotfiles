@@ -4,6 +4,7 @@ let
   inherit (ben) username homeDirectory;
 in {
   imports = [
+    ./darwin
     ./fzf.nix
     ./git.nix
     ./ideavim
@@ -17,29 +18,12 @@ in {
     ./zsh
   ];
 
-  options.ben = {
-    username = mkOption {
-      type = types.str;
-      default = "ben";
-      description = ''
-        Username of the user to provision on the system.
-      '';
-    };
-
-    homeDirectory = mkOption {
-      type = types.str;
-      default = "/home/ben";
-      description = ''
-        Home directory of the user.
-      '';
-    };
-  };
-
   config = {
     home = {
       inherit username homeDirectory;
       stateVersion = "22.11";
     };
+    darwinApps = { enable = pkgs.stdenv.hostPlatform.isDarwin; };
     xdg.configFile."fd/ignore".text = ".git";
     programs = { home-manager.enable = true; };
   };

@@ -1,25 +1,25 @@
-{ self, pkgs, ... }:
+{ self, pkgs, ben, ... }:
 let
-  packages = with pkgs; [
-    bat
-    black
-    cmake
-    fasd
-    fd
-    fpp
-    gh
-    jq
-    lsd
-    luajit
-    luarocks
-    ncurses
-    neofetch
-    nixfmt
-    nodejs
-    ripgrep
-    stow
-    tldr
-    tree
-    yarn
-  ];
+  nonWorkPackages = if !ben.work then with pkgs; [ jq yarn ] else [ ];
+  packages = with pkgs;
+    [
+      bat
+      black
+      cmake
+      fasd
+      fd
+      fpp
+      gh
+      lsd
+      luajit
+      luarocks
+      ncurses
+      neofetch
+      nixfmt
+      nodejs
+      ripgrep
+      stow
+      tldr
+      tree
+    ] ++ nonWorkPackages;
 in { home = { inherit packages; }; }

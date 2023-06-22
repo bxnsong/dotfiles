@@ -5,7 +5,7 @@ return {
     "luukvbaal/nnn.nvim",
     config = {
       picker = {
-        cmd = "tmux new-session nnn -Pp",
+        cmd = "tmux new-session nnn -APp",
         style = { border = "rounded" },
         session = "shared",
       },

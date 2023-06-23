@@ -6,6 +6,7 @@ let
     ls = "lsd";
     lg = "lazygit";
     cat = "bat";
+    nnn = "nnn -APp";
   };
 in {
   home.packages = with pkgs; [ zsh ];

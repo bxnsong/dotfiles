@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
   spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", opts = { colorscheme = "catppuccin" }, import = "lazyvim.plugins" },
     { import = "plugins" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { "nvim-neo-tree/neo-tree.nvim", enabled = false },

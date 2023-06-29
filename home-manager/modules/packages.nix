@@ -3,7 +3,6 @@ let
   nonWorkPackages = if !ben.work then with pkgs; [ jq yarn ] else [ ];
   packages = with pkgs;
     [
-      bat
       black
       cmake
       fasd

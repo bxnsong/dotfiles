@@ -15,6 +15,7 @@ let
       luarocks
       ncurses
       neofetch
+      nix-prefetch-github
       nixfmt
       nodejs
       ripgrep

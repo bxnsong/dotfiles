@@ -6,7 +6,7 @@ in {
   imports = [
     ./darwin
     ./fzf.nix
-    ./git.nix
+    ./git
     ./ideavim
     ./neovim
     ./nnn.nix

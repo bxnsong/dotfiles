@@ -1,5 +1,8 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [ delta ];
+  xdg.configFile = {
+    "git/themes.gitconfig".text = builtins.readFile ./themes.gitconfig;
+  };
   programs = {
     lazygit = {
       enable = true;
@@ -42,6 +45,7 @@
       enable = true;
       userName = "Ben Soh";
       userEmail = "ben.soh@discordapp.com";
+      includes = [{ path = "~/.config/git/themes.gitconfig"; }];
       extraConfig = {
         pull.rebase = true;
         fetch.prune = true;
@@ -49,6 +53,7 @@
         interactive.diffFilter = "delta --color-only";
         delta.navigate = true;
         delta.light = false;
+        delta.features = "collared-trogon";
         merge.conflictstyle = "diff3";
         diff.colorMoved = "default";
       };

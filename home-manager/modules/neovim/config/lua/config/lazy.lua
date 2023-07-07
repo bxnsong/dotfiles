@@ -18,6 +18,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { "nvim-neo-tree/neo-tree.nvim", enabled = false },
     { "akinsho/bufferline.nvim", enabled = false },
+    { "catppuccin", enabled = false },
   },
   defaults = {
     lazy = false,

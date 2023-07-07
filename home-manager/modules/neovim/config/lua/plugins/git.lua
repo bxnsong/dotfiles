@@ -15,6 +15,7 @@ return {
       vim.g.gitblame_ignored_filetypes = { "octo" }
     end,
   },
+  { "aspeddro/gitui.nvim", config = true },
   { "sindrets/diffview.nvim", dependencies = { "plenary.nvim" } },
   {
     "pwntester/octo.nvim",

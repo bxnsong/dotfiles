@@ -1,6 +1,6 @@
 { self, pkgs, ben, ... }:
 let
-  nonWorkPackages = if !ben.work then with pkgs; [ jq yarn ] else [ ];
+  nonWorkPackages = if !ben.work then with pkgs; [ jq yarn nodejs ] else [ ];
   packages = with pkgs;
     [
       black
@@ -16,7 +16,6 @@ let
       neofetch
       nix-prefetch-github
       nixfmt
-      nodejs
       ripgrep
       stow
       tldr

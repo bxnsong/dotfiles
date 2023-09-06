@@ -249,6 +249,7 @@ return {
         "black",
         "isort",
         "luacheck",
+        "prettierd",
         "ruff",
         "shfmt",
         "stylua",

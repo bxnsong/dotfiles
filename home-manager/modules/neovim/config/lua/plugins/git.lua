@@ -15,21 +15,4 @@ return {
       vim.g.gitblame_ignored_filetypes = { "octo" }
     end,
   },
-  { "aspeddro/gitui.nvim", config = true },
-  { "sindrets/diffview.nvim", dependencies = { "plenary.nvim" } },
-  {
-    "pwntester/octo.nvim",
-    dependencies = {
-      "plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = true,
-    cmd = "Octo",
-    keys = {
-      { "<leader>op", "<cmd>Octo pr search review-requested:@me is:open<cr>", desc = "View my PR queue" },
-      { "<leader>om", "<cmd>Octo pr search author:@me<cr>", desc = "View my open PRs" },
-      { "<leader>oc", "<cmd>Octo pr changes<cr>", desc = "View current PR changes" },
-    },
-  },
 }

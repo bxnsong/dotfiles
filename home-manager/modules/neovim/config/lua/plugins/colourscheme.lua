@@ -1,7 +1,7 @@
 return {
   {
     "m4xshen/catppuccinight.nvim",
-    lazy = true,
+    lazy = false,
     name = "catppuccinight",
     opts = {
       flavour = "mocha",

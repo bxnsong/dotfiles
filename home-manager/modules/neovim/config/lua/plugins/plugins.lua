@@ -58,6 +58,7 @@ return {
       vim.cmd.colorscheme("catppuccin")
     end,
   },
+
   {
     "ruifm/gitlinker.nvim",
     dependencies = { "plenary.nvim", "ojroques/vim-oscyank" },
@@ -74,12 +75,15 @@ return {
       vim.g.gitblame_ignored_filetypes = { "octo" }
     end,
   },
+
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
         "bash",
+        "gitcommit",
+        "gitignore",
         "html",
         "javascript",
         "json",
@@ -112,16 +116,18 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed, {
+        "selene",
+        "shellcheck",
         "beautysh",
         "isort",
         "luacheck",
         "ruff",
         "shfmt",
         "stylua",
-      },
-    },
+      })
+    end,
   },
 
   {
@@ -144,5 +150,47 @@ return {
       replace_netrw = "picker",
     },
     keys = { { "-", "<cmd>NnnPicker %:p<cr>", desc = "Open nnn" } },
+  },
+
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        ["markdown"] = { { "prettierd", "prettier" } },
+        ["markdown.mdx"] = { { "prettierd", "prettier" } },
+        ["javascript"] = { { "prettierd", "prettier" } },
+        ["javascriptreact"] = { { "prettierd", "prettier" } },
+        ["typescript"] = { { "prettierd", "prettier" } },
+        ["typescriptreact"] = { { "prettierd", "prettier" } },
+      },
+      formatters = {
+        shfmt = {
+          prepend_args = { "-i", "2", "-ci" },
+        },
+      },
+    },
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        lua = { "selene", "luacheck" },
+        markdown = { "markdownlint" },
+      },
+      linters = {
+        selene = {
+          condition = function(ctx)
+            return vim.fs.find({ "selene.toml" }, { path = ctx.filename, upward = true })[1]
+          end,
+        },
+        luacheck = {
+          condition = function(ctx)
+            return vim.fs.find({ ".luacheckrc" }, { path = ctx.filename, upward = true })[1]
+          end,
+        },
+      },
+    },
   },
 }

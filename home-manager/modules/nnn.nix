@@ -3,12 +3,11 @@
     nnn = {
       enable = true;
       package = pkgs.nnn.override ({ withNerdIcons = true; });
-      extraPackages = with pkgs; [ bat fzf exa ];
+      extraPackages = with pkgs; [ bat fzf ];
       plugins = {
         src = "${pkgs.nnn.src}/plugins";
         mappings = {
           p = "preview-tui";
-          v = "imgview";
           o = "fzopen";
         };
       };

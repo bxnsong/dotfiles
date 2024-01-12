@@ -16,7 +16,7 @@ in {
     zsh = {
       enable = true;
       enableAutosuggestions = true;
-      enableSyntaxHighlighting = true;
+      syntaxHighlighting.enable = true;
       dotDir = ".config/zsh";
       oh-my-zsh = {
         enable = true;

@@ -4,7 +4,7 @@ let
     v = "nvim";
     vim = "nvim";
     ls = "lsd";
-    lg = "lazygit";
+    lg = "gitui";
     cat = "bat";
     nnn = "nnn -APp";
   };

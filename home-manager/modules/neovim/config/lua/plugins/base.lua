@@ -7,6 +7,17 @@ return {
   { "nvim-lualine/lualine.nvim", enabled = false },
 
   {
+    "telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
+    },
+  },
+
+  {
     "echasnovski/mini.surround",
     opts = {
       mappings = {

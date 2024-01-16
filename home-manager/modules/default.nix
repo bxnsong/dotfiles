@@ -13,6 +13,7 @@ in {
     ./packages.nix
     ./python.nix
     ./ranger
+    ./scripts
     ./starship.nix
     ./tmux
     ./zsh

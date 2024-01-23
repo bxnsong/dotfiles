@@ -5,6 +5,7 @@ return {
   { "lukas-reineke/indent-blankline.nvim", enabled = false },
   { "RRethy/vim-illuminate", enabled = false },
   { "nvim-lualine/lualine.nvim", enabled = false },
+  { "bufferline.nvim", enabled = false },
 
   {
     "telescope.nvim",

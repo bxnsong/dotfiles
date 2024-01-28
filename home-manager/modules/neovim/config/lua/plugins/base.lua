@@ -163,6 +163,7 @@ return {
 
   {
     "luukvbaal/nnn.nvim",
+    enabled = false,
     config = {
       picker = {
         cmd = "tmux new-session nnn -APp",
@@ -180,6 +181,13 @@ return {
       { "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
     },
     opts = { use_default_keymaps = false, max_join_length = 150 },
+  },
+
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    keys = { { "-", "<cmd>Oil<cr>", desc = "Open oil" } },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
   {

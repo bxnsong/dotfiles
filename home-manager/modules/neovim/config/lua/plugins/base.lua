@@ -145,6 +145,7 @@ return {
         "beautysh",
         "isort",
         "luacheck",
+        "markdownlint",
         "ruff",
         "shfmt",
         "stylua",

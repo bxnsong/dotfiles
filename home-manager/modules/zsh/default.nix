@@ -3,7 +3,7 @@ let
   shellAliases = {
     v = "nvim";
     vim = "nvim";
-    ls = "lsd";
+    ls = "eza --icons=always";
     lg = "gitui";
     cat = "bat";
     nnn = "nnn -APp";

@@ -5,11 +5,11 @@ let
     [
       black
       cmake
+      eza
       fasd
       fd
       fpp
       gh
-      lsd
       luajit
       luarocks
       ncurses

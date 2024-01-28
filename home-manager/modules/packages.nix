@@ -19,7 +19,6 @@ let
       ripgrep
       stow
       tldr
-      tree
       unzip
     ] ++ nonWorkPackages;
 in { home = { inherit packages; }; }

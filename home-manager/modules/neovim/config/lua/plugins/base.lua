@@ -201,6 +201,7 @@ return {
         ["javascriptreact"] = { { "prettierd", "prettier" } },
         ["typescript"] = { { "prettierd", "prettier" } },
         ["typescriptreact"] = { { "prettierd", "prettier" } },
+        ["lua"] = { { "stylua" } },
         ["nix"] = { "nixfmt" },
       },
       formatters = {

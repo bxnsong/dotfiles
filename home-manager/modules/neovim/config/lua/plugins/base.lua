@@ -187,7 +187,16 @@ return {
 
   {
     "stevearc/oil.nvim",
-    opts = {},
+    opts = {
+      keymaps = {
+        ["<C-h>"] = false,
+        ["<C-s>"] = false,
+        ["<C-l>"] = false,
+        ["<C-t>"] = false,
+        ["gs"] = "actions.select_vsplit",
+        ["gh"] = "actions.select_split",
+      },
+    },
     keys = { { "-", "<cmd>Oil<cr>", desc = "Open oil" } },
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },

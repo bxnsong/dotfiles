@@ -102,6 +102,7 @@ return {
       highlight = {
         enable = false,
       },
+      indent = { enable = false },
       ensure_installed = {
         "bash",
         "gitcommit",

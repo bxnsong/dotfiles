@@ -1,5 +1,4 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ neovim-nightly ];
   programs = {
     neovim = {
       enable = true;

@@ -1,5 +1,9 @@
+-- Macbook
 if vim.fn.hostname() ~= "sejeong" then
   return {}
 end
 
-return {}
+-- Coder
+if vim.fn.hostname() ~= "supershy" then
+  return {}
+end

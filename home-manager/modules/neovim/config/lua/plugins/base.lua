@@ -214,6 +214,7 @@ return {
         ["typescriptreact"] = { { "prettierd", "prettier" } },
         ["lua"] = { { "stylua" } },
         ["nix"] = { "nixfmt" },
+        ["python"] = { "ruff_format" },
       },
       formatters = {
         shfmt = {

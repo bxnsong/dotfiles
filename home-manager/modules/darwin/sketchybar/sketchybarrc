@@ -18,8 +18,13 @@ $HOME/.config/sketchybar/helper/helper $HELPER > /dev/null 2>&1 &
 # Unload the macOS on screen indicator overlay for volume change
 launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
 
+system_profiler SPDisplaysDataType | grep -q 'Resolution: 5120 x 1440'
 # padding for ultrawide
-PADDING=1600
+if [[ $? -eq 0 ]]; then
+    PADDING=1600
+else
+    PADDING=80
+fi
 
 # Setting up the general bar appearance and default values
 bar=(

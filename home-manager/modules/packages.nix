@@ -10,6 +10,7 @@ let
       fd
       fpp
       gh
+      httpie
       luajit
       luarocks
       ncurses

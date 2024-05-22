@@ -1,8 +1,8 @@
 {
-  system = "x86_64-darwin";
+  system = "aarch64-darwin";
   config.ben = {
-    username = "bensoh";
-    homeDirectory = "/Users/bensoh";
+    username = "ben.soh";
+    homeDirectory = "/Users/ben.soh";
     work = true;
   };
 }

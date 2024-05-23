@@ -5,6 +5,7 @@ in {
   options.darwinApps = { enable = mkEnableOption "Enable Darwin"; };
   config = mkIf cfg.enable {
     xdg.configFile = {
+      aerospace = { source = ./aerospace; };
       kitty = { source = ./kitty; };
       sketchybar = { source = ./sketchybar; };
       skhd = { source = ./skhd; };

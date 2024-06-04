@@ -141,6 +141,7 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
+        "eslint_d",
         "selene",
         "shellcheck",
         "beautysh",
@@ -230,6 +231,8 @@ return {
       linters_by_ft = {
         lua = { "selene", "luacheck" },
         markdown = { "markdownlint" },
+        typescript = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
       },
       linters = {
         selene = {
@@ -241,6 +244,34 @@ return {
           condition = function(ctx)
             return vim.fs.find({ ".luacheckrc" }, { path = ctx.filename, upward = true })[1]
           end,
+        },
+        eslint = {
+          condition = function(ctx)
+            return vim.fs.find({ ".eslintrc.yml" }, { path = ctx.filename, upward = true })[1]
+          end,
+        },
+      },
+    },
+  },
+
+  {
+    "folke/trouble.nvim",
+    opts = {
+      modes = {
+        mydiags = {
+          mode = "diagnostics", -- inherit from diagnostics mode
+          filter = {
+            any = {
+              buf = 0, -- current buffer
+              {
+                severity = vim.diagnostic.severity.WARN, -- errors only
+                -- limit to files in the current project
+                function(item)
+                  return item.filename:find((vim.loop or vim.uv).cwd(), 1, true)
+                end,
+              },
+            },
+          },
         },
       },
     },

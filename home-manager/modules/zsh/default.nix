@@ -4,7 +4,7 @@ let
     v = "nvim";
     vim = "nvim";
     ls = "eza --icons=always";
-    lg = "gitui";
+    lg = "lazygit";
     cat = "bat";
     nnn = "nnn -APp";
   };
@@ -15,7 +15,7 @@ in {
 
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       dotDir = ".config/zsh";
       oh-my-zsh = {

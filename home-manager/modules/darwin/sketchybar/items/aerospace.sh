@@ -1,6 +1,6 @@
 sketchybar --add event aerospace_workspace_change
 
-for sid in $(/opt/homebrew/bin/aerospace list-workspaces --all); do
+for sid in $(/opt/homebrew/bin/aerospace list-workspaces --monitor focused --empty no); do
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \
         --set space.$sid \

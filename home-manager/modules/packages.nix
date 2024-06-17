@@ -1,6 +1,6 @@
 { self, pkgs, ben, ... }:
 let
-  nonWorkPackages = if !ben.work then with pkgs; [ jq yarn nodejs ] else [ ];
+  nonWorkPackages = if !ben.work then with pkgs; [ jq yarn nodejs corepack_22 ] else [ ];
   packages = with pkgs;
     [
       black

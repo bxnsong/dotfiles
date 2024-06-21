@@ -18,6 +18,7 @@ let
       nix-prefetch-github
       nixfmt
       ripgrep
+      rustup
       stow
       tldr
       unzip

@@ -16,7 +16,7 @@ let
       ncurses
       neofetch
       nix-prefetch-github
-      nixfmt
+      nixfmt-classic
       ripgrep
       rustup
       stow

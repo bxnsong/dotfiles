@@ -4,3 +4,5 @@
 
 vim.opt.statuscolumn = ""
 vim.opt.statusline = "%f %m"
+vim.g.lazyvim_python_lsp = "pyright"
+vim.g.lazyvim_python_ruff = "ruff_lsp"

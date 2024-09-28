@@ -6,7 +6,6 @@ let
       black
       cmake
       eza
-      fasd
       fd
       fpp
       gh
@@ -22,5 +21,6 @@ let
       stow
       tldr
       unzip
+      zoxide
     ] ++ nonWorkPackages;
 in { home = { inherit packages; }; }

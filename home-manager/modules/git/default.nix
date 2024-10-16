@@ -89,6 +89,7 @@
       extraConfig = {
         pull.rebase = true;
         fetch.prune = true;
+        core.excludesFile = "~/.gitignore";
         core.pager = "delta";
         interactive.diffFilter = "delta --color-only";
         delta.navigate = true;

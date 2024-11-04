@@ -72,6 +72,7 @@ source "$ITEM_DIR/front_app.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
+source "$ITEM_DIR/rng.sh"
 source "$ITEM_DIR/brew.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/divider.sh"

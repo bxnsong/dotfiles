@@ -1,6 +1,6 @@
 { self, pkgs, ben, ... }:
 let
-  nonWorkPackages = if !ben.work then with pkgs; [ jq yarn nodejs corepack_22 texliveFull ] else [ ];
+  nonWorkPackages = if !ben.work then with pkgs; [ rustup jq yarn nodejs corepack_22 texliveFull ] else [ ];
   packages = with pkgs;
     [
       black
@@ -17,7 +17,6 @@ let
       nix-prefetch-github
       nixfmt-classic
       ripgrep
-      rustup
       stow
       tldr
       unzip

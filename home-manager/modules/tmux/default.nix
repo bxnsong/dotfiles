@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 let
   nova = import ./nova.nix { inherit pkgs; };
   spotify = import ./spotify.nix { inherit pkgs; };

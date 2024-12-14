@@ -23,6 +23,61 @@ return {
   },
 
   {
+    "yashguptaz/calvera-dark.nvim",
+    lazy = false,
+    name = "calvera",
+    init = function()
+      vim.g.calvera_contrast = true
+      vim.g.calvera_italic_comments = true
+      vim.g.calvera_italic_keywords = true
+      vim.g.calvera_italic_functions = true
+      vim.g.calvera_italic_variables = false
+    end,
+    config = function()
+      vim.cmd.colorscheme("calvera")
+    end,
+  },
+
+  {
+    "maxmx03/fluoromachine.nvim",
+    lazy = false,
+    priority = 1000,
+    name = "fluoromachine",
+    config = function()
+      local fm = require("fluoromachine")
+
+      fm.setup({
+        glow = true,
+        theme = "fluoromachine",
+        transparent = true,
+      })
+
+      -- vim.cmd.colorscheme("fluoromachine")
+    end,
+  },
+
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    lazy = false,
+    config = function()
+      -- vim.cmd.colorscheme("rose-pine")
+    end,
+  },
+
+  {
+    "tiagovla/tokyodark.nvim",
+    name = "tokyodark",
+    opts = {
+      -- custom options here
+    },
+    config = function(_, opts)
+      require("tokyodark").setup(opts) -- calling setup is optional
+      -- vim.cmd.colorscheme("tokyodark")
+    end,
+  },
+
+  {
     "m4xshen/catppuccinight.nvim",
     lazy = false,
     name = "catppuccinight",
@@ -63,7 +118,7 @@ return {
       },
     },
     config = function()
-      vim.cmd.colorscheme("catppuccin")
+      -- vim.cmd.colorscheme("catppuccin")
     end,
   },
 

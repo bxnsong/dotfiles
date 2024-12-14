@@ -1,11 +1,9 @@
 return {
 
   -- disable the following plugins because of perf
-  { "echasnovski/mini.indentscope", enabled = false },
-  { "lukas-reineke/indent-blankline.nvim", enabled = false },
-  { "RRethy/vim-illuminate", enabled = false },
-  { "nvim-lualine/lualine.nvim", enabled = false },
-  { "bufferline.nvim", enabled = false },
+  -- { "echasnovski/mini.indentscope", enabled = false },
+  -- { "nvim-lualine/lualine.nvim", enabled = false },
+  -- { "bufferline.nvim", enabled = false },
 
   {
     "echasnovski/mini.surround",

@@ -4,6 +4,7 @@ let
   packages = with pkgs;
     [
       black
+      chafa
       cmake
       eza
       fd
@@ -22,4 +23,5 @@ let
       unzip
       zoxide
     ] ++ nonWorkPackages;
-in { home = { inherit packages; }; }
+in
+{ home = { inherit packages; }; }

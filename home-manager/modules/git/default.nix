@@ -87,16 +87,20 @@
       userEmail = "ben.soh@discordapp.com";
       includes = [{ path = "~/.config/git/themes.gitconfig"; }];
       extraConfig = {
-        pull.rebase = true;
-        fetch.prune = true;
-        core.excludesFile = "~/.gitignore";
-        core.pager = "delta";
-        interactive.diffFilter = "delta --color-only";
-        delta.navigate = true;
-        delta.light = false;
-        delta.features = "collared-trogon";
-        merge.conflictstyle = "diff3";
+        core = {
+          excludesFile = "~/.gitignore";
+          pager = "delta";
+        };
+        delta = {
+          navigate = true;
+          light = false;
+          features = "collared-trogon";
+        };
         diff.colorMoved = "default";
+        fetch.prune = true;
+        interactive.diffFilter = "delta --color-only";
+        merge.conflictstyle = "diff3";
+        pull.rebase = true;
       };
     };
   };

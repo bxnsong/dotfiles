@@ -4,6 +4,14 @@ return {
   -- { "echasnovski/mini.indentscope", enabled = false },
   -- { "nvim-lualine/lualine.nvim", enabled = false },
   -- { "bufferline.nvim", enabled = false },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      indent = {
+        enabled = false,
+      },
+    },
+  },
 
   {
     "echasnovski/mini.surround",

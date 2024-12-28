@@ -3,4 +3,4 @@ macos-titlebar-style = hidden
 bold-is-bright = true
 font-family = "Fira Code Nerd Font Mono"
 window-padding-x = 16
-window-padding-y = 16
+window-padding-y = 6

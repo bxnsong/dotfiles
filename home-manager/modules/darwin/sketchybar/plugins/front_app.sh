@@ -72,5 +72,5 @@ case $INFO in
     ;;
 esac
 
-sketchybar --set $NAME icon=$ICON icon.padding_right=$ICON_PADDING_RIGHT
+sketchybar --set $NAME icon=$ICON icon.padding_right=$ICON_PADDING_RIGHT icon.padding_left=8
 sketchybar --set $NAME.name label="$INFO"

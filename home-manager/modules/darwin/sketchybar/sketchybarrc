@@ -47,7 +47,7 @@ sketchybar --add item front_app left \
     icon.color=0xffc5a7f2 \
     icon.font="$FONT_FACE:Bold:20.0" \
     icon.padding_left=0 \
-    icon.padding_right=0 \
+    icon.padding_right=4 \
     icon.y_offset=1 \
     label.drawing=no \
     --add item front_app.name left \
@@ -56,7 +56,8 @@ sketchybar --add item front_app left \
     background.padding_right=0 \
     icon.drawing=off \
     label.font="$FONT_FACE:Bold:12.0" \
-    label.drawing=yes
+    label.drawing=yes \
+    label.padding_right=8
 
 sketchybar --add bracket front_app_bracket \
     front_app \

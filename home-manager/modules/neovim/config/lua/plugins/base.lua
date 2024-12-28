@@ -145,6 +145,15 @@ return {
   },
 
   {
+    "sindrets/diffview.nvim",
+    keys = {
+      { "<leader>gdv", "<cmd>DiffviewOpen<cr>", desc = "Open diff view" },
+      { "<leader>gdm", "<cmd>DiffviewOpen HEAD~1<cr>", desc = "Open diff view (HEAD~1)" },
+      { "<leader>gdf", "<cmd>DiffviewFileHistory<cr>", desc = "Open file history" },
+    },
+  },
+
+  {
     "f-person/git-blame.nvim",
     init = function()
       vim.g.gitblame_ignored_filetypes = { "octo" }

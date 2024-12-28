@@ -7,8 +7,10 @@ let
     lg = "lazygit";
     cat = "bat";
     nnn = "nnn -APp";
+    mux = "tmuxinator";
   };
-in {
+in
+{
   home.packages = with pkgs; [ zsh ];
   programs = {
     fzf.enableZshIntegration = true;
@@ -27,9 +29,7 @@ in {
       sessionVariables = {
         EDITOR = "nvim";
         GIT_EDITOR = "nvim";
-        ZSH_TMUX_AUTOSTART = "false";
         PATH = "\${PATH}";
-        TSC_WATCHFILE = "PriorityPollingInterval";
       };
 
       initExtra = (builtins.readFile ./zshrc);

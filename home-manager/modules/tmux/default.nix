@@ -6,7 +6,7 @@ in
   home = {
     packages = with pkgs; [
       tmux
-      teamocil
+      tmuxinator
     ];
   };
   programs.tmux = {

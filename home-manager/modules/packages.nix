@@ -12,7 +12,6 @@ let
       fd
       gh
       httpie
-      hub
       neofetch
       nixfmt-classic
       ripgrep

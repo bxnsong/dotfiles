@@ -147,10 +147,6 @@ return {
   },
 
   {
-    "sindrets/diffview.nvim",
-  },
-
-  {
     "Wansmer/treesj",
     keys = {
       {

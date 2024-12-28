@@ -151,6 +151,10 @@ return {
       { "<leader>gdm", "<cmd>DiffviewOpen HEAD~1<cr>", desc = "Open diff view (HEAD~1)" },
       { "<leader>gdf", "<cmd>DiffviewFileHistory<cr>", desc = "Open file history" },
     },
+    cmd = { "DiffviewOpen" },
+    opts = {
+      enhanced_diff_hl = true,
+    },
   },
 
   {

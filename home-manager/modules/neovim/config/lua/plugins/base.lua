@@ -147,6 +147,28 @@ return {
   },
 
   {
+    "sindrets/diffview.nvim",
+  },
+
+  {
+    "Wansmer/treesj",
+    keys = {
+      {
+        "J",
+        "<cmd>TSJToggle<cr>",
+        desc = "Join toggle",
+      },
+    },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    }, -- if you install parsers with `nvim-treesitter`
+    opts = {
+      use_default_keymaps = false,
+      max_join_length = 150,
+    },
+  },
+
+  {
     "stevearc/oil.nvim",
     opts = {
       keymaps = {

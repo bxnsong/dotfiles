@@ -1,9 +1,14 @@
 { pkgs, ... }:
 let
-  nova = import ./nova.nix { inherit pkgs; };
-  spotify = import ./spotify.nix { inherit pkgs; };
-in {
-  home = { packages = with pkgs; [ tmux ]; };
+  catppuccin = import ./catppuccin.nix { inherit pkgs; };
+in
+{
+  home = {
+    packages = with pkgs; [
+      tmux
+      teamocil
+    ];
+  };
   programs.tmux = {
     enable = true;
     baseIndex = 1;
@@ -13,6 +18,6 @@ in {
     keyMode = "vi";
     terminal = "screen-256color";
     prefix = "C-a";
-    plugins = [ nova spotify pkgs.tmuxPlugins.fpp ];
+    plugins = [ catppuccin pkgs.tmuxPlugins.fpp pkgs.tmuxPlugins.tmux-thumbs ];
   };
 }

@@ -1,8 +1,8 @@
-{ config, pkgs, lib, ben, ... }:
+{ pkgs, ben, ... }:
 let
-  inherit (lib) mkOption types;
   inherit (ben) username homeDirectory;
-in {
+in
+{
   imports = [
     ./darwin
     ./fzf.nix
@@ -11,7 +11,6 @@ in {
     ./neovim
     ./nnn.nix
     ./packages.nix
-    ./python.nix
     ./ranger
     ./scripts
     ./starship.nix

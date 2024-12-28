@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ lib, config, ... }:
 with lib;
 let cfg = config.darwinApps;
 in {
@@ -9,9 +9,6 @@ in {
       kitty = { source = ./kitty; };
       ghostty = { source = ./ghostty; };
       sketchybar = { source = ./sketchybar; };
-      skhd = { source = ./skhd; };
-      yabai = { source = ./yabai; };
     };
-    home.packages = with pkgs; [ spicetify-cli ];
   };
 }

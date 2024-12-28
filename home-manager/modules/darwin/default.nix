@@ -7,6 +7,7 @@ in {
     xdg.configFile = {
       aerospace = { source = ./aerospace; };
       kitty = { source = ./kitty; };
+      ghostty = { source = ./ghostty; };
       sketchybar = { source = ./sketchybar; };
       skhd = { source = ./skhd; };
       yabai = { source = ./yabai; };

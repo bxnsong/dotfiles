@@ -20,5 +20,8 @@
     set -agF status-right "#{E:@catppuccin_status_battery}"
     set -g status-left-length 100
     set -g status-left ""
+    set -g @catppuccin_window_default_text " #W"
+    set -g @catppuccin_window_current_text " #W"
+    set -g @catppuccin_window_text " #W"
   '';
 }

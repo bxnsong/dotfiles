@@ -41,6 +41,11 @@ return {
     end,
     config = function()
       vim.cmd.colorscheme("calvera")
+
+      vim.cmd([[highlight DiffChange guifg=#6d6eb9 gui=reverse]])
+      vim.cmd([[highlight DiffAdd guifg=#368291 gui=reverse]])
+      vim.cmd([[highlight DiffDelete guifg=#743f50 guibg=#4e2e3e gui=reverse]])
+      vim.cmd([[highlight DiffText guifg=#8e8eed gui=reverse]])
     end,
   },
 

@@ -10,7 +10,6 @@ let
       chafa
       eza
       fd
-      gh
       httpie
       neofetch
       nixfmt-classic

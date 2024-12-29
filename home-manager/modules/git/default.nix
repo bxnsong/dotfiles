@@ -1,8 +1,58 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ delta ];
-  xdg.configFile = {
-    "git/themes.gitconfig".text = builtins.readFile ./themes.gitconfig;
+{ pkgs, ... }:
+let
+  yamlFormat = pkgs.formats.yaml { };
+  generateGhDashConfig = repo: {
+    theme = {
+      colors = {
+        text = {
+          primary = "#cdd6f4";
+          secondary = "#cba6f7";
+          inverted = "#11111b";
+          faint = "#bac2de";
+          warning = "#f9e2af";
+          success = "#a6e3a1";
+          error = "#f38ba8";
+        };
+        background = {
+          selected = "#313244";
+        };
+        border = {
+          primary = "#cba6f7";
+          secondary = "#45475a";
+          faint = "#313244";
+        };
+      };
+    };
+    prSections = [
+      {
+        title = "Open PRs";
+        filters = "is:open repo:${repo}";
+      }
+      {
+        title = "Needs My Review";
+        filters = "is:open review-requested:@me repo:${repo}";
+      }
+      {
+        title = "My PRs";
+        filters = "is:open author:@me repo:${repo}";
+      }
+    ];
+    issuesSections = [
+      {
+        title = "Open Issues";
+        filters = "is:open repo:${repo}";
+      }
+    ];
+    pager = {
+      diff = "delta";
+    };
+    repoPaths = {
+      "*/:repo" = "~/code/:repo";
+    };
   };
+in
+{
+  home.packages = with pkgs; [ delta ];
   programs = {
     gitui = {
       enable = true;
@@ -103,5 +153,20 @@
         pull.rebase = true;
       };
     };
+    gh = {
+      enable = true;
+      settings = {
+        git_protocol = "ssh";
+        editor = "nvim";
+      };
+    };
+    gh-dash = {
+      enable = true;
+    };
+  };
+  xdg.configFile = {
+    "git/themes.gitconfig".text = builtins.readFile ./themes.gitconfig;
+    "gh-dash/pokerscope-config.yml".source = yamlFormat.generate "pokerscope-config.yml" (generateGhDashConfig "pokershare/pokershare");
+    "gh-dash/discord-config.yml".source = yamlFormat.generate "discord-config.yml" (generateGhDashConfig "discord/discord");
   };
 }

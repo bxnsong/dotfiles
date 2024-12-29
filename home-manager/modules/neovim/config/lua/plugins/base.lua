@@ -3,7 +3,8 @@ return {
   -- disable the following plugins because of perf
   -- { "echasnovski/mini.indentscope", enabled = false },
   -- { "nvim-lualine/lualine.nvim", enabled = false },
-  -- { "bufferline.nvim", enabled = false },
+  { "bufferline.nvim", enabled = false },
+
   {
     "folke/snacks.nvim",
     opts = {

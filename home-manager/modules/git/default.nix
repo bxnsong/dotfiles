@@ -23,6 +23,17 @@ let
         };
       };
     };
+    defaults = {
+      view = "issues";
+      layout = {
+        issues = { };
+        prs = { };
+      };
+      preview = {
+        open = true;
+        width = 100;
+      };
+    };
     prSections = [
       {
         title = "Open PRs";
@@ -136,9 +147,12 @@ in
       userName = "Ben Soh";
       userEmail = "ben.soh@discordapp.com";
       includes = [{ path = "~/.config/git/themes.gitconfig"; }];
+      ignores = [
+        ".neoconf.json"
+        "*.swp"
+      ];
       extraConfig = {
         core = {
-          excludesFile = "~/.gitignore";
           pager = "delta";
         };
         delta = {

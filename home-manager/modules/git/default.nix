@@ -158,7 +158,7 @@ in
         delta = {
           navigate = true;
           light = false;
-          features = "collared-trogon";
+          features = "catppuccin-mocha";
         };
         diff.colorMoved = "default";
         fetch.prune = true;

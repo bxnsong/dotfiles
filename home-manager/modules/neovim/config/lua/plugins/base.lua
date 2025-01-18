@@ -6,6 +6,11 @@ return {
   { "bufferline.nvim", enabled = false },
 
   {
+    "rafamadriz/friendly-snippets",
+    enabled = false,
+  },
+
+  {
     "folke/snacks.nvim",
     opts = {
       indent = {

@@ -1,4 +1,5 @@
 {
+    "name": "snippets",
     "contributes": {
         "snippets": [
             {
@@ -8,6 +9,5 @@
                 "path": "./typescript-react.json"
             }
         ]
-    },
-    "name": "my-snippets"
+    }
 }

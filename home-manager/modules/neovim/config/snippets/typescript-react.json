@@ -3,5 +3,21 @@
         "prefix": "rfc",
         "body": "import * as React from 'react'\n\ninterface ${TM_FILENAME_BASE}Props {\n}\n\nexport const ${TM_FILENAME_BASE} = (props: ${TM_FILENAME_BASE}Props) => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
         "description": "Create a React functional component"
+    },
+    "tanstack router route file": {
+        "prefix": "route",
+        "body": [
+            "import { createFileRoute, Outlet } from '@tanstack/react-router'",
+            "",
+            "function ${1:routeName}Route() {",
+            "  return <Outlet />",
+            "}",
+            "",
+            "export const Route = createFileRoute('${2:path}')({",
+            "  component: ${1:routeName}Route",
+            "})",
+            ""
+        ],
+        "description": "tanstack router route file"
     }
 }

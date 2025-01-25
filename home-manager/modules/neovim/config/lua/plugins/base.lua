@@ -1,9 +1,8 @@
 return {
 
   -- disable the following plugins because of perf
-  -- { "echasnovski/mini.indentscope", enabled = false },
-  -- { "nvim-lualine/lualine.nvim", enabled = false },
   { "bufferline.nvim", enabled = false },
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
 
   {
     "rafamadriz/friendly-snippets",

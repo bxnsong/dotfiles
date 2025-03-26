@@ -20,4 +20,13 @@ vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameCopyCommitURL<CR>", { desc = "Co
 if vim.g.vscode then
   vim.keymap.set("n", "<C-d>", "20j")
   vim.keymap.set("n", "<C-u>", "20k")
+  vim.keymap.set("n", "<leader>\\", "<cmd>lua require('vscode').action('workbench.action.splitEditorRight')<CR>")
+  vim.keymap.set("n", "<leader>-", "<cmd>lua require('vscode').action('workbench.action.splitEditorDown')<CR>")
+  vim.keymap.set("n", "gr", "<cmd>lua require('vscode').action('editor.action.goToReferences')<CR>")
+  vim.keymap.set("n", "<leader>,", "<cmd>lua require('vscode').action('workbench.action.showAllEditors')<CR>")
+  vim.keymap.set("n", "<leader>sg", "<cmd>lua require('vscode').action('workbench.action.findInFiles')<CR>")
+  vim.keymap.set("n", "<leader>ff", "<cmd>lua require('vscode').action('workbench.action.quickOpen')<CR>")
+  vim.keymap.set("n", "]e", "<cmd>lua require('vscode').action('editor.action.marker.next')<CR>")
+  vim.keymap.set("n", "[e", "<cmd>lua require('vscode').action('editor.action.marker.prev')<CR>")
+  vim.keymap.set("n", "-", "<cmd>lua require('vscode').action('vsnetrw.open')<CR>")
 end

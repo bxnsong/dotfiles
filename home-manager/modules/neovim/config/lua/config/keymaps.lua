@@ -29,4 +29,11 @@ if vim.g.vscode then
   vim.keymap.set("n", "]e", "<cmd>lua require('vscode').action('editor.action.marker.next')<CR>")
   vim.keymap.set("n", "[e", "<cmd>lua require('vscode').action('editor.action.marker.prev')<CR>")
   vim.keymap.set("n", "-", "<cmd>lua require('vscode').action('vsnetrw.open')<CR>")
+  vim.keymap.set("n", "<leader>gy", "<cmd>lua require('vscode').action('gitlens.copyRemoteFileUrlToClipboard')<CR>")
+  vim.keymap.set("n", "<leader>gb", "<cmd>lua require('vscode').action('gitlens.copyRemoteCommitUrl')<CR>")
+  vim.keymap.set(
+    "c",
+    "q<cr>",
+    "<cmd>lua require('vscode').action('workbench.action.closeEditorsInGroup')<CR><cmd>lua require('vscode').action('workbench.action.closeQuickOpen')<CR>"
+  )
 end

@@ -16,3 +16,8 @@ vim.keymap.set("n", "<leader>\\", "<cmd>vsplit<CR>", { desc = "Split vertically"
 vim.keymap.set("n", "<leader>-", "<cmd>split<CR>", { desc = "Split horizontally" })
 
 vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameCopyCommitURL<CR>", { desc = "Copy Git blame URL" })
+
+if vim.g.vscode then
+  vim.keymap.set("n", "<C-d>", "20j")
+  vim.keymap.set("n", "<C-u>", "20k")
+end

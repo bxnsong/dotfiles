@@ -6,6 +6,12 @@ return {
   { "echasnovski/mini.animate", cond = not vim.g.vscode },
 
   {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+  },
+
+  {
     "rafamadriz/friendly-snippets",
     enabled = false,
   },

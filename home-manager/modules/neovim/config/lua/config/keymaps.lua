@@ -18,8 +18,8 @@ vim.keymap.set("n", "<leader>-", "<cmd>split<CR>", { desc = "Split horizontally"
 vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameCopyCommitURL<CR>", { desc = "Copy Git blame URL" })
 
 if vim.g.vscode then
-  vim.keymap.set("n", "<C-d>", "20j")
-  vim.keymap.set("n", "<C-u>", "20k")
+  vim.keymap.set("n", "u", "<Cmd>call VSCodeNotify('undo')<CR>")
+  vim.keymap.set("n", "<C-r>", "<Cmd>call VSCodeNotify('redo')<CR>")
   vim.keymap.set("n", "<leader>\\", "<cmd>lua require('vscode').action('workbench.action.splitEditorRight')<CR>")
   vim.keymap.set("n", "<leader>-", "<cmd>lua require('vscode').action('workbench.action.splitEditorDown')<CR>")
   vim.keymap.set("n", "gr", "<cmd>lua require('vscode').action('editor.action.goToReferences')<CR>")

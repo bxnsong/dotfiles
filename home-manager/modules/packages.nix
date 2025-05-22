@@ -10,6 +10,7 @@ let
       chafa
       eza
       fd
+      ffmpeg-full
       httpie
       neofetch
       nixfmt-classic

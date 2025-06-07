@@ -36,4 +36,6 @@ if vim.g.vscode then
     "q<cr>",
     "<cmd>lua require('vscode').action('workbench.action.closeEditorsInGroup')<CR><cmd>lua require('vscode').action('workbench.action.closeQuickOpen')<CR>"
   )
+  vim.keymap.set("n", "u", "<Cmd>call VSCodeNotify('undo')<CR>")
+  vim.keymap.set("n", "<C-r>", "<Cmd>call VSCodeNotify('redo')<CR>")
 end

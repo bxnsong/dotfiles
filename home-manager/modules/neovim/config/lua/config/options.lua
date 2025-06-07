@@ -23,7 +23,6 @@ if vim.g.vscode then
   vscode.update_config("workbench.activityBar.location", "hidden", "global")
   vscode.update_config("editor.gotoLocation.multipleDefinitions", "goto", "global")
   vscode.update_config("editor.fontFamily", "'FiraCode Nerd Font', Monaco, 'Courier New', monospace", "global")
-  vscode.update_config("redhat.telemetry.enabled", false, "global")
   vscode.update_config("editor.cursorSmoothCaretAnimation", "on", "global")
   vscode.update_config("editor.cursorBlinking", "smooth", "global")
   vscode.update_config("diffEditor.codeLens", true, "global")

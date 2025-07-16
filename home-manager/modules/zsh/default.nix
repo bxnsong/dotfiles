@@ -32,7 +32,7 @@ in
         PATH = "\${PATH}";
       };
 
-      initExtra = (builtins.readFile ./zshrc);
+      initContent = (builtins.readFile ./zshrc);
     };
   };
 }

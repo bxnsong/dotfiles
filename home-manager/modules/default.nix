@@ -25,6 +25,12 @@ in
     };
     darwinApps = { enable = pkgs.stdenv.hostPlatform.isDarwin; };
     xdg.configFile."fd/ignore".text = ".git";
+    nixpkgs = {
+      config = {
+        # claude-code
+        allowUnfree = true;
+      };
+    };
     programs = {
       home-manager.enable = true;
       bat = {

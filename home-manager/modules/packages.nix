@@ -1,9 +1,10 @@
 { pkgs, ben, ... }:
 let
-  nonWorkPackages = if !ben.work then
-    with pkgs; [ rustup jq yarn nodejs_22 corepack_22 texliveFull ]
-  else
-    [ ];
+  nonWorkPackages =
+    if !ben.work then
+      with pkgs; [ claude-code rustup jq yarn nodejs_22 corepack_22 texliveFull ]
+    else
+      [ ];
   packages = with pkgs;
     [
       chafa
@@ -19,4 +20,5 @@ let
       uv
       zoxide
     ] ++ nonWorkPackages;
-in { home = { inherit packages; }; }
+in
+{ home = { inherit packages; }; }

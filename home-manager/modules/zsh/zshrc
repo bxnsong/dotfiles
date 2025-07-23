@@ -1,9 +1,0 @@
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-
-if [[ -f "$HOME/.local.zshrc" ]]
-then
-    source "$HOME/.local.zshrc"
-fi
-
-eval "$(zoxide init zsh)"

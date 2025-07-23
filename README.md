@@ -7,9 +7,7 @@
 - [ ] Install Determinate Nix: `curl -fsSL https://install.determinate.systems/nix | sh -s -- install`
   - say **NO** to the first prompt (asking you to install Determinate)
 - [ ] `sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .`
-- [ ] (optional) `defaults write -g InitialKeyRepeat -int 10`
-- [ ] (optional) `defaults write -g KeyRepeat -int 1`
-- [ ] Log out and back in
+- [ ] Restart
 
 ### Git
 - [ ] Generate GitHub SSH key

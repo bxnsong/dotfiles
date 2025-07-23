@@ -33,8 +33,8 @@ in {
       NSGlobalDomain."com.apple.swipescrolldirection" = false;
       NSGlobalDomain._HIHideMenuBar = true;
       NSGlobalDomain.AppleInterfaceStyle = "Dark";
-      NSGlobalDomain.KeyRepeat = 2;
-      NSGlobalDomain.InitialKeyRepeat = 15;
+      NSGlobalDomain.KeyRepeat = 1;
+      NSGlobalDomain.InitialKeyRepeat = 10;
     };
   };
 

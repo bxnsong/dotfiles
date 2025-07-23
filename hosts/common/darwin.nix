@@ -146,6 +146,14 @@ in {
         "alt-8" = "workspace 8";
         "alt-9" = "workspace 9";
 
+        # Specific apps
+        "alt-q" =
+          "exec-and-forget osascript -e 'tell application \"Ghostty\" to activate'";
+        "alt-w" =
+          "exec-and-forget osascript -e 'tell application \"Arc\" to activate'";
+        "alt-e" =
+          "exec-and-forget osascript -e 'tell application \"Discord\" to activate'";
+
         # Move node to workspace
         "alt-shift-1" = "move-node-to-workspace 1";
         "alt-shift-2" = "move-node-to-workspace 2";

@@ -136,7 +136,7 @@ return {
 
   {
     "ruifm/gitlinker.nvim",
-    dependencies = { "plenary.nvim", "ojroques/vim-oscyank" },
+    dependencies = { "ojroques/vim-oscyank" },
     opts = {
       action_callback = function(url)
         vim.api.nvim_command("let @\" = '" .. url .. "'")

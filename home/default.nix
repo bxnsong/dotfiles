@@ -77,6 +77,7 @@ in {
   programs.neovim = {
     enable = true;
     extraLuaConfig = ''require("config.lazy")'';
+    defaultEditor = true;
   };
 
   programs.zsh = {
@@ -180,8 +181,35 @@ in {
   };
 
   programs.ghostty = {
+    enable = true;
+    package = if pkgs.stdenv.isLinux then pkgs.ghostty else pkgs.ghostty-bin;
     enableZshIntegration = true;
     themes = {
+      calvera = {
+        background = "0c0c1f";
+        foreground = "b3b1ad";
+        selection-foreground = "000000";
+        selection-background = "ffc600";
+        cursor-color = "ffcc00";
+        palette = [
+          "0=#091934"
+          "1=#f78c6c"
+          "2=#adcea1"
+          "3=#f9af4f"
+          "4=#53bdfa"
+          "5=#fae994"
+          "6=#90e1c6"
+          "7=#c7c7c7"
+          "8=#686868"
+          "9=#f07178"
+          "10=#c2d94c"
+          "11=#ffb454"
+          "12=#59c2ff"
+          "13=#ffee99"
+          "14=#95e6cb"
+          "15=#ffffff"
+        ];
+      };
       catppuccin-mocha = {
         palette = [
           "0=#45475a"
@@ -209,23 +237,25 @@ in {
       };
     };
     settings = {
-      theme = "catppuccin-mocha";
-      font-size = 10;
-      window-padding-x = 8;
-      window-padding-y = 8;
+      font-size = 12;
+      window-padding-x = 16;
+      window-padding-y = 6;
+      bold-is-bright = true;
+      theme = "calvera";
       macos-titlebar-style = "hidden";
     };
   };
 
   xdg.configFile = {
     "git/themes.gitconfig".text = builtins.readFile ./git/themes.gitconfig;
+    sketchybar = {
+      source = ./sketchybar;
+      recursive = true;
+    };
     nvim = {
       source = ./nvim/config;
       recursive = true;
     };
-  } // lib.mkIf pkgs.stdenv.isDarwin {
-    "aerospace/aerospace.toml".text =
-      builtins.readFile ../home-manager/modules/darwin/aerospace/aerospace.toml;
   };
 
 }

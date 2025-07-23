@@ -18,6 +18,7 @@
         inputs.home-manager.darwinModules.home-manager
         {
           networking.hostName = hostname;
+          networking.computerName = hostname;
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";

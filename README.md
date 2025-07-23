@@ -2,15 +2,14 @@
 
 ## Mac
 
-- [ ] Set hostname in Settings > About
+- [ ] `sudo scutil --set LocalHostName seol`
   - current supported hostnames are: `seol`
 - [ ] `git clone https://github.com/bxnsong/dotfiles.git && cd dotfiles`
 - [ ] Install Determinate Nix: `curl -fsSL https://install.determinate.systems/nix | sh -s -- install`
   - say **NO** to the first prompt (asking you to install Determinate)
 - [ ] `sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .`
-- [ ] Restart
 
-### Git
+### Git (if we intend on editing)
 
 - [ ] Generate GitHub SSH key
   - `ssh-keygen -t ed25519 -C "<email>"`
@@ -24,7 +23,15 @@
 
 - [ ] `desktoppr data/wallpapers/3.jpg`
 
-## Windows (no nix-darwin)
+## Linux/WSL (no nix-darwin) (WIP, probably won't work yet)
 
+- [ ] `git clone https://github.com/bxnsong/dotfiles.git && cd dotfiles`
+- [ ] Install Determinate Nix: `curl -fsSL https://install.determinate.systems/nix | sh -s -- install`
+  - say **NO** to the first prompt (asking you to install Determinate)
+- [ ] `hostname seol`
 - [ ] `nix run home-manager/master -- init --switch`
 - [ ] `home-manager switch --flake .`
+
+## Just (after initial install)
+
+- `just switch`

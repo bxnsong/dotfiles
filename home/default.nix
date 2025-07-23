@@ -11,6 +11,7 @@ in {
     eza
     fd
     ffmpeg-full
+    just
     neofetch
     nixfmt-classic
     ripgrep

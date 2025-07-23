@@ -168,7 +168,7 @@ in {
       upgrade = true;
     };
     global.autoUpdate = true;
-    casks = [ "arc" "discord" "orbstack" "raycast" ];
+    casks = [ "arc" "bitwarden" "discord" "orbstack" "raycast" ];
     brews = [ ];
   };
 }

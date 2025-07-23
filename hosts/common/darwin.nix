@@ -16,6 +16,11 @@ in {
     touchIdAuth = true;
   };
 
+  system.activationScripts.postActivation.text = ''
+    # Following line should allow us to avoid a logout/login cycle when changing settings
+    sudo -u ${username} /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+  '';
+
   system = {
     keyboard = {
       enableKeyMapping = true;
@@ -35,6 +40,30 @@ in {
       NSGlobalDomain.AppleInterfaceStyle = "Dark";
       NSGlobalDomain.KeyRepeat = 1;
       NSGlobalDomain.InitialKeyRepeat = 10;
+      screencapture.location = "~/Documents/Screenshots";
+      screencapture.type = "png";
+
+      CustomUserPreferences = {
+        "com.raycast.macos" = { raycastGlobalHotkey = "Command-49"; };
+        "com.apple.symbolichotkeys" = {
+          AppleSymbolicHotKeys = {
+            "64" = {
+              enabled = false;
+              value = {
+                parameters = [ 32 49 1048576 ];
+                type = "standard";
+              };
+            };
+            "65" = {
+              enabled = false;
+              value = {
+                parameters = [ 32 49 1572864 ];
+                type = "standard";
+              };
+            };
+          };
+        };
+      };
     };
   };
 

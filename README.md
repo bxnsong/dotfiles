@@ -18,7 +18,6 @@
 
 ### Raycast
 
-- [ ] System Settings > Keyboard > Keyboard Shortcuts > Spotlight (OFF)
 - [ ] System Settings > Keyboard > Shortcuts > App Shortcuts
   - Click the [+] button and in the sheet that appears...
   - Set Application: to: All Applications

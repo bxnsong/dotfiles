@@ -18,11 +18,7 @@
 
 ### Raycast
 
-- [ ] System Settings > Keyboard > Shortcuts > App Shortcuts
-  - Click the [+] button and in the sheet that appears...
-  - Set Application: to: All Applications
-  - Set Menu Title: to: Emoji & Symbols
-  - Set Keyboard Shortcut to e.g.: ⌃⇧⌘Space
+- [ ] `open /Applications/Raycast.app` (since we have no cmd+space right now)
 
 ### Wallpaper
 

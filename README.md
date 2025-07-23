@@ -1,5 +1,7 @@
 # New machine setup (Mac)
 
+`sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .`
+
 - [ ] Set hostname in Settings > About
 - [ ] Settings > Trackpad > Natural scrolling (OFF)
 - [ ] Settings > Customise modifier keys (CAPS -> CTRL)

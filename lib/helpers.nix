@@ -1,4 +1,4 @@
-{ inputs, outputs, ... }: {
+{ inputs, ... }: {
   mkDarwin = { hostname, username ? "ben", system ? "aarch64-darwin", }:
     let
       inherit (inputs.nixpkgs) lib;

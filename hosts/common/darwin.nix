@@ -207,6 +207,7 @@ in {
     global.autoUpdate = true;
     casks = [ "arc" "bitwarden" "desktoppr" "discord" "orbstack" "raycast" ];
     brews = [ ];
+    taps = builtins.attrNames config.nix-homebrew.taps;
   };
 }
 

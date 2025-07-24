@@ -1,6 +1,4 @@
-{ config, inputs, pkgs, lib, ... }:
-let
-in {
+{ pkgs, ... }: {
   home.stateVersion = "25.11";
 
   programs.home-manager.enable = true;
@@ -258,5 +256,4 @@ in {
       recursive = true;
     };
   };
-
 }

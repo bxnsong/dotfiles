@@ -1,4 +1,18 @@
 { inputs, ... }: {
+  mkLinux = { hostname, username ? "ben", system ? "x86_64-linux" }:
+    let
+      inherit (inputs.nixpkgs) lib;
+
+      customUserPath = ./../home/${hostname}.nix;
+
+      pkgs = import inputs.nixpkgs { inherit system; };
+    in inputs.home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [ ./../home ]
+        ++ lib.optionals (builtins.pathExists (customUserPath))
+        [ customUserPath ];
+    };
+
   mkDarwin = { hostname, username ? "ben", system ? "aarch64-darwin", }:
     let
       inherit (inputs.nixpkgs) lib;

@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, lib, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     claude-code
     corepack

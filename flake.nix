@@ -33,6 +33,12 @@
       inherit (self) outputs;
       libx = import ./lib { inherit inputs outputs; };
     in {
+      homeConfigurations = {
+        ben = libx.mkLinux {
+          hostname = "san";
+          username = "ben";
+        };
+      };
       darwinConfigurations = {
         seol = libx.mkDarwin {
           hostname = "seol";

@@ -1,6 +1,4 @@
-{ inputs, outputs, config, lib, hostname, system, username, pkgs, ... }:
-let inherit (inputs) nixpkgs;
-in {
+{ config, lib, system, username, pkgs, ... }: {
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs.config.allowUnfree = true;
 
@@ -205,8 +203,16 @@ in {
       upgrade = true;
     };
     global.autoUpdate = true;
-    casks =
-      [ "arc" "bitwarden" "claude" "desktoppr" "discord" "orbstack" "raycast" ];
+    casks = [
+      "arc"
+      "bitwarden"
+      "claude"
+      "cursor"
+      "desktoppr"
+      "discord"
+      "orbstack"
+      "raycast"
+    ];
     brews = [ ];
     taps = builtins.attrNames config.nix-homebrew.taps;
   };

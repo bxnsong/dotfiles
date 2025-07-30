@@ -25,21 +25,28 @@
       remapCapsLockToControl = true;
     };
     defaults = {
-      dock.persistent-apps = [
-        "${pkgs.ghostty-bin}/Applications/Ghostty.app"
-        "/Applications/Arc.app"
-        "/Applications/Discord.app"
-      ];
-      dock.autohide = true;
-      dock.show-recents = false;
       loginwindow.GuestEnabled = false;
-      NSGlobalDomain."com.apple.swipescrolldirection" = false;
-      NSGlobalDomain._HIHideMenuBar = true;
-      NSGlobalDomain.AppleInterfaceStyle = "Dark";
-      NSGlobalDomain.KeyRepeat = 1;
-      NSGlobalDomain.InitialKeyRepeat = 10;
       screencapture.location = "~/Documents/Screenshots";
       screencapture.type = "png";
+
+      dock = {
+        persistent-apps = [
+          "${pkgs.ghostty-bin}/Applications/Ghostty.app"
+          "/Applications/Arc.app"
+          "/Applications/Discord.app"
+        ];
+        autohide = true;
+        show-recents = false;
+      };
+
+      NSGlobalDomain = {
+        "com.apple.swipescrolldirection" = false;
+        _HIHideMenuBar = true;
+        AppleInterfaceStyle = "Dark";
+        KeyRepeat = 1;
+        InitialKeyRepeat = 10;
+        ApplePressAndHoldEnabled = false;
+      };
 
       CustomUserPreferences = {
         "com.raycast.macos" = { raycastGlobalHotkey = "Command-49"; };
@@ -144,13 +151,11 @@
         "alt-8" = "workspace 8";
         "alt-9" = "workspace 9";
 
-        # Specific apps
-        "alt-q" =
-          "exec-and-forget osascript -e 'tell application \"Ghostty\" to activate'";
-        "alt-w" =
-          "exec-and-forget osascript -e 'tell application \"Arc\" to activate'";
-        "alt-e" =
-          "exec-and-forget osascript -e 'tell application \"Discord\" to activate'";
+        # Alternate workspace navigation
+        "alt-q" = "workspace 1";
+        "alt-w" = "workspace 2";
+        "alt-e" = "workspace 3";
+        "alt-r" = "workspace 4";
 
         # Move node to workspace
         "alt-shift-1" = "move-node-to-workspace 1";
@@ -210,6 +215,7 @@
       "cursor"
       "desktoppr"
       "discord"
+      "firefox"
       "orbstack"
       "raycast"
     ];

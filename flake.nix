@@ -7,6 +7,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     homebrew-core = {
       url = "github:Homebrew/homebrew-core";
       flake = false;

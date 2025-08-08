@@ -6,6 +6,7 @@
     claude-code
     corepack
     gcc
+    ngrok
     nodePackages.nodejs
     rustup
   ];

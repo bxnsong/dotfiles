@@ -2,37 +2,75 @@
   programs.vscode = {
     enable = true;
     profiles.default = {
+      keybindings = [
+        {
+          key = "ctrl+u";
+          command = "extension.smoothscroll_cursorUp";
+        }
+        {
+          key = "ctrl+d";
+          command = "extension.smoothscroll_cursorDown";
+        }
+      ];
       userSettings = {
-        "editor.formatOnSave" = true;
-        "workbench.colorTheme" = "Outrun Electric";
-        "editor.smoothScrolling" = true;
-        "editor.guides.indentation" = false;
-        "extensions.autoUpdate" = false;
-        "git.autofetch" = true;
-        "editor.lineNumbers" = "relative";
-        "editor.scrollbar.horizontal" = "hidden";
-        "editor.scrollbar.vertical" = "hidden";
-        "workbench.editor.showTabs" = "none";
-        "breadcrumbs.enabled" = false;
-        "workbench.statusBar.visible" = true;
-        "workbench.activityBar.orientation" = "vertical";
-        "workbench.activityBar.location" = "hidden";
-        "editor.gotoLocation.multipleDefinitions" = "goto";
-        "editor.fontFamily" =
-          "'FiraCode Nerd Font', Monaco, 'Courier New', monospace";
-        "editor.cursorSmoothCaretAnimation" = "on";
-        "editor.cursorBlinking" = "smooth";
-        "diffEditor.codeLens" = true;
-        "workbench.iconTheme" = "material-icon-theme";
-        "window.customTitleBarVisibility" = "never";
-        "gitlens.plusFeatures.enabled" = false;
+        editor = {
+          codeActionsOnSave = {
+            source = {
+              organizeImports = { biome = "explicit"; };
+              fixAll = { biome = "explicit"; };
+            };
+          };
+          cursorBlinking = "smooth";
+          cursorSmoothCaretAnimation = "on";
+          fontFamily = "'FiraCode Nerd Font', Monaco, 'Courier New', monospace";
+          formatOnSave = true;
+          guides = { indentation = false; };
+          gotoLocation = { multipleDefinitions = "goto"; };
+          scrollbar = {
+            horizontal = "hidden";
+            vertical = "hidden";
+          };
+          smoothScrolling = true;
+          lineNumbers = "relative";
+        };
+        breadcrumbs = { enabled = false; };
+        diffEditor = { codelens = true; };
+        extensions = {
+          autoUpdate = false;
+          experimental = { affinity = { "asvetliakov.vscode-neovim" = 1; }; };
+        };
+        git = { autofetch = true; };
+        gitlens = { plusFeatures = { enabled = false; }; };
+        window = { customTitleBarVisibility = "never"; };
+        workbench = {
+          activityBar = {
+            location = "hidden";
+            orientation = "vertical";
+          };
+          colorTheme = "Celestial";
+          editor = { showTabs = "none"; };
+          iconTheme = "material-icon-theme";
+          statusBar = { visible = true; };
+        };
+        "vscode-neovim" = {
+          compositeKeys = { "jk" = { command = "vscode-neovim.escape"; }; };
+        };
       };
       extensions = with pkgs.vscode-marketplace; [
-        dracula-theme.theme-dracula
-        asvetliakov.vscode-neovim
-        hsnazar.hyper-term-theme
-        samrapdev.outrun
         apvarun.celestial
+        astro-build.astro-vscode
+        asvetliakov.vscode-neovim
+        biomejs.biome
+        bradlc.vscode-tailwindcss
+        cyansprite.smoothscroll
+        dracula-theme.theme-dracula
+        eamodio.gitlens
+        hsnazar.hyper-term-theme
+        jnoortheen.nix-ide
+        nefrob.vscode-just-syntax
+        pkief.material-icon-theme
+        samrapdev.outrun
+        vitest.explorer
       ];
     };
   };

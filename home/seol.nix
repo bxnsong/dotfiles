@@ -11,7 +11,18 @@
           key = "ctrl+d";
           command = "extension.smoothscroll_cursorDown";
         }
+        {
+          key = "ctrl+l";
+          command = "workbench.action.navigateRight";
+          when = "!editorTextFocus";
+        }
+        {
+          key = "ctrl+h";
+          command = "workbench.action.navigateLeft";
+          when = "!editorTextFocus";
+        }
       ];
+
       userSettings = {
         editor = {
           codeActionsOnSave = {
@@ -63,13 +74,17 @@
         biomejs.biome
         bradlc.vscode-tailwindcss
         cyansprite.smoothscroll
+        danprince.vsnetrw
         dracula-theme.theme-dracula
         eamodio.gitlens
         hsnazar.hyper-term-theme
         jnoortheen.nix-ide
-        nefrob.vscode-just-syntax
+        kokakiwi.vscode-just
         pkief.material-icon-theme
         samrapdev.outrun
+        sumneko.lua
+        tamasfe.even-better-toml
+        tompollak.lazygit-vscode
         vitest.explorer
       ];
     };

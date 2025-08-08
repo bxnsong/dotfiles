@@ -1,9 +1,9 @@
 return {
 
   -- disable the following plugins because of perf
-  { "bufferline.nvim", enabled = false },
+  { "bufferline.nvim",             enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
-  { "echasnovski/mini.animate", cond = not vim.g.vscode },
+  { "echasnovski/mini.animate",    cond = not vim.g.vscode },
 
   {
     "rafamadriz/friendly-snippets",
@@ -148,7 +148,7 @@ return {
   {
     "sindrets/diffview.nvim",
     keys = {
-      { "<leader>gdv", "<cmd>DiffviewOpen<cr>", desc = "Open diff view" },
+      { "<leader>gdv", "<cmd>DiffviewOpen<cr>",        desc = "Open diff view" },
       { "<leader>gdm", "<cmd>DiffviewOpen HEAD~1<cr>", desc = "Open diff view (HEAD~1)" },
       { "<leader>gdf", "<cmd>DiffviewFileHistory<cr>", desc = "Open file history" },
     },
@@ -218,7 +218,7 @@ return {
           },
           {
             pane = 2,
-            { section = "keys", gap = 1, padding = 1 },
+            { section = "keys",   gap = 1, padding = 1 },
             { section = "startup" },
           },
         },

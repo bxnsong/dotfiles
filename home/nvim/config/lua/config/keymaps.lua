@@ -25,17 +25,17 @@ if vim.g.vscode then
   vim.keymap.set("n", "gr", "<cmd>lua require('vscode').action('editor.action.goToReferences')<CR>")
   vim.keymap.set("n", "<leader>,", "<cmd>lua require('vscode').action('workbench.action.showAllEditors')<CR>")
   vim.keymap.set("n", "<leader>sg", "<cmd>lua require('vscode').action('workbench.action.findInFiles')<CR>")
+  vim.keymap.set("n", "<leader>gg", "<cmd>lua require('vscode').action('lazygit-vscode.toggle')<CR>")
   vim.keymap.set("n", "<leader>ff", "<cmd>lua require('vscode').action('workbench.action.quickOpen')<CR>")
   vim.keymap.set("n", "]e", "<cmd>lua require('vscode').action('editor.action.marker.next')<CR>")
   vim.keymap.set("n", "[e", "<cmd>lua require('vscode').action('editor.action.marker.prev')<CR>")
   vim.keymap.set("n", "-", "<cmd>lua require('vscode').action('vsnetrw.open')<CR>")
   vim.keymap.set("n", "<leader>gy", "<cmd>lua require('vscode').action('gitlens.copyRemoteFileUrlToClipboard')<CR>")
   vim.keymap.set("n", "<leader>gb", "<cmd>lua require('vscode').action('gitlens.copyRemoteCommitUrl')<CR>")
+  vim.keymap.set("n", "<leader>un", "<cmd>lua require('vscode').action('notifications.clearAll')<CR>")
   vim.keymap.set(
     "c",
     "q<cr>",
     "<cmd>lua require('vscode').action('workbench.action.closeEditorsInGroup')<CR><cmd>lua require('vscode').action('workbench.action.closeQuickOpen')<CR>"
   )
-  vim.keymap.set("n", "u", "<Cmd>call VSCodeNotify('undo')<CR>")
-  vim.keymap.set("n", "<C-r>", "<Cmd>call VSCodeNotify('redo')<CR>")
 end

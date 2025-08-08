@@ -66,6 +66,7 @@
         "vscode-neovim" = {
           compositeKeys = { "jk" = { command = "vscode-neovim.escape"; }; };
         };
+        "oil-code.disableVimKeymaps" = true;
       };
       extensions = with pkgs.vscode-marketplace; [
         apvarun.celestial
@@ -74,9 +75,9 @@
         biomejs.biome
         bradlc.vscode-tailwindcss
         cyansprite.smoothscroll
-        danprince.vsnetrw
         dracula-theme.theme-dracula
         eamodio.gitlens
+        haphazarddev.oil-code
         hsnazar.hyper-term-theme
         jnoortheen.nix-ide
         kokakiwi.vscode-just

@@ -39,10 +39,6 @@
           hostname = "san";
           username = "ben";
         };
-        discord = libx.mkLinux {
-          hostname = "box";
-          username = "discord";
-        };
       };
       darwinConfigurations = {
         seol = libx.mkDarwin {

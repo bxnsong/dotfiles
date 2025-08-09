@@ -4,6 +4,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    biome
     chafa
     delta
     eza

@@ -130,6 +130,9 @@
         "alt-k" = "focus up";
         "alt-l" = "focus right";
 
+        # Toggle between floating/tiling
+        "alt-shift-space" = "layout floating tiling";
+
         # Move commands
         "alt-shift-h" = "move left";
         "alt-shift-j" = "move down";

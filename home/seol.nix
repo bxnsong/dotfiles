@@ -25,12 +25,6 @@
 
       userSettings = {
         editor = {
-          codeActionsOnSave = {
-            source = {
-              organizeImports = { biome = "explicit"; };
-              fixAll = { biome = "explicit"; };
-            };
-          };
           cursorBlinking = "smooth";
           cursorSmoothCaretAnimation = "on";
           fontFamily = "'FiraCode Nerd Font', Monaco, 'Courier New', monospace";

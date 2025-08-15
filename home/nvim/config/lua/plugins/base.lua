@@ -1,9 +1,9 @@
 return {
 
   -- disable the following plugins because of perf
-  { "bufferline.nvim",             enabled = false },
+  { "bufferline.nvim", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
-  { "echasnovski/mini.animate",    cond = not vim.g.vscode },
+  { "echasnovski/mini.animate", cond = not vim.g.vscode },
 
   {
     "rafamadriz/friendly-snippets",
@@ -90,51 +90,6 @@ return {
   },
 
   {
-    "m4xshen/catppuccinight.nvim",
-    lazy = false,
-    name = "catppuccinight",
-    opts = {
-      flavour = "mocha",
-      custom_highlights = function(colours)
-        return {
-          VertSplit = { fg = colours.surface0 },
-        }
-      end,
-      integrations = {
-        alpha = true,
-        cmp = true,
-        gitsigns = true,
-        illuminate = true,
-        indent_blankline = { enabled = true },
-        lsp_trouble = true,
-        mason = true,
-        mini = true,
-        native_lsp = {
-          enabled = true,
-          underlines = {
-            errors = { "undercurl" },
-            hints = { "undercurl" },
-            warnings = { "undercurl" },
-            information = { "undercurl" },
-          },
-        },
-        navic = { enabled = true },
-        neotest = true,
-        noice = true,
-        notify = true,
-        neotree = true,
-        semantic_tokens = true,
-        telescope = true,
-        treesitter = true,
-        which_key = true,
-      },
-    },
-    config = function()
-      -- vim.cmd.colorscheme("catppuccin")
-    end,
-  },
-
-  {
     "ruifm/gitlinker.nvim",
     dependencies = { "ojroques/vim-oscyank" },
     opts = {
@@ -148,7 +103,7 @@ return {
   {
     "sindrets/diffview.nvim",
     keys = {
-      { "<leader>gdv", "<cmd>DiffviewOpen<cr>",        desc = "Open diff view" },
+      { "<leader>gdv", "<cmd>DiffviewOpen<cr>", desc = "Open diff view" },
       { "<leader>gdm", "<cmd>DiffviewOpen HEAD~1<cr>", desc = "Open diff view (HEAD~1)" },
       { "<leader>gdf", "<cmd>DiffviewFileHistory<cr>", desc = "Open file history" },
     },
@@ -218,7 +173,7 @@ return {
           },
           {
             pane = 2,
-            { section = "keys",   gap = 1, padding = 1 },
+            { section = "keys", gap = 1, padding = 1 },
             { section = "startup" },
           },
         },

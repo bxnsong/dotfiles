@@ -9,5 +9,6 @@
     ngrok
     nodePackages.nodejs
     rustup
+    yt-dlp
   ];
 }

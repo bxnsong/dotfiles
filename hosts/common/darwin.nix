@@ -230,17 +230,7 @@
       upgrade = true;
     };
     global.autoUpdate = true;
-    casks = [
-      "arc"
-      "bitwarden"
-      "claude"
-      "cursor"
-      "desktoppr"
-      "discord"
-      "firefox"
-      "orbstack"
-      "raycast"
-    ];
+    casks = [ "claude" "desktoppr" "onedrive" "orbstack" ];
     brews = [ ];
     taps = builtins.attrNames config.nix-homebrew.taps;
   };

@@ -9,15 +9,9 @@
   - say **NO** to the first prompt (asking you to install Determinate)
 - [ ] `sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .`
 
-### Git (if we intend on editing)
-
-- [ ] Generate GitHub SSH key
-  - `ssh-keygen -t ed25519 -C "<email>"`
-- [ ] `git remote set-url origin git@github.com:bxnsong/dotfiles.git`
-
 ### Raycast
 
-- [ ] `open /Applications/Raycast.app` (since we have no cmd+space right now)
+- [ ] `open /Users/ben/Applications/Home\ Manager\ Apps/Raycast.app` (since we have no cmd+space right now)
 
 ### Wallpaper
 
@@ -34,3 +28,9 @@
 ## Just (after initial install)
 
 - `just switch`
+
+## SSH key for Git (if we intend on editing)
+
+- [ ] Generate GitHub SSH key
+  - `ssh-keygen -t ed25519 -C "<email>"`
+- [ ] `git remote set-url origin git@github.com:bxnsong/dotfiles.git`

@@ -11,6 +11,7 @@
 
 ### Raycast
 
+- [ ] Might need to run `just switch` after initial install to set up Raycast keybindings
 - [ ] `open /Users/ben/Applications/Home\ Manager\ Apps/Raycast.app` (since we have no cmd+space right now)
 
 ### Wallpaper

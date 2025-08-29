@@ -1,10 +1,12 @@
-{ config, lib, system, username, pkgs, ... }: {
+{ inputs, config, lib, system, username, pkgs, ... }: {
   nix.settings.experimental-features = "nix-command flakes";
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    hostPlatform = lib.mkDefault "${system}";
+    overlays = [ inputs.nix-vscode-extensions.overlays.default ];
+  };
 
   system.stateVersion = 6;
-
-  nixpkgs.hostPlatform = lib.mkDefault "${system}";
 
   users.users.${username}.home = "/Users/${username}";
   system.primaryUser = "${username}";

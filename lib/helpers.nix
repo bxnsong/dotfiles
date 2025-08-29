@@ -14,7 +14,7 @@
   mkDarwin = { hostname, username ? "ben", system ? "aarch64-darwin", }:
     let
       inherit (inputs.nixpkgs) lib;
-      customConfPath = ./../hosts/${hostname}.nix;
+      customConfPath = ./../hosts/darwin/${hostname}.nix;
       customUserPath = ./../home/${hostname}.nix;
     in inputs.nix-darwin.lib.darwinSystem {
       specialArgs = { inherit system inputs username; };

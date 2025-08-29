@@ -232,7 +232,7 @@
       upgrade = true;
     };
     global.autoUpdate = true;
-    casks = [ "claude" "desktoppr" "onedrive" "orbstack" ];
+    casks = [ "claude" "desktoppr" ];
     brews = [ ];
     taps = builtins.attrNames config.nix-homebrew.taps;
   };

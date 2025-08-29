@@ -248,10 +248,6 @@
 
   xdg.configFile = {
     "git/themes.gitconfig".text = builtins.readFile ./git/themes.gitconfig;
-    sketchybar = {
-      source = ./sketchybar;
-      recursive = true;
-    };
     nvim = {
       source = ./nvim/config;
       recursive = true;

@@ -46,8 +46,6 @@
                 "homebrew/homebrew-core" = homebrew-core;
                 "homebrew/homebrew-cask" = homebrew-cask;
                 "homebrew/homebrew-bundle" = homebrew-bundle;
-                "nikitabobko/homebrew-tap" = aerospace-tap;
-                "FelixKratz/homebrew-formulae" = sketchybar-tap;
               };
               mutableTaps = false;
             };

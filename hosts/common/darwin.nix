@@ -1,4 +1,6 @@
-{ inputs, config, lib, system, username, pkgs, ... }: {
+{ inputs, config, lib, system, username, pkgs, ... }:
+let sketchybarConfig = import ./../../home/sketchybar { inherit pkgs; };
+in {
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs = {
     config.allowUnfree = true;
@@ -81,7 +83,13 @@
     pkgs.nerd-fonts.jetbrains-mono
   ];
 
-  services.sketchybar = { enable = true; };
+  services.sketchybar = {
+    enable = true;
+    config = ''
+      PLUGIN_DIR="${sketchybarConfig}/plugins"
+      source "${sketchybarConfig}/sketchybarrc"
+    '';
+  };
   services.jankyborders = {
     enable = true;
     width = 5.0;

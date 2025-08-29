@@ -20,14 +20,6 @@
       url = "github:Homebrew/homebrew-bundle";
       flake = false;
     };
-    aerospace-tap = {
-      url = "github:nikitabobko/homebrew-tap";
-      flake = false;
-    };
-    sketchybar-tap = {
-      url = "github:FelixKratz/homebrew-formulae";
-      flake = false;
-    };
   };
   outputs = { self, ... }@inputs:
     let

@@ -2,8 +2,6 @@
 
 FONT_FACE="JetBrainsMono Nerd Font"
 
-PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
-
 sketchybar --bar \
     height=32 \
     color=0x00000000 \

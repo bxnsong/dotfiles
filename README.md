@@ -2,11 +2,11 @@
 
 ## Hostnames
 
-| Hostname | Platform |
-|----------|----------|
-| `seol` | macOS |
-| `rumi` | macOS |
-| `san` | WSL |
+| Hostname | Platform | Description |
+|----------|----------|----------|
+| `rumi` | macOS | Work |
+| `seol` | macOS | Personal |
+| `san` | WSL | Personal |
 
 ## Mac
 

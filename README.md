@@ -1,9 +1,16 @@
 # dotfiles
 
+## Hostnames
+
+| Hostname | Platform |
+|----------|----------|
+| `seol` | macOS |
+| `rumi` | macOS |
+| `san` | WSL |
+
 ## Mac
 
-- [ ] `sudo scutil --set LocalHostName seol`
-  - current supported hostnames are: `seol`
+- [ ] `sudo scutil --set LocalHostName <hostname>`
 - [ ] `git clone https://github.com/bxnsong/dotfiles.git && cd dotfiles`
 - [ ] Install Determinate Nix: `curl -fsSL https://install.determinate.systems/nix | sh -s -- install`
   - say **NO** to the first prompt (asking you to install Determinate)

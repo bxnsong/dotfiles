@@ -13,6 +13,8 @@ in {
   users.users.${username}.home = "/Users/${username}";
   system.primaryUser = "${username}";
 
+  power.sleep.display = "never";
+
   security.pam.services.sudo_local = {
     reattach = true;
     touchIdAuth = true;

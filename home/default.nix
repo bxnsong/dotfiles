@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   home.stateVersion = "25.11";
 
   programs.home-manager.enable = true;
@@ -118,7 +118,7 @@
   programs.git = {
     enable = true;
     userName = "Ben Soh";
-    userEmail = "ben.xiao.soh@gmail.com";
+    userEmail = lib.mkDefault "ben.xiao.soh@gmail.com";
     includes = [{ path = "~/.config/git/themes.gitconfig"; }];
     ignores = [ ".neoconf.json" "*.swp" ];
     extraConfig = {

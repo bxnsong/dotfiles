@@ -125,7 +125,7 @@ in {
         outer = {
           left = 16;
           bottom = 16;
-          top = 8;
+          top = lib.mkDefault 8;
           right = 16;
         };
       };
@@ -207,30 +207,6 @@ in {
         "alt-shift-k" = [ "join-with up" "mode main" ];
         "alt-shift-l" = [ "join-with right" "mode main" ];
       };
-
-      # Window detection rules
-      on-window-detected = [
-        {
-          "if".app-name-regex-substring = "Cursor";
-          run = [ "layout tiling" "move-node-to-workspace 1" ];
-        }
-        {
-          "if".app-id = "company.thebrowser.Browser";
-          run = [ "layout tiling" "move-node-to-workspace 2" ];
-        }
-        {
-          "if".app-id = "com.hnc.Discord";
-          run = [ "layout tiling" "move-node-to-workspace 3" ];
-        }
-        {
-          "if".app-id = "com.anthropic.claudefordesktop";
-          run = [ "layout tiling" "move-node-to-workspace 4" ];
-        }
-        {
-          "if".app-id = "com.mitchellh.ghostty";
-          run = [ "layout tiling" "move-node-to-workspace 5" ];
-        }
-      ];
     };
   };
 

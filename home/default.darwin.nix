@@ -66,7 +66,6 @@
         apvarun.celestial
         astro-build.astro-vscode
         asvetliakov.vscode-neovim
-        biomejs.biome
         bradlc.vscode-tailwindcss
         cyansprite.smoothscroll
         dracula-theme.theme-dracula

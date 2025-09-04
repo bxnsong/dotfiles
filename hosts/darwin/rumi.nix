@@ -1,1 +1,3 @@
-{ ... }: { homebrew = { casks = [ "tailscale" ]; }; }
+{ ... }: {
+  services.aerospace = { settings = { gaps = { outer = { top = 36; }; }; }; };
+}

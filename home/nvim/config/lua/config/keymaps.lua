@@ -38,6 +38,7 @@ if vim.g.vscode then
     "q<cr>",
     "<cmd>lua require('vscode').action('workbench.action.closeEditorsInGroup')<CR><cmd>lua require('vscode').action('workbench.action.closeQuickOpen')<CR>"
   )
+  vim.keymap.set("n", "gr", "<cmd>lua require('vscode').action('editor.action.referenceSearch.trigger')<CR>")
 
   local vscode = require("vscode")
   local map = vim.keymap.set

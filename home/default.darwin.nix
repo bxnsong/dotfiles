@@ -21,6 +21,21 @@
           command = "workbench.action.navigateLeft";
           when = "!editorTextFocus";
         }
+        {
+          key = "ctrl+n";
+          command = "goToNextReference";
+          when = "inReferenceSearchEditor || referenceSearchVisible";
+        }
+        {
+          key = "ctrl+p";
+          command = "goToPreviousReference";
+          when = "inReferenceSearchEditor || referenceSearchVisible";
+        }
+        {
+          key = "enter";
+          command = "closeReferenceSearch";
+          when = "inReferenceSearchEditor || referenceSearchVisible";
+        }
       ];
 
       userSettings = {

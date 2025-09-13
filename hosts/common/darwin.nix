@@ -36,6 +36,7 @@ in {
       remapCapsLockToControl = true;
     };
     defaults = {
+      finder.AppleShowAllFiles = true;
       loginwindow.GuestEnabled = false;
       screencapture.location = "~/Documents/Screenshots";
       screencapture.type = "png";

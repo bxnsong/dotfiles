@@ -20,10 +20,15 @@ in {
     touchIdAuth = true;
   };
 
-  system.activationScripts.postActivation.text = ''
-    # Following line should allow us to avoid a logout/login cycle when changing settings
-    sudo -u ${username} /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-  '';
+  system.activationScripts = {
+    preActivation.text = ''
+      mkdir -p /Users/${username}/Documents/Screenshots
+    '';
+    postActivation.text = ''
+      # Following line should allow us to avoid a logout/login cycle when changing settings
+      sudo -u ${username} /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    '';
+  };
 
   system = {
     keyboard = {

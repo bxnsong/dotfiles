@@ -43,8 +43,8 @@ in {
       dock = {
         persistent-apps = [
           "${pkgs.ghostty-bin}/Applications/Ghostty.app"
-          "/Applications/Arc.app"
-          "/Applications/Discord.app"
+          "${pkgs.arc-browser}/Applications/Arc.app"
+          "${pkgs.discord}/Applications/Discord.app"
         ];
         autohide = true;
         show-recents = false;

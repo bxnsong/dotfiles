@@ -95,6 +95,7 @@
         tamasfe.even-better-toml
         tompollak.lazygit-vscode
         vitest.explorer
+        yoavbls.pretty-ts-errors
       ];
     };
   };

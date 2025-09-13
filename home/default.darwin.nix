@@ -50,7 +50,7 @@
             horizontal = "hidden";
             vertical = "hidden";
           };
-          smoothScrolling = true;
+          smoothScrolling = false;
           lineNumbers = "relative";
         };
         breadcrumbs = { enabled = false; };

@@ -4,7 +4,6 @@
     caddy
     colima
     docker
-    fzf
     graphviz
     jq
     mycli

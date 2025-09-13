@@ -125,7 +125,7 @@ in {
         outer = {
           left = 16;
           bottom = 16;
-          top = lib.mkDefault 8;
+          top = [ { monitor."built-in" = 8; } 36 ];
           right = 16;
         };
       };

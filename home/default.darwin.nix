@@ -68,7 +68,14 @@
             orientation = "vertical";
           };
           colorTheme = "Celestial";
-          editor = { showTabs = "none"; };
+          editor = {
+            showTabs = "none";
+            limit = {
+              enabled = true;
+              perEditorGroup = true;
+              value = 1;
+            };
+          };
           iconTheme = "material-icon-theme";
           statusBar = { visible = true; };
         };

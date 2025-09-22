@@ -15,6 +15,7 @@
     nixfmt-classic
     ripgrep
     tldr
+    tree-sitter
     unzip
     uv
     zoxide

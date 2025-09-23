@@ -1,1 +1,1 @@
-{ ... }: { homebrew = { casks = [ "onedrive" "orbstack" ]; }; }
+{ ... }: { homebrew = { casks = [ "onedrive" "orbstack" "firefox" ]; }; }

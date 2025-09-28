@@ -110,12 +110,10 @@
     arc-browser
     claude-code
     code-cursor
-    corepack
     discord
     jq
     nodePackages.nodejs
     raycast
-    rustup
   ];
 }
 

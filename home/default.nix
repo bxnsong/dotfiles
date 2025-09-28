@@ -6,14 +6,17 @@
   home.packages = with pkgs; [
     biome
     chafa
+    corepack
     delta
     eza
     fd
     ffmpeg-full
+    gcc
     just
     neofetch
     nixfmt-classic
     ripgrep
+    rustup
     tldr
     tree-sitter
     unzip

@@ -31,6 +31,11 @@
           hostname = "san";
           username = "ben";
         };
+        pipi = libx.mkLinux {
+          hostname = "pipi";
+          username = "pipi";
+          system = "aarch64-linux";
+        };
       };
       darwinConfigurations = {
         rumi = libx.mkDarwin {

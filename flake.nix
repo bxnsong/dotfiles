@@ -20,6 +20,10 @@
       url = "github:Homebrew/homebrew-bundle";
       flake = false;
     };
+    nix-podman-stacks.url = "github:Tarow/nix-podman-stacks";
+    nix-podman-stacks.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = { self, ... }@inputs:
     let

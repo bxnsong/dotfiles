@@ -6,6 +6,15 @@
       pkgs = import inputs.nixpkgs { inherit system; };
     in inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
+
+      extraSpecialArgs = {
+        inherit inputs;
+        userConfig = {
+          inherit username;
+          homeDirectory = "/home/${username}";
+        };
+      };
+
       modules = [ ./../home ]
         ++ lib.optionals (builtins.pathExists (customUserPath))
         [ customUserPath ];

@@ -1,28 +1,32 @@
-{ pkgs, lib, ... }: {
-  home.stateVersion = "25.11";
+{ pkgs, lib, userConfig, ... }: {
+
+  home = {
+    stateVersion = "25.11";
+    username = userConfig.username;
+    homeDirectory = userConfig.homeDirectory;
+    packages = with pkgs; [
+      biome
+      chafa
+      corepack
+      delta
+      eza
+      fd
+      ffmpeg-full
+      gcc
+      just
+      neofetch
+      nixfmt-classic
+      ripgrep
+      rustup
+      tldr
+      tree-sitter
+      unzip
+      uv
+      zoxide
+    ];
+  };
 
   programs.home-manager.enable = true;
-
-  home.packages = with pkgs; [
-    biome
-    chafa
-    corepack
-    delta
-    eza
-    fd
-    ffmpeg-full
-    gcc
-    just
-    neofetch
-    nixfmt-classic
-    ripgrep
-    rustup
-    tldr
-    tree-sitter
-    unzip
-    uv
-    zoxide
-  ];
 
   programs.tmux = {
     enable = true;

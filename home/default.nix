@@ -251,6 +251,9 @@
       bold-is-bright = true;
       theme = "calvera";
       macos-titlebar-style = "hidden";
+      clipboard-read = "allow";
+      clipboard-write = "allow";
+      copy-on-select = "clipboard";
     };
   };
 

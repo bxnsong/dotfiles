@@ -7,6 +7,10 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = tru
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Go to left window", remap = true })
+vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Go to lower window", remap = true })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Go to upper window", remap = true })
+vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to right window", remap = true })
 
 vim.keymap.set("n", ";", ":")
 vim.keymap.set({ "n", "x" }, "H", "^", { desc = "Go to start of line" })

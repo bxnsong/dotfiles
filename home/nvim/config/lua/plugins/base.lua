@@ -1,20 +1,43 @@
 return {
 
   -- disable the following plugins because of perf
-  { "bufferline.nvim", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   { "nvim-mini/mini.animate", cond = not vim.g.vscode },
 
   {
+    "saghen/blink.cmp",
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      keymap = {
+        ["<Tab>"] = {
+          "snippet_forward",
+          function() -- sidekick next edit suggestion
+            return require("sidekick").nes_jump_or_apply()
+          end,
+          function() -- if you are using Neovim's native inline completions
+            return vim.lsp.inline_completion.get()
+          end,
+          "fallback",
+        },
+      },
+    },
+  },
+
+  {
     "folke/sidekick.nvim",
     opts = {
-      -- add any options here
-      -- cli = {
-      --   mux = {
-      --     backend = "zellij",
-      --     enabled = true,
-      --   },
-      -- },
+      cli = {
+        win = {
+          keys = {
+            win_p = false,
+          },
+        },
+        -- mux = {
+        --   backend = "zellij",
+        --   enabled = true,
+        -- },
+      },
     },
     keys = {
       {
@@ -70,45 +93,6 @@ return {
     end,
     config = function()
       vim.cmd.colorscheme("calvera")
-    end,
-  },
-
-  {
-    "maxmx03/fluoromachine.nvim",
-    lazy = false,
-    priority = 1000,
-    name = "fluoromachine",
-    config = function()
-      local fm = require("fluoromachine")
-
-      fm.setup({
-        glow = true,
-        theme = "fluoromachine",
-        transparent = true,
-      })
-
-      -- vim.cmd.colorscheme("fluoromachine")
-    end,
-  },
-
-  {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    lazy = false,
-    config = function()
-      -- vim.cmd.colorscheme("rose-pine")
-    end,
-  },
-
-  {
-    "tiagovla/tokyodark.nvim",
-    name = "tokyodark",
-    opts = {
-      -- custom options here
-    },
-    config = function(_, opts)
-      require("tokyodark").setup(opts) -- calling setup is optional
-      -- vim.cmd.colorscheme("tokyodark")
     end,
   },
 

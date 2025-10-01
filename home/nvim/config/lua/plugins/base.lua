@@ -1,6 +1,7 @@
 return {
 
   -- disable the following plugins because of perf
+  { "bufferline.nvim", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   { "nvim-mini/mini.animate", cond = not vim.g.vscode },
 

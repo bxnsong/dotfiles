@@ -2,16 +2,17 @@
   imports = [
     inputs.nix-podman-stacks.homeModules.nps
     inputs.sops-nix.homeManagerModules.sops
+    {
+      options.services.podman.containers = lib.mkOption {
+        type = lib.types.attrsOf (lib.types.submodule ({ config, name, ... }: {
+          labels."traefik.http.routers.${name}.rule" =
+            lib.mkForce "Host(`${config.traefik.serviceHost}`)";
+        }));
+      };
+    }
   ];
 
   home.packages = with pkgs; [ age nodejs_24 sops ];
-  #
-  # services.podman.containers.homepage = {
-  #   environment = {
-  #     HOMEPAGE_ALLOWED_HOSTS =
-  #       lib.mkForce "pipi.run,homepage.pipi.run,localhost";
-  #   };
-  # };
 
   services.podman.containers.homepage = { traefik.subDomain = ""; };
 
@@ -29,15 +30,15 @@
         sessionSecretFile = config.sops.secrets."authelia/session_secret".path;
         storageEncryptionKeyFile =
           config.sops.secrets."authelia/encryption_key".path;
-        oidc = {
-          # enable = true;
-          # hmacSecretFile = config.sops.secrets."authelia/oidc_hmac_secret".path;
-          # jwksRsaKeyFile = config.sops.secrets."authelia/oidc_rsa_pk".path;
-        };
+        # oidc = {
+        #   enable = true;
+        #   hmacSecretFile = config.sops.secrets."authelia/oidc_hmac_secret".path;
+        #   jwksRsaKeyFile = config.sops.secrets."authelia/oidc_rsa_pk".path;
+        # };
       };
 
       docker-socket-proxy.enable = true;
-      homepage.enable = true;
+      homepage = { enable = true; };
       monitoring.enable = true;
 
       paperless = {
@@ -91,9 +92,6 @@
           http.middlewares = {
             ipwhitelist-internal = {
               ipAllowList.sourceRange = [
-                "10.0.0.0/8"
-                "172.16.0.0/12"
-                "192.168.0.0/16"
                 "100.64.0.0/10" # Tailscale CGNAT range
               ];
             };

@@ -16,7 +16,10 @@
       };
 
       modules = [ ./../home ] ++ [{
-        nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+        nixpkgs.overlays = [
+          inputs.neovim-nightly-overlay.overlays.default
+          inputs.claude-code.overlays.default
+        ];
       }] ++ lib.optionals (builtins.pathExists (customUserPath))
         [ customUserPath ];
     };

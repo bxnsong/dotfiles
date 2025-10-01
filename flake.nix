@@ -25,6 +25,7 @@
     nix-podman-stacks.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
   outputs = { self, ... }@inputs:
     let

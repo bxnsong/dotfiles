@@ -5,9 +5,12 @@
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_python_ruff = "ruff"
 
-vim.schedule(function()
+-- Clipboard
+if vim.env.SSH_TTY then
   vim.opt.clipboard:append("unnamedplus")
-
+  local function paste()
+    return vim.split(vim.fn.getreg(""), "\n")
+  end
   vim.g.clipboard = {
     name = "OSC 52",
     copy = {
@@ -15,8 +18,8 @@ vim.schedule(function()
       ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
     },
     paste = {
-      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+      ["+"] = paste,
+      ["*"] = paste,
     },
   }
-end)
+end

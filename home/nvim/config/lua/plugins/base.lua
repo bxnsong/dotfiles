@@ -31,7 +31,9 @@ return {
       cli = {
         win = {
           keys = {
+            stopinsert = false,
             win_p = false,
+            prompt = { "<C-x>", "prompt" },
           },
         },
         -- mux = {

@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, userConfig, ... }: {
+{ pkgs, lib, inputs, userConfig, config, ... }: {
 
   nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
 
@@ -95,7 +95,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.home.homeDirectory}/.config/zsh";
     oh-my-zsh = {
       enable = true;
       plugins = [ "gitfast" ];

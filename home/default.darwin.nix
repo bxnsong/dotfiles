@@ -107,7 +107,6 @@
     };
   };
   home.packages = with pkgs; [
-    arc-browser
     claude-code
     code-cursor
     discord

@@ -1,7 +1,4 @@
-{ pkgs, lib, inputs, userConfig, config, ... }: {
-
-  nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
-
+{ pkgs, lib, userConfig, config, ... }: {
   home = {
     stateVersion = "25.11";
     username = userConfig.username;

@@ -5,7 +5,10 @@ in {
   nixpkgs = {
     config.allowUnfree = true;
     hostPlatform = lib.mkDefault "${system}";
-    overlays = [ inputs.nix-vscode-extensions.overlays.default ];
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+      inputs.neovim-nightly-overlay.overlays.default
+    ];
   };
 
   system.stateVersion = 6;
@@ -42,11 +45,7 @@ in {
       screencapture.type = "png";
 
       dock = {
-        persistent-apps = [
-          "${pkgs.ghostty-bin}/Applications/Ghostty.app"
-          "${pkgs.arc-browser}/Applications/Arc.app"
-          "${pkgs.discord}/Applications/Discord.app"
-        ];
+        persistent-apps = [ ];
         autohide = true;
         show-recents = false;
       };
@@ -224,7 +223,7 @@ in {
       upgrade = true;
     };
     global.autoUpdate = true;
-    casks = [ "claude" "desktoppr" ];
+    casks = [ "arc" "claude" "desktoppr" ];
     brews = [ ];
     taps = builtins.attrNames config.nix-homebrew.taps;
   };

@@ -15,8 +15,9 @@
         };
       };
 
-      modules = [ ./../home ]
-        ++ lib.optionals (builtins.pathExists (customUserPath))
+      modules = [ ./../home ] ++ [{
+        nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+      }] ++ lib.optionals (builtins.pathExists (customUserPath))
         [ customUserPath ];
     };
 
@@ -37,7 +38,13 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              userConfig = {
+                inherit username;
+                homeDirectory = "/Users/${username}";
+              };
+            };
             home-manager.users.${username} = {
               imports = [ ./../home ./../home/default.darwin.nix ]
                 ++ lib.optionals (builtins.pathExists (customUserPath))

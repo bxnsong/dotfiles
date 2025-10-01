@@ -4,6 +4,7 @@
 
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_python_ruff = "ruff"
+vim.lsp.inline_completion.enable()
 
 -- Clipboard
 if vim.env.SSH_TTY then

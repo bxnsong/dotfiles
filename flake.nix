@@ -6,6 +6,7 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     homebrew-core = {

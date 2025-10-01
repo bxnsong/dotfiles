@@ -6,6 +6,29 @@ return {
   { "nvim-mini/mini.animate", cond = not vim.g.vscode },
 
   {
+    "folke/sidekick.nvim",
+    opts = {
+      -- add any options here
+      -- cli = {
+      --   mux = {
+      --     backend = "zellij",
+      --     enabled = true,
+      --   },
+      -- },
+    },
+    keys = {
+      {
+        "<leader>ac",
+        function()
+          require("sidekick.cli").toggle({ name = "claude", focus = true })
+        end,
+        desc = "Sidekick Claude Toggle",
+        mode = { "n", "v" },
+      },
+    },
+  },
+
+  {
     "rafamadriz/friendly-snippets",
     enabled = false,
   },

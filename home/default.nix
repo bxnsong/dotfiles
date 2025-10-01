@@ -250,6 +250,7 @@
       bold-is-bright = true;
       theme = "calvera";
       macos-titlebar-style = "hidden";
+      macos-option-as-alt = true;
       clipboard-read = "allow";
       clipboard-write = "allow";
       copy-on-select = "clipboard";

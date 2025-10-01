@@ -64,7 +64,16 @@ in {
         "com.raycast.macos" = { raycastGlobalHotkey = "Command-49"; };
         "com.apple.symbolichotkeys" = {
           AppleSymbolicHotKeys = {
+            "60" = {
+              # Disable '^ + Space' for selecting the previous input source
+              enabled = false;
+            };
+            "61" = {
+              # Disable '^ + Option + Space' for selecting the next input source
+              enabled = false;
+            };
             "64" = {
+              # Disable 'Cmd + Space' for Spotlight Search
               enabled = false;
               value = {
                 parameters = [ 32 49 1048576 ];
@@ -72,6 +81,7 @@ in {
               };
             };
             "65" = {
+              # Disable 'Cmd + Alt + Space' for Finder search window
               enabled = false;
               value = {
                 parameters = [ 32 49 1572864 ];

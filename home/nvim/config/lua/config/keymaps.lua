@@ -15,7 +15,11 @@ vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to right window",
 vim.keymap.set("n", ";", ":")
 vim.keymap.set({ "n", "x" }, "H", "^", { desc = "Go to start of line" })
 vim.keymap.set({ "n", "x" }, "L", "$", { desc = "Go to end of line" })
-vim.keymap.set("i", "jk", "<C-c>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "JK", "<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "Jk", "<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "jK", "<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("i", "kj", "<Esc>", { desc = "Exit insert mode" })
 vim.keymap.set("n", "<leader>\\", "<cmd>vsplit<CR>", { desc = "Split vertically" })
 vim.keymap.set("n", "<leader>-", "<cmd>split<CR>", { desc = "Split horizontally" })
 

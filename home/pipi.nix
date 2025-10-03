@@ -14,7 +14,8 @@
 
   home.packages = with pkgs; [ age nodejs_24 sops ];
 
-  # services.podman.containers.homepage = { traefik.subDomain = ""; };
+  services.podman.containers.donetick.image =
+    lib.mkForce "docker.io/donetick/donetick:v0.1.53";
 
   nps = {
     hostIP4Address = "100.72.192.60";
@@ -48,6 +49,19 @@
       };
 
       docker-socket-proxy.enable = true;
+
+      donetick = {
+        enable = true;
+        jwtSecretFile = config.sops.secrets."donetick/jwt_secret".path;
+        oidc = {
+          enable = true;
+          clientSecretFile =
+            config.sops.secrets."donetick/authelia_secret".path;
+          clientSecretHash =
+            "$pbkdf2-sha512$310000$6QbOThHNvD7MaVIOoclmTA$kEsHhPUgX.6d0jdyjxpqqK0.7SycSWr246AHlRoKczEvVD44ITOW7lx1Nzod2RMGAwvUsfsj6wUb.lnSnejCRQ";
+        };
+      };
+
       dozzle.enable = true;
       glance.enable = true;
 
@@ -110,17 +124,6 @@
       microbin.enable = true;
       monitoring.enable = true;
       n8n.enable = true;
-      donetick = {
-        enable = true;
-        jwtSecretFile = config.sops.secrets."donetick/jwt_secret".path;
-        oidc = {
-          enable = true;
-          clientSecretFile =
-            config.sops.secrets."donetick/authelia_secret".path;
-          clientSecretHash =
-            "$pbkdf2-sha512$310000$6QbOThHNvD7MaVIOoclmTA$kEsHhPUgX.6d0jdyjxpqqK0.7SycSWr246AHlRoKczEvVD44ITOW7lx1Nzod2RMGAwvUsfsj6wUb.lnSnejCRQ";
-        };
-      };
 
       outline = {
         containers.outline.extraEnv.OIDC_SCOPES = lib.mkForce {

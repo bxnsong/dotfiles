@@ -1,4 +1,1 @@
-{ ... }: {
-  homebrew = { casks = [ "onedrive" "orbstack" "firefox" ]; };
-  services.tailscale.enable = true;
-}
+{ ... }: { homebrew = { casks = [ "onedrive" "orbstack" "firefox" ]; }; }

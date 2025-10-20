@@ -1,2 +1,2 @@
-{ pkgs, ... }: { home.packages = with pkgs; [ qmk yt-dlp ]; }
+{ pkgs, ... }: { home.packages = with pkgs; [ codex qmk yt-dlp ]; }
 

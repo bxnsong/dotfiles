@@ -46,10 +46,10 @@
   programs.lazygit = {
     enable = true;
     settings = {
-      git.paging = {
+      git.pagers = [{
         colorArg = "always";
         pager = "delta --dark --paging=never";
-      };
+      }];
       gui.theme = {
         lightTheme = false;
         activeBorderColor = [
@@ -124,11 +124,11 @@
 
   programs.git = {
     enable = true;
-    userName = "Ben Soh";
-    userEmail = lib.mkDefault "ben.xiao.soh@gmail.com";
-    includes = [{ path = "~/.config/git/themes.gitconfig"; }];
-    ignores = [ ".neoconf.json" "*.swp" ];
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Ben Soh";
+        email = lib.mkDefault "ben.xiao.soh@gmail.com";
+      };
       core = { pager = "delta"; };
       delta = {
         navigate = true;
@@ -141,6 +141,8 @@
       merge.conflictstyle = "diff3";
       pull.rebase = true;
     };
+    includes = [{ path = "~/.config/git/themes.gitconfig"; }];
+    ignores = [ ".neoconf.json" "*.swp" ];
   };
 
   programs.gh = {

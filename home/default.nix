@@ -142,7 +142,7 @@
       pull.rebase = true;
     };
     includes = [{ path = "~/.config/git/themes.gitconfig"; }];
-    ignores = [ ".neoconf.json" "*.swp" ];
+    ignores = [ ".neoconf.json" "*.swp" ".lazy.lua" ];
   };
 
   programs.gh = {

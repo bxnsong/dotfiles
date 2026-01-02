@@ -3,11 +3,10 @@
 ## Hostnames
 
 | Hostname | Platform | Description |
-|----------|----------|----------|
-| `rumi` | macOS | Work |
-| `seol` | macOS | Personal |
-| `san` | WSL | Personal |
-| `pipi` | Linux | Pi |
+| -------- | -------- | ----------- |
+| `seol`   | macOS    | Personal    |
+| `san`    | WSL      | Personal    |
+| `pipi`   | Linux    | Pi          |
 
 ## Mac
 

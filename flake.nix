@@ -44,10 +44,6 @@
         };
       };
       darwinConfigurations = {
-        rumi = libx.mkDarwin {
-          hostname = "rumi";
-          username = "ben";
-        };
         seol = libx.mkDarwin {
           hostname = "seol";
           username = "ben";

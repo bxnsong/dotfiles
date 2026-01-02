@@ -10,7 +10,6 @@
       delta
       eza
       fd
-      ffmpeg-full
       gcc
       just
       neofetch

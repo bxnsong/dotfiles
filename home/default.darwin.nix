@@ -107,7 +107,6 @@
     };
   };
   home.packages = with pkgs; [
-    claude-code
     code-cursor
     discord
     jq

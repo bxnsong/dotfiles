@@ -7,7 +7,6 @@
       biome
       chafa
       claude-code
-      corepack
       delta
       eza
       fd

@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [ qmk yt-dlp ];
+  home.packages = with pkgs; [ pnpm qmk yt-dlp ];
 
   programs.codex = {
     enable = true;

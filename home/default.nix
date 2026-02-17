@@ -13,7 +13,7 @@
       gcc
       just
       neofetch
-      nixfmt-classic
+      nixfmt
       ripgrep
       rustup
       tldr
@@ -82,7 +82,7 @@
 
   programs.neovim = {
     enable = true;
-    extraLuaConfig = ''require("config.lazy")'';
+    initLua = ''require("config.lazy")'';
     defaultEditor = true;
   };
 

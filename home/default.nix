@@ -1,4 +1,11 @@
-{ pkgs, lib, userConfig, config, ... }: {
+{
+  pkgs,
+  lib,
+  userConfig,
+  config,
+  ...
+}:
+{
   home = {
     stateVersion = "25.11";
     username = userConfig.username;
@@ -16,6 +23,7 @@
       nixfmt
       ripgrep
       rustup
+      statix
       tldr
       tree-sitter
       unzip
@@ -45,10 +53,12 @@
   programs.lazygit = {
     enable = true;
     settings = {
-      git.pagers = [{
-        colorArg = "always";
-        pager = "delta --dark --paging=never";
-      }];
+      git.pagers = [
+        {
+          colorArg = "always";
+          pager = "delta --dark --paging=never";
+        }
+      ];
       gui.theme = {
         lightTheme = false;
         activeBorderColor = [
@@ -128,7 +138,9 @@
         name = "Ben Soh";
         email = lib.mkDefault "ben.xiao.soh@gmail.com";
       };
-      core = { pager = "delta"; };
+      core = {
+        pager = "delta";
+      };
       delta = {
         navigate = true;
         light = false;
@@ -140,8 +152,12 @@
       merge.conflictstyle = "diff3";
       pull.rebase = true;
     };
-    includes = [{ path = "~/.config/git/themes.gitconfig"; }];
-    ignores = [ ".neoconf.json" "*.swp" ".lazy.lua" ];
+    includes = [ { path = "~/.config/git/themes.gitconfig"; } ];
+    ignores = [
+      ".neoconf.json"
+      "*.swp"
+      ".lazy.lua"
+    ];
   };
 
   programs.gh = {
@@ -154,8 +170,7 @@
 
   programs.fzf = {
     enable = true;
-    defaultCommand =
-      "fd --type f --color=always --exclude .git --ignore-file ~/.gitignore";
+    defaultCommand = "fd --type f --color=always --exclude .git --ignore-file ~/.gitignore";
     colors = {
       bg = "#1e1e2e";
       "bg+" = "#313244";
@@ -174,7 +189,9 @@
 
   programs.bat = {
     enable = true;
-    config = { theme = "mocha"; };
+    config = {
+      theme = "mocha";
+    };
     themes = {
       mocha = {
         src = pkgs.fetchFromGitHub {

@@ -16,10 +16,10 @@
       claude-code
       delta
       eza
+      fastfetch
       fd
       gcc
       just
-      neofetch
       nixfmt
       ripgrep
       rustup

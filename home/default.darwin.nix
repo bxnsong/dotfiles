@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode = {
     enable = true;
     profiles.default = {
@@ -44,8 +45,12 @@
           cursorSmoothCaretAnimation = "on";
           fontFamily = "'FiraCode Nerd Font', Monaco, 'Courier New', monospace";
           formatOnSave = true;
-          guides = { indentation = false; };
-          gotoLocation = { multipleDefinitions = "goto"; };
+          guides = {
+            indentation = false;
+          };
+          gotoLocation = {
+            multipleDefinitions = "goto";
+          };
           scrollbar = {
             horizontal = "hidden";
             vertical = "hidden";
@@ -53,15 +58,31 @@
           smoothScrolling = false;
           lineNumbers = "relative";
         };
-        breadcrumbs = { enabled = false; };
-        diffEditor = { codelens = true; };
+        breadcrumbs = {
+          enabled = false;
+        };
+        diffEditor = {
+          codelens = true;
+        };
         extensions = {
           autoUpdate = false;
-          experimental = { affinity = { "asvetliakov.vscode-neovim" = 1; }; };
+          experimental = {
+            affinity = {
+              "asvetliakov.vscode-neovim" = 1;
+            };
+          };
         };
-        git = { autofetch = true; };
-        gitlens = { plusFeatures = { enabled = false; }; };
-        window = { customTitleBarVisibility = "never"; };
+        git = {
+          autofetch = true;
+        };
+        gitlens = {
+          plusFeatures = {
+            enabled = false;
+          };
+        };
+        window = {
+          customTitleBarVisibility = "never";
+        };
         workbench = {
           activityBar = {
             location = "hidden";
@@ -77,10 +98,16 @@
             };
           };
           iconTheme = "material-icon-theme";
-          statusBar = { visible = true; };
+          statusBar = {
+            visible = true;
+          };
         };
         "vscode-neovim" = {
-          compositeKeys = { "jk" = { command = "vscode-neovim.escape"; }; };
+          compositeKeys = {
+            "jk" = {
+              command = "vscode-neovim.escape";
+            };
+          };
         };
         "oil-code.disableVimKeymaps" = true;
       };
@@ -110,8 +137,7 @@
     code-cursor
     discord
     jq
-    nodePackages.nodejs
+    nodejs_24
     raycast
   ];
 }
-

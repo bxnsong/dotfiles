@@ -1,5 +1,10 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ pnpm qmk yt-dlp ];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    pnpm
+    qmk
+    yt-dlp
+  ];
 
   programs.codex = {
     enable = true;
@@ -19,5 +24,6 @@
       };
     };
   };
-}
 
+  programs.go.enable = true;
+}

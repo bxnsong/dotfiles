@@ -25,13 +25,15 @@
     nix-podman-stacks.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-    claude-code.url = "github:sadjow/claude-code-nix";
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
-  outputs = { self, ... }@inputs:
+  outputs =
+    { self, ... }@inputs:
     let
       inherit (self) outputs;
       libx = import ./lib { inherit inputs outputs; };
-    in {
+    in
+    {
       homeConfigurations = {
         ben = libx.mkLinux {
           hostname = "san";

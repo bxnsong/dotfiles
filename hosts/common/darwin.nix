@@ -1,6 +1,16 @@
-{ inputs, config, lib, system, username, pkgs, ... }:
-let sketchybarConfig = import ./../../home/sketchybar { inherit pkgs; };
-in {
+{
+  inputs,
+  config,
+  lib,
+  system,
+  username,
+  pkgs,
+  ...
+}:
+let
+  sketchybarConfig = import ./../../home/sketchybar { inherit pkgs; };
+in
+{
   nix.settings.experimental-features = "nix-command flakes";
   nixpkgs = {
     config.allowUnfree = true;
@@ -8,7 +18,7 @@ in {
     overlays = [
       inputs.nix-vscode-extensions.overlays.default
       inputs.neovim-nightly-overlay.overlays.default
-      inputs.claude-code.overlays.default
+      inputs.llm-agents.overlays.default
     ];
   };
 
@@ -61,7 +71,9 @@ in {
       };
 
       CustomUserPreferences = {
-        "com.raycast.macos" = { raycastGlobalHotkey = "Command-49"; };
+        "com.raycast.macos" = {
+          raycastGlobalHotkey = "Command-49";
+        };
         "com.apple.symbolichotkeys" = {
           AppleSymbolicHotKeys = {
             "60" = {
@@ -76,7 +88,11 @@ in {
               # Disable 'Cmd + Space' for Spotlight Search
               enabled = false;
               value = {
-                parameters = [ 32 49 1048576 ];
+                parameters = [
+                  32
+                  49
+                  1048576
+                ];
                 type = "standard";
               };
             };
@@ -84,7 +100,11 @@ in {
               # Disable 'Cmd + Alt + Space' for Finder search window
               enabled = false;
               value = {
-                parameters = [ 32 49 1572864 ];
+                parameters = [
+                  32
+                  49
+                  1572864
+                ];
                 type = "standard";
               };
             };
@@ -141,7 +161,10 @@ in {
         outer = {
           left = 16;
           bottom = 16;
-          top = [ { monitor."built-in" = 8; } 36 ];
+          top = [
+            { monitor."built-in" = 8; }
+            36
+          ];
           right = 16;
         };
       };
@@ -210,18 +233,39 @@ in {
 
       # Key bindings - service mode
       mode.service.binding = {
-        "esc" = [ "reload-config" "mode main" ];
-        "r" = [ "flatten-workspace-tree" "mode main" ]; # reset layout
+        "esc" = [
+          "reload-config"
+          "mode main"
+        ];
+        "r" = [
+          "flatten-workspace-tree"
+          "mode main"
+        ]; # reset layout
         "f" = [
           "layout floating tiling"
           "mode main"
         ]; # Toggle between floating and tiling layout
-        "backspace" = [ "close-all-windows-but-current" "mode main" ];
+        "backspace" = [
+          "close-all-windows-but-current"
+          "mode main"
+        ];
 
-        "alt-shift-h" = [ "join-with left" "mode main" ];
-        "alt-shift-j" = [ "join-with down" "mode main" ];
-        "alt-shift-k" = [ "join-with up" "mode main" ];
-        "alt-shift-l" = [ "join-with right" "mode main" ];
+        "alt-shift-h" = [
+          "join-with left"
+          "mode main"
+        ];
+        "alt-shift-j" = [
+          "join-with down"
+          "mode main"
+        ];
+        "alt-shift-k" = [
+          "join-with up"
+          "mode main"
+        ];
+        "alt-shift-l" = [
+          "join-with right"
+          "mode main"
+        ];
       };
     };
   };
@@ -234,9 +278,12 @@ in {
       upgrade = true;
     };
     global.autoUpdate = true;
-    casks = [ "arc" "claude" "desktoppr" ];
+    casks = [
+      "arc"
+      "claude"
+      "desktoppr"
+    ];
     brews = [ ];
     taps = builtins.attrNames config.nix-homebrew.taps;
   };
 }
-

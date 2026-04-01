@@ -8,6 +8,7 @@
 
   programs.codex = {
     enable = true;
+    package = pkgs.llm-agents.codex;
     settings = {
       mcp_servers = {
         serena = {

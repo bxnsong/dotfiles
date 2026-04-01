@@ -13,7 +13,7 @@
     packages = with pkgs; [
       biome
       chafa
-      claude-code
+      llm-agents.claude-code
       delta
       eza
       fastfetch

@@ -12,12 +12,10 @@
     settings = {
       mcp_servers = {
         serena = {
-          command = "uvx";
+          command = "serena";
           args = [
-            "--from"
-            "git+https://github.com/oraios/serena"
-            "serena"
             "start-mcp-server"
+            "--project-from-cwd"
             "--context"
             "codex"
           ];

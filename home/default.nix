@@ -94,6 +94,8 @@
     enable = true;
     initLua = ''require("config.lazy")'';
     defaultEditor = true;
+    withPython3 = true;
+    withRuby = true;
   };
 
   programs.zsh = {
@@ -121,7 +123,7 @@
       GIT_EDITOR = "nvim";
       PATH = "\${PATH}";
     };
-    initContent = (builtins.readFile ./zsh/zshrc);
+    initContent = builtins.readFile ./zsh/zshrc;
   };
 
   programs.starship = {

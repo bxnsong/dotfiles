@@ -5,7 +5,7 @@
     codex
     ffmpeg-full
     ngrok
-    nodePackages.nodejs
+    nodejs_22
     pnpm
     yt-dlp
   ];

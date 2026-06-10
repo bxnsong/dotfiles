@@ -137,7 +137,7 @@
     code-cursor
     discord
     jq
-    nodejs_24
+    nodejs_22
     raycast
   ];
 }

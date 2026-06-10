@@ -25,7 +25,7 @@
     nix-podman-stacks.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-    llm-agents.url = "github:numtide/llm-agents.nix";
+    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
   outputs =
     { self, ... }@inputs:

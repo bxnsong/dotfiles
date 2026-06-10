@@ -18,7 +18,6 @@ in
     overlays = [
       inputs.nix-vscode-extensions.overlays.default
       inputs.neovim-nightly-overlay.overlays.default
-      inputs.llm-agents.overlays.default
     ];
   };
 

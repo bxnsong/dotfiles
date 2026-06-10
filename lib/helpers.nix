@@ -29,7 +29,6 @@
         {
           nixpkgs.overlays = [
             inputs.neovim-nightly-overlay.overlays.default
-            inputs.llm-agents.overlays.default
           ];
         }
       ]

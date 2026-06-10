@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   programs.vscode = {
     enable = true;
@@ -133,11 +133,15 @@
       ];
     };
   };
-  home.packages = with pkgs; [
-    code-cursor
-    discord
-    jq
-    nodejs_22
-    raycast
-  ];
+  home.packages =
+    with pkgs;
+    [
+      discord
+      jq
+      nodejs_22
+      raycast
+    ]
+    ++ [
+      inputs.codex-cli-nix.packages.${pkgs.system}.default
+    ];
 }

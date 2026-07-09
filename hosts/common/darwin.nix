@@ -279,7 +279,6 @@ in
     global.autoUpdate = true;
     casks = [
       "arc"
-      "claude"
       "desktoppr"
     ];
     brews = [ ];

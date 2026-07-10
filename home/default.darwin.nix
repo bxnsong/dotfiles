@@ -5,7 +5,7 @@
     [
       discord
       jq
-      nodejs_22
+      nodejs_26
       raycast
     ]
     ++ [

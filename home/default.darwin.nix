@@ -5,6 +5,7 @@
     [
       discord
       jq
+      (pnpm.override { nodejs = nodejs_26; })
       nodejs_26
       raycast
     ]

@@ -6,7 +6,6 @@
 | -------- | -------- | ----------- |
 | `seol`   | macOS    | Personal    |
 | `san`    | WSL      | Personal    |
-| `pipi`   | Linux    | Pi          |
 
 ## Mac
 

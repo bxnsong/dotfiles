@@ -25,13 +25,6 @@
       modules = [
         ./../home
       ]
-      ++ [
-        {
-          nixpkgs.overlays = [
-            inputs.neovim-nightly-overlay.overlays.default
-          ];
-        }
-      ]
       ++ lib.optionals (builtins.pathExists (customUserPath)) [ customUserPath ];
     };
 

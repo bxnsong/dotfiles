@@ -7,10 +7,6 @@ case $INFO in
     ICON_PADDING_RIGHT=5
     ICON=󰞍
     ;;
-"Code")
-    ICON_PADDING_RIGHT=4
-    ICON=󰨞
-    ;;
 "Calendar")
     ICON_PADDING_RIGHT=3
     ICON=

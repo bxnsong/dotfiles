@@ -7,7 +7,7 @@
       discord
       jq
       macmon
-      (pnpm.override { nodejs = nodejs-slim_26; })
+      (pnpm.override { nodejs-slim = nodejs-slim_26; })
       nodejs-slim_26
       raycast
     ]

@@ -6,8 +6,9 @@
       btop
       discord
       jq
-      (pnpm.override { nodejs = nodejs_26; })
-      nodejs_26
+      macmon
+      (pnpm.override { nodejs = nodejs-slim_26; })
+      nodejs-slim_26
       raycast
     ]
     ++ [

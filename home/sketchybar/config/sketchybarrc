@@ -76,8 +76,13 @@ sketchybar --add item battery right \
     update_freq=20 \
     script="$PLUGIN_DIR/battery.sh"
 
-# osascript -e 'quit app "Rectangle"'
-# open -a Rectangle
+sketchybar --add item cpu right \
+    --set cpu \
+    background.padding_left=8 \
+    icon= \
+    icon.color=0xfff5a97f \
+    update_freq=10 \
+    script="$PLUGIN_DIR/cpu.sh"
 
 ##### Finalizing Setup #####
 sketchybar --update

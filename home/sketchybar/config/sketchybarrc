@@ -73,6 +73,7 @@ sketchybar --add item clock right \
 
 sketchybar --add item battery right \
     --set battery \
+    background.padding_left=8 \
     update_freq=20 \
     script="$PLUGIN_DIR/battery.sh"
 

@@ -3,6 +3,7 @@
   home.packages =
     with pkgs;
     [
+      btop
       discord
       jq
       (pnpm.override { nodejs = nodejs_26; })

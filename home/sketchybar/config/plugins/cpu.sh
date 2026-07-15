@@ -27,8 +27,23 @@ fi
 if [[ -n "$METRICS" ]]; then
     IFS=$'\t' read -r TEMPERATURE CPU_USAGE <<< "$METRICS"
     LABEL="$TEMPERATURE  $CPU_USAGE"
+
+    TEMPERATURE_VALUE=${TEMPERATURE%°C}
+    if (( TEMPERATURE_VALUE < 60 )); then
+        COLOR=0xffa6da95
+    elif (( TEMPERATURE_VALUE < 80 )); then
+        COLOR=0xffeed49f
+    elif (( TEMPERATURE_VALUE < 90 )); then
+        COLOR=0xfff5a97f
+    else
+        COLOR=0xffed8796
+    fi
 else
     LABEL="CPU unavailable"
+    COLOR=0xffcad3f5
 fi
 
-sketchybar --set "$NAME" label="$LABEL"
+sketchybar --set "$NAME" \
+    icon.color="$COLOR" \
+    label="$LABEL" \
+    label.color="$COLOR"

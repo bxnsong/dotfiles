@@ -14,6 +14,7 @@
       biome
       chafa
       delta
+      difftastic
       eza
       fastfetch
       fd
@@ -56,37 +57,30 @@
       settings = {
         git.diffRenderers = [
           {
-            colorArg = "always";
-            command = "delta --dark --paging=never";
+            type = "extDiff";
+            command = "difft --color=always --context={{diffContext}}";
           }
         ];
-        gui.theme = {
-          lightTheme = false;
-          activeBorderColor = [
-            "#a6e3a1" # Green
-            "bold"
-          ];
-          inactiveBorderColor = [
-            "#cdd6f4" # Text
-          ];
-          optionsTextColor = [
-            "#89b4fa" # Blue
-          ];
-          selectedLineBgColor = [
-            "#313244" # Surface0
-          ];
-          selectedRangeBgColor = [
-            "#313244" # Surface0
-          ];
-          cherryPickedCommitBgColor = [
-            "#94e2d5" # Teal
-          ];
-          cherryPickedCommitFgColor = [
-            "#89b4fa" # Blue
-          ];
-          unstagedChangesColor = [
-            "red" # Red
-          ];
+        gui = {
+          nerdFontsVersion = "3";
+          theme = {
+            activeBorderColor = [
+              "#75a1c7"
+              "bold"
+            ];
+            inactiveBorderColor = [ "#404040" ];
+            optionsTextColor = [ "#75a1c7" ];
+            selectedLineBgColor = [ "#212121" ];
+            selectedRangeBgColor = [ "#212121" ];
+            cherryPickedCommitBgColor = [ "#c4a8d6" ];
+            cherryPickedCommitFgColor = [ "#75a1c7" ];
+            unstagedChangesColor = [ "#e08585" ];
+            defaultFgColor = [ "#e4e4e8" ];
+            searchingActiveBorderColor = [
+              "#d9a35a"
+              "bold"
+            ];
+          };
         };
       };
     };

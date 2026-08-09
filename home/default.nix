@@ -40,6 +40,7 @@
     zellij = {
       enable = true;
       enableZshIntegration = true;
+      settings.default_mode = "locked";
       settings.theme = "luna";
       themes.luna = ''
         themes {

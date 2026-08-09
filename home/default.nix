@@ -23,7 +23,6 @@
       nixfmt
       ripgrep
       rustup
-      sesh
       statix
       tldr
       tree-sitter
@@ -59,22 +58,6 @@
           }
         }
       '';
-    };
-
-    tmux = {
-      enable = true;
-      baseIndex = 1;
-      extraConfig = builtins.readFile ./tmux/tmux.conf;
-      escapeTime = 10;
-      historyLimit = 10000;
-      keyMode = "vi";
-      terminal = "screen-256color";
-      prefix = "C-a";
-      plugins = [
-        (import ./tmux/catppuccin.nix { inherit pkgs; })
-        pkgs.tmuxPlugins.fpp
-        pkgs.tmuxPlugins.tmux-thumbs
-      ];
     };
 
     lazygit = {

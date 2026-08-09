@@ -38,6 +38,29 @@
   programs = {
     home-manager.enable = true;
 
+    zellij = {
+      enable = true;
+      enableZshIntegration = true;
+      settings.theme = "luna";
+      themes.luna = ''
+        themes {
+          luna {
+            fg 228 228 232
+            bg 6 6 6
+            black 0 0 0
+            red 224 133 133
+            green 111 190 128
+            yellow 217 163 90
+            blue 117 161 199
+            magenta 196 168 214
+            cyan 117 161 199
+            white 199 199 199
+            orange 194 145 106
+          }
+        }
+      '';
+    };
+
     tmux = {
       enable = true;
       baseIndex = 1;

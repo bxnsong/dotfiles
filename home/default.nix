@@ -268,13 +268,44 @@
           selection-background = "353749";
           selection-foreground = "cdd6f4";
         };
+        luna = {
+          palette = [
+            "0=#000000"
+            "1=#e08585"
+            "2=#6fbe80"
+            "3=#c2916a"
+            "4=#75a1c7"
+            "5=#c4a8d6"
+            "6=#75a1c7"
+            "7=#c7c7c7"
+            "8=#888888"
+            "9=#e08585"
+            "10=#6fbe80"
+            "11=#d9a35a"
+            "12=#8c9cb8"
+            "13=#c4a8d6"
+            "14=#75a1c7"
+            "15=#ffffff"
+            "16=#a8a8a8"
+            "17=#c2916a"
+            "18=#1c1c1c"
+            "19=#404040"
+            "20=#888888"
+            "21=#c7c7c7"
+          ];
+          background = "060606";
+          foreground = "e4e4e8";
+          cursor-color = "e4e4e8";
+          selection-background = "404040";
+          selection-foreground = "e4e4e8";
+        };
       };
       settings = {
         font-size = 12;
         window-padding-x = 16;
         window-padding-y = 6;
         bold-is-bright = true;
-        theme = "calvera";
+        theme = "luna";
         macos-titlebar-style = "hidden";
         macos-option-as-alt = true;
         clipboard-read = "allow";

@@ -33,6 +33,8 @@
     ];
   };
 
+  manual.manpages.enable = false;
+
   programs = {
     home-manager.enable = true;
 

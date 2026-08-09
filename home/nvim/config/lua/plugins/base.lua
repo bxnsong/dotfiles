@@ -84,7 +84,18 @@ return {
   },
 
   {
+    "wtfox/luna.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      vim.cmd.colorscheme("luna")
+    end,
+  },
+
+  {
     "yashguptaz/calvera-dark.nvim",
+    enabled = false,
     lazy = false,
     name = "calvera",
     init = function()

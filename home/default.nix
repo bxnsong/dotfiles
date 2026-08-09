@@ -193,9 +193,18 @@
     bat = {
       enable = true;
       config = {
-        theme = "mocha";
+        theme = "luna";
       };
       themes = {
+        luna = {
+          src = pkgs.fetchFromGitHub {
+            owner = "WTFox";
+            repo = "luna.nvim";
+            rev = "575b27d51cae6d5c07c769ed8754e51ea9ad8c85";
+            hash = "sha256-HcMJnNcbVrmNfGw3/4tXVl1Q0l8ZDxJaN9ahBnJRGk4=";
+          };
+          file = "extras/bat/luna.tmTheme";
+        };
         mocha = {
           src = pkgs.fetchFromGitHub {
             owner = "catppuccin";

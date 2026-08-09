@@ -174,19 +174,21 @@
     fzf = {
       enable = true;
       defaultCommand = "fd --type f --color=always --exclude .git --ignore-file ~/.gitignore";
+      defaultOptions = [ "--multi" ];
       colors = {
-        bg = "#1e1e2e";
-        "bg+" = "#313244";
-        spinner = "#f5e0dc";
-        hl = "#f38ba8";
-        fg = "#cdd6f4";
-        header = "#f38ba8";
-        info = "#cba6f7";
-        pointer = "#f5e0dc";
-        marker = "#f5e0dc";
-        "fg+" = "#cdd6f4";
-        prompt = "#cba6f7";
-        "hl+" = "#f38ba8";
+        "bg+" = "#1c1c1c";
+        bg = "#060606";
+        spinner = "#a8a8a8";
+        hl = "#c2916a";
+        fg = "#e4e4e8";
+        header = "#c2916a";
+        info = "#8c9cb8";
+        pointer = "#a8a8a8";
+        marker = "#b09080";
+        "fg+" = "#c7c7c7";
+        prompt = "#75a1c7";
+        "hl+" = "#c2916a";
+        border = "#060606";
       };
     };
 

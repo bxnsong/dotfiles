@@ -57,6 +57,8 @@ in
         show-recents = false;
       };
 
+      ".GlobalPreferences"."com.apple.mouse.scaling" = -1.0;
+
       NSGlobalDomain = {
         "com.apple.swipescrolldirection" = false;
         _HIHideMenuBar = true;

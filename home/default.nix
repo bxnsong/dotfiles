@@ -10,26 +10,29 @@
     stateVersion = "25.11";
     inherit (userConfig) username homeDirectory;
 
-    packages = with pkgs; [
-      biome
-      chafa
-      delta
-      difftastic
-      eza
-      fastfetch
-      fd
-      gcc
-      just
-      nixfmt
-      ripgrep
-      rustup
-      statix
-      tldr
-      tree-sitter
-      unzip
-      uv
-      zoxide
-    ];
+    packages =
+      with pkgs;
+      [
+        biome
+        chafa
+        delta
+        difftastic
+        eza
+        fastfetch
+        fd
+        just
+        nixfmt
+        ripgrep
+        rustup
+        statix
+        tldr
+        tree-sitter
+        unzip
+        uv
+        zoxide
+      ]
+      # Let macOS use Apple's compiler so linking finds the system SDK libraries.
+      ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ pkgs.gcc ];
   };
 
   manual.manpages.enable = false;

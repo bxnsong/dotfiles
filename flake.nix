@@ -7,6 +7,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # Newer casks use `zap :not_required`, which needs a newer Homebrew parser.
+    nix-homebrew.inputs.brew-src.url = "github:Homebrew/brew/7.0.11";
     homebrew-core = {
       url = "github:Homebrew/homebrew-core";
       flake = false;

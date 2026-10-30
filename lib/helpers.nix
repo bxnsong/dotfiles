@@ -72,6 +72,11 @@
         {
           nix-homebrew = {
             enable = true;
+            # nix-homebrew derives this metadata from its own lock file.
+            package = inputs.nix-homebrew.inputs.brew-src // {
+              name = "brew-7.0.11";
+              version = "7.0.11";
+            };
             enableRosetta = true;
             autoMigrate = true;
             user = "${username}";

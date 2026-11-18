@@ -128,12 +128,21 @@ in
   };
   services.jankyborders = {
     enable = true;
+    # Borders probes Accessibility before reading ax_focus=off.
+    package = pkgs.jankyborders.overrideAttrs (old: {
+      postPatch = (old.postPatch or "") + ''
+        substituteInPlace src/main.c \
+          --replace-fail 'g_settings.ax_focus = ax_check_trust(true);' ""
+      '';
+    });
     width = 5.0;
     active_color = "0xffc5a7f2";
     inactive_color = "0xff494d64";
   };
   services.aerospace = {
     enable = true;
+    # Keep the release signature so macOS can recognize AeroSpace across updates.
+    package = pkgs.aerospace.overrideAttrs { dontFixup = true; };
 
     settings = {
       after-login-command = [ ];
